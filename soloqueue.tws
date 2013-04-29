@@ -1,0 +1,188 @@
+(dp0
+S'buildDestination'
+p1
+V/Users/matthew/Documents/code/Twine/Solo Queue/soloqueue.html
+p2
+sS'saveDestination'
+p3
+V/Users/matthew/Documents/code/Twine/Solo Queue/soloqueue.tws
+p4
+sS'target'
+p5
+S'sugarcane'
+p6
+sS'storyPanel'
+p7
+(dp8
+S'widgets'
+p9
+(lp10
+(dp11
+S'selected'
+p12
+I01
+sS'pos'
+p13
+(lp14
+I10
+aI10
+asS'passage'
+p15
+(itiddlywiki
+Tiddler
+p16
+(dp17
+S'text'
+p18
+V<html><img src="ranked.png"/>\u000a<h1>Classic - Summoner's Rift</h1>\u000a<p>Work with your allies to siege the enemy base and destroy their Nexus. Average game length is 30-45 minutes.</p></html>\u000a\u000aLast Step:\u000a[[Solo: match me with teammates|solo]]\u000a[[Duo: I will invite a duo partner|duo]]
+p19
+sS'tags'
+p20
+(lp21
+sS'created'
+p22
+ctime
+struct_time
+p23
+((I2013
+I4
+I29
+I0
+I24
+I50
+I0
+I119
+I1
+tp24
+(dp25
+tp26
+Rp27
+sS'modified'
+p28
+g27
+sS'title'
+p29
+VStart
+p30
+sbsa(dp31
+g12
+I00
+sg13
+(lp32
+I121
+aI226
+asg15
+(itiddlywiki
+Tiddler
+p33
+(dp34
+S'text'
+p35
+VAfter <<random 30 50>> seconds of matchmaking...\u000a\u000a<html><img src="match_found.png" /></html>
+p36
+sS'tags'
+p37
+(lp38
+sS'created'
+p39
+g23
+((I2013
+I4
+I29
+I0
+I40
+I48
+I0
+I119
+I1
+tp40
+(dp41
+tp42
+Rp43
+sS'modified'
+p44
+g43
+sS'title'
+p45
+Vsolo
+p46
+sbsa(dp47
+g12
+I00
+sg13
+(lp48
+I257
+aI30
+asg15
+(itiddlywiki
+Tiddler
+p49
+(dp50
+g35
+VYou take a look at your friend's list. Everyone you know is either offline or already in a match.\u000a\u000a[[Okay, solo queue it is.|solo]]
+p51
+sg37
+(lp52
+sg39
+g23
+((I2013
+I4
+I29
+I0
+I40
+I48
+I0
+I119
+I1
+tp53
+(dp54
+tp55
+Rp56
+sg44
+g56
+sg45
+Vduo
+p57
+sbsa(dp58
+g12
+I00
+sg13
+(lp59
+I429
+aI10
+asg15
+(itiddlywiki
+Tiddler
+p60
+(dp61
+g35
+Vtry {\u000a  version.extensions['random'] = { major:1, minor:0, revision:0 };\u000a  macros['random'] = {\u000a    handler: function(place, macroName, params, parser) {\u000a		if (params[0] === undefined) params[0] = 0;\u000a		if (params[1] === undefined) params[1] = 1;\u000a		var n = Math.round(Math.random()*params[1] + params[0]);\u000a		insertText(place, n);\u000a    },\u000a  };\u000a} catch(e) {\u000a  throwError(place,"recall Setup Error: "+e.message); \u000a}
+p62
+sg37
+(lp63
+Vscript
+p64
+asg39
+g23
+((I2013
+I4
+I29
+I0
+I59
+I27
+I0
+I119
+I1
+tp65
+(dp66
+tp67
+Rp68
+sg44
+g68
+sg45
+Vrandom
+p69
+sbsasS'scale'
+p70
+I1
+ss.
