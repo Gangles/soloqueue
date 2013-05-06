@@ -20,12 +20,12 @@ p9
 (dp11
 S'selected'
 p12
-I01
+I00
 sS'pos'
 p13
 (lp14
 I10
-aI10
+aI150
 asS'passage'
 p15
 (itiddlywiki
@@ -34,7 +34,7 @@ p16
 (dp17
 S'text'
 p18
-V<html><img src="ranked.png"/>\u000a<h1>Classic - Summoner's Rift</h1>\u000a<p>Work with your allies to siege the enemy base and destroy their Nexus. Average game length is 30-45 minutes.</p></html>\u000a\u000aLast Step:\u000a[[Solo: match me with teammates|solo]]\u000a[[Duo: I will invite a duo partner|duo]]
+V<html><img src="ranked.png"/>\u000a<h1>Classic - Summoner's Rift</h1>\u000a<p>Work with your allies to siege the enemy base and destroy their Nexus. Average game length is 30-45 minutes.</p></html>\u000aLast Step:\u000a[[Solo: match me with teammates|Solo]]\u000a[[Duo: I will invite a duo partner|Duo]]
 p19
 sS'tags'
 p20
@@ -62,15 +62,15 @@ p28
 g27
 sS'title'
 p29
-VStart
+VMatchmaking
 p30
 sbsa(dp31
 g12
 I00
 sg13
 (lp32
-I121
-aI226
+I10
+aI290
 asg15
 (itiddlywiki
 Tiddler
@@ -78,7 +78,7 @@ p33
 (dp34
 S'text'
 p35
-VAfter <<random 30 50>> seconds of matchmaking...\u000a\u000a<html><img src="match_found.png" /></html>
+VAfter <<randomnumber 30 50>> seconds of matchmaking...\u000a\u000a<html><img src="match_found.png" /></html>\u000a\u000a[[Accept|Champion Select]]\u000a[[Decline|Matchmaking]]
 p36
 sS'tags'
 p37
@@ -104,22 +104,22 @@ p44
 g43
 sS'title'
 p45
-Vsolo
+VSolo
 p46
 sbsa(dp47
 g12
 I00
 sg13
 (lp48
-I257
-aI30
+I150
+aI150
 asg15
 (itiddlywiki
 Tiddler
 p49
 (dp50
 g35
-VYou take a look at your friend's list. Everyone you know is either offline or already in a match.\u000a\u000a[[Okay, solo queue it is.|solo]]
+VYou take a look at your friend's list. Everyone you know is either offline or already in a match.\u000a\u000a[[Okay, solo queue it is.|Solo]]
 p51
 sg37
 (lp52
@@ -141,14 +141,14 @@ Rp56
 sg44
 g56
 sg45
-Vduo
+VDuo
 p57
 sbsa(dp58
 g12
 I00
 sg13
 (lp59
-I429
+I1130
 aI10
 asg15
 (itiddlywiki
@@ -156,7 +156,7 @@ Tiddler
 p60
 (dp61
 g35
-Vtry {\u000a  version.extensions['random'] = { major:1, minor:0, revision:0 };\u000a  macros['random'] = {\u000a    handler: function(place, macroName, params, parser) {\u000a		if (params[0] === undefined) params[0] = 0;\u000a		if (params[1] === undefined) params[1] = 1;\u000a		var n = Math.round(Math.random()*params[1] + params[0]);\u000a		insertText(place, n);\u000a    },\u000a  };\u000a} catch(e) {\u000a  throwError(place,"recall Setup Error: "+e.message); \u000a}
+Vtry {\u000a  version.extensions['randomnumber'] = { major:1, minor:0, revision:0 };\u000a  macros['randomnumber'] = {\u000a    handler: function(place, macroName, params, parser) {\u000a		if (params[0] === undefined) params[0] = 0;\u000a		if (params[1] === undefined) params[1] = 1;\u000a		var n = Math.round(Math.random()*params[1] + params[0]);\u000a		insertText(place, n);\u000a    },\u000a  };\u000a} catch(e) {\u000a  throwError(place,"recall Setup Error: "+e.message); \u000a}
 p62
 sg37
 (lp63
@@ -180,9 +180,539 @@ Rp68
 sg44
 g68
 sg45
-Vrandom
+Vrandomnumber
 p69
+sbsa(dp70
+g12
+I00
+sg13
+(lp71
+I10
+aI10
+asg15
+(itiddlywiki
+Tiddler
+p72
+(dp73
+g35
+VSolo Queue
+p74
+sg37
+(lp75
+Vtitle
+p76
+asg39
+g23
+((I2013
+I4
+I29
+I1
+I31
+I43
+I0
+I119
+I1
+tp77
+(dp78
+tp79
+Rp80
+sg44
+g80
+sg45
+VStoryTitle
+p81
+sbsa(dp82
+g12
+I00
+sg13
+(lp83
+I290
+aI10
+asg15
+(itiddlywiki
+Tiddler
+p84
+(dp85
+g35
+VMatthew Gallant
+p86
+sg37
+(lp87
+Vtitle
+p88
+asg39
+g23
+((I2013
+I4
+I29
+I1
+I33
+I34
+I0
+I119
+I1
+tp89
+(dp90
+tp91
+Rp92
+sg44
+g92
+sg45
+VStoryAuthor
+p93
+sbsa(dp94
+g12
+I00
+sg13
+(lp95
+I430
+aI290
+asg15
+(itiddlywiki
+Tiddler
+p96
+(dp97
+g35
+VYou're placed in a match with 4 teammates.\u000a<<silently>>\u000a<<set $ally1 = "Nachobek">>\u000a<<set $ally2 = "MegaDancer">>\u000a<<set $ally3 = "lungjuno">>\u000a<<set $ally4 = "Krazehz">>\u000a<<endsilently>>\u000aYou have third pick in the draft.\u000a\u000aYou can call a role in team chat...\u000a[[Call top lane|Call Top]]\u000a[[Call mid lane|Call Mid]]\u000a[[Call AD carry|Call ADC]]\u000a[[Call support|Call Support]]\u000a[[Call jungle|Call Jungle]]\u000a\u000aOr say nothing at all and [[fill whatever role is needed|Fill]].
+p98
+sg37
+(lp99
+sg39
+g23
+((I2013
+I4
+I29
+I1
+I35
+I0
+I0
+I119
+I1
+tp100
+(dp101
+tp102
+Rp103
+sg44
+g103
+sg45
+VChampion Select
+p104
+sbsa(dp105
+g12
+I00
+sg13
+(lp106
+I430
+aI10
+asg15
+(itiddlywiki
+Tiddler
+p107
+(dp108
+g35
+V<<display Matchmaking>>
+p109
+sg37
+(lp110
+sg39
+g23
+((I2013
+I4
+I29
+I1
+I40
+I10
+I0
+I119
+I1
+tp111
+(dp112
+tp113
+Rp114
+sg44
+g114
+sg45
+VStart
+p115
+sbsa(dp116
+g12
+I00
+sg13
+(lp117
+I150
+aI10
+asg15
+(itiddlywiki
+Tiddler
+p118
+(dp119
+S'text'
+p120
+VAn excercise in serenity
+p121
+sS'tags'
+p122
+(lp123
+sS'created'
+p124
+g23
+((I2013
+I4
+I29
+I1
+I54
+I33
+I0
+I119
+I1
+tp125
+(dp126
+tp127
+Rp128
+sS'modified'
+p129
+g128
+sS'title'
+p130
+VStorySubtitle
+p131
+sbsa(dp132
+g12
+I00
+sg13
+(lp133
+I144
+aI569
+asg15
+(itiddlywiki
+Tiddler
+p134
+(dp135
+S'text'
+p136
+V<<set $wantrole = "top">>You: top\u000a<<print $ally1>>: top\u000a<<print $ally2>>: mid or adc\u000a<<print $ally3>>: can I jungle?\u000a\u000aA few second later...\u000a\u000a<<print $ally1>>: yo I called top\u000a\u000a[[I called it first|Insist Solo]]\u000a[[*sigh* fine I'll just fill whatever we need|Fill]]
+p137
+sS'tags'
+p138
+(lp139
+sS'created'
+p140
+g23
+((I2013
+I5
+I6
+I0
+I50
+I55
+I0
+I126
+I1
+tp141
+(dp142
+tp143
+Rp144
+sS'modified'
+p145
+g144
+sS'title'
+p146
+VCall Top
+p147
+sbsa(dp148
+g12
+I00
+sg13
+(lp149
+I290
+aI570
+asg15
+(itiddlywiki
+Tiddler
+p150
+(dp151
+g136
+V<<set $wantrole = "mid">>You: mid\u000a<<print $ally1>>: mid\u000a<<print $ally2>>: top or adc\u000a<<print $ally3>>: lemme jungle\u000a\u000aA few second later...\u000a\u000a<<print $ally1>>: yo I called mid\u000a\u000a[[I called it first|Insist Solo]]\u000a[[*sigh* fine I'll just fill whatever we need|Fill]]
+p152
+sg138
+(lp153
+sg140
+g23
+((I2013
+I5
+I6
+I0
+I51
+I12
+I0
+I126
+I1
+tp154
+(dp155
+tp156
+Rp157
+sg145
+g157
+sg146
+VCall Mid
+p158
+sbsa(dp159
+g12
+I00
+sg13
+(lp160
+I570
+aI570
+asg15
+(itiddlywiki
+Tiddler
+p161
+(dp162
+g136
+V
+p163
+sg138
+(lp164
+sg140
+g23
+((I2013
+I5
+I6
+I0
+I51
+I20
+I0
+I126
+I1
+tp165
+(dp166
+tp167
+Rp168
+sg145
+g168
+sg146
+VCall ADC
+p169
+sbsa(dp170
+g12
+I00
+sg13
+(lp171
+I430
+aI570
+asg15
+(itiddlywiki
+Tiddler
+p172
+(dp173
+g136
+g163
+sg138
+(lp174
+sg140
+g23
+((I2013
+I5
+I6
+I0
+I51
+I27
+I0
+I126
+I1
+tp175
+(dp176
+tp177
+Rp178
+sg145
+g178
+sg146
+VCall Jungle
+p179
+sbsa(dp180
+g12
+I00
+sg13
+(lp181
+I710
+aI570
+asg15
+(itiddlywiki
+Tiddler
+p182
+(dp183
+g136
+g163
+sg138
+(lp184
+sg140
+g23
+((I2013
+I5
+I6
+I0
+I51
+I42
+I0
+I126
+I1
+tp185
+(dp186
+tp187
+Rp188
+sg145
+g188
+sg146
+VCall Support
+p189
+sbsa(dp190
+g12
+I00
+sg13
+(lp191
+I522
+aI739
+asg15
+(itiddlywiki
+Tiddler
+p192
+(dp193
+g136
+g163
+sg138
+(lp194
+sg140
+g23
+((I2013
+I5
+I6
+I0
+I52
+I34
+I0
+I126
+I1
+tp195
+(dp196
+tp197
+Rp198
+sg145
+g198
+sg146
+VFill
+p199
+sbsa(dp200
+g12
+I00
+sg13
+(lp201
+I211
+aI733
+asg15
+(itiddlywiki
+Tiddler
+p202
+(dp203
+g136
+VLast time you let someone else get <<print $wantrole>> lane they played <<if $wantrole eq "top">><<randomword 50 "Teemo" 999 "Fiora">><<else>><<randomword 50 "Master Yi" 999 "Pantheon">><<endif>>, never warded and fed like crazy. You don't trust anyone with <<print $wantrole>> but yourself.\u000a\u000aYou: I called <<print $wantrole>> first\u000aYou: and I pick before you\u000a<<print $ally1>>: i called <<print $wantrole>>\u000a<<print $ally1>>: i will carry\u000a<<print $ally1>>: <<print $wantrole>> or I feed\u000a\u000aYou'd rather not lose another match due to a troll teammate.\u000a\u000a<<if $wantrole eq "top">>\u000a[[*sigh* fine you can have top|Fill]]\u000a<<else>>\u000a[[*sigh* fine you can have mid|Fill]]\u000a<<endif>>\u000a[[I pick first, deal with it|Insist Solo 2]]
+p204
+sg138
+(lp205
+sg140
+g23
+((I2013
+I5
+I6
+I1
+I8
+I58
+I0
+I126
+I1
+tp206
+(dp207
+tp208
+Rp209
+sg145
+g209
+sg146
+VInsist Solo
+p210
+sbsa(dp211
+g12
+I00
+sg13
+(lp212
+I1130
+aI150
+asg15
+(itiddlywiki
+Tiddler
+p213
+(dp214
+g136
+Vtry { macros['randomword'] = { \u000a\u000a  handler: function(place,macroName,params,parser) {\u000a    var state = 0;\u000a    var passageflag = false;\u000a    var chance = 100;\u000a    var r = Math.random() * 100;\u000a    \u000a    for(var i = 0; i < params.length; i++) {\u000a      switch(state) {\u000a        case 0:\u000a          if(params[i] == 'passage') {\u000a            passageflag = true;\u000a            state = 1;\u000a            break;\u000a          }\u000a          //No break !!! fall through if keyword 'passage' is not used\u000a          \u000a        case 1:\u000a          chance -= params[i];\u000a          state = 2;\u000a          break;\u000a          \u000a        case 2:\u000a          if(r >= chance) {\u000a            if(passageflag) macros.display.handler(place,macroName,[ params[i] ]); \u000a            else new Wikifier(place, params[i]);\u000a            return;\u000a          }\u000a          state = 0;\u000a          break;\u000a      }\u000a    }\u000a  },\u000a\u000a  init: function() { }\u000a  \u000a};} catch(e) { \u000a  throwError(place,"Macro Randomword Error: "+e.message); \u000a}
+p215
+sg138
+(lp216
+Vscript
+p217
+asg140
+g23
+((I2013
+I5
+I6
+I1
+I18
+I29
+I0
+I126
+I1
+tp218
+(dp219
+tp220
+Rp221
+sg145
+g221
+sg146
+Vrandomword
+p222
+sbsa(dp223
+g12
+I00
+sg13
+(lp224
+I210
+aI880
+asg15
+(itiddlywiki
+Tiddler
+p225
+(dp226
+g136
+g163
+sg138
+(lp227
+sg140
+g23
+((I2013
+I5
+I6
+I1
+I39
+I18
+I0
+I126
+I1
+tp228
+(dp229
+tp230
+Rp231
+sg145
+g231
+sg146
+VInsist Solo 2
+p232
 sbsasS'scale'
-p70
+p233
 I1
 ss.
