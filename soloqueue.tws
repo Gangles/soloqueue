@@ -70,7 +70,7 @@ I00
 sg13
 (lp32
 I10
-aI290
+aI293
 asg15
 (itiddlywiki
 Tiddler
@@ -78,7 +78,7 @@ p33
 (dp34
 S'text'
 p35
-VAfter <<randomnumber 30 50>> seconds of matchmaking...\u000a\u000a<html><img src="match_found.png" /></html>\u000a\u000a[[Accept|Champion Select]]\u000a[[Decline|Matchmaking]]
+VAfter <<randomnumber 30 50>> seconds of matchmaking...\u000a\u000a<html>\u000a<img src="match_found.png" usemap="#solo" />\u000a<map name="solo">\u000a	<area shape="rect" coords="200,250,310,285" alt="Accept" href="#" onclick="javascript:state.display('Champion Select', this); return false;">\u000a	<area shape="rect" coords="395,250,490,285" alt="Accept" href="#" onclick="javascript:state.display('Matchmaking', this); return false;">\u000a</map></html>
 p36
 sS'tags'
 p37
@@ -390,7 +390,7 @@ p134
 (dp135
 S'text'
 p136
-V<<set $wantrole = "top">>You: top\u000a<<print $ally1>>: top\u000a<<print $ally2>>: mid or adc\u000a<<print $ally3>>: can I jungle?\u000a\u000aA few second later...\u000a\u000a<<print $ally1>>: yo I called top\u000a\u000a[[I called it first|Insist Solo]]\u000a[[*sigh* fine I'll just fill whatever we need|Fill]]
+V<<set $wantrole = "top">>You: top\u000a<<print $ally4>>: top\u000a<<print $ally2>>: mid or adc\u000a<<print $ally3>>: can I jungle?\u000a\u000aA few second later...\u000a\u000a<<print $ally1>>: yo I called top\u000a\u000a[[I called it first|Insist Solo]]\u000a[[*sigh* fine I'll just fill whatever we need|Fill]]
 p137
 sS'tags'
 p138
@@ -431,7 +431,7 @@ Tiddler
 p150
 (dp151
 g136
-V<<set $wantrole = "mid">>You: mid\u000a<<print $ally1>>: mid\u000a<<print $ally2>>: top or adc\u000a<<print $ally3>>: lemme jungle\u000a\u000aA few second later...\u000a\u000a<<print $ally1>>: yo I called mid\u000a\u000a[[I called it first|Insist Solo]]\u000a[[*sigh* fine I'll just fill whatever we need|Fill]]
+VMid. The shortest and safest lane, with opportunities to quickly roam top and bottom to set up ganks.\u000a\u000a<<set $wantrole = "mid">>You: mid\u000a<<print $ally4>>: mid\u000a<<print $ally2>>: top or adc\u000a<<print $ally3>>: lemme jungle\u000a\u000aA few second later...\u000a\u000a<<print $ally1>>: yo I called mid\u000a\u000a[[I called it first|Insist Solo]]\u000a[[*sigh* fine I'll just fill whatever we need|Fill]]
 p152
 sg138
 (lp153
@@ -541,9 +541,10 @@ Tiddler
 p182
 (dp183
 g136
-g163
+VSupport. Noone's going to contest you for that pick. At least you can guarantee that your lane will have good ward coverage. You might even feed your ADC a kill or two if you're lucky.\u000a\u000a<<set $wantrole = "support">>You: I'll support\u000a<<print $ally4>>: mid\u000a<<print $ally2>>: top or adc\u000a<<print $ally3>>: lemme jungle
+p184
 sg138
-(lp184
+(lp185
 sg140
 g23
 ((I2013
@@ -555,31 +556,31 @@ I42
 I0
 I126
 I1
-tp185
-(dp186
-tp187
-Rp188
+tp186
+(dp187
+tp188
+Rp189
 sg145
-g188
+g189
 sg146
 VCall Support
-p189
-sbsa(dp190
+p190
+sbsa(dp191
 g12
 I00
 sg13
-(lp191
+(lp192
 I522
 aI739
 asg15
 (itiddlywiki
 Tiddler
-p192
-(dp193
+p193
+(dp194
 g136
 g163
 sg138
-(lp194
+(lp195
 sg140
 g23
 ((I2013
@@ -591,32 +592,32 @@ I34
 I0
 I126
 I1
-tp195
-(dp196
-tp197
-Rp198
+tp196
+(dp197
+tp198
+Rp199
 sg145
-g198
+g199
 sg146
 VFill
-p199
-sbsa(dp200
+p200
+sbsa(dp201
 g12
 I00
 sg13
-(lp201
+(lp202
 I211
 aI733
 asg15
 (itiddlywiki
 Tiddler
-p202
-(dp203
+p203
+(dp204
 g136
 VLast time you let someone else get <<print $wantrole>> lane they played <<if $wantrole eq "top">><<randomword 50 "Teemo" 999 "Fiora">><<else>><<randomword 50 "Master Yi" 999 "Pantheon">><<endif>>, never warded and fed like crazy. You don't trust anyone with <<print $wantrole>> but yourself.\u000a\u000aYou: I called <<print $wantrole>> first\u000aYou: and I pick before you\u000a<<print $ally1>>: i called <<print $wantrole>>\u000a<<print $ally1>>: i will carry\u000a<<print $ally1>>: <<print $wantrole>> or I feed\u000a\u000aYou'd rather not lose another match due to a troll teammate.\u000a\u000a<<if $wantrole eq "top">>\u000a[[*sigh* fine you can have top|Fill]]\u000a<<else>>\u000a[[*sigh* fine you can have mid|Fill]]\u000a<<endif>>\u000a[[I pick first, deal with it|Insist Solo 2]]
-p204
+p205
 sg138
-(lp205
+(lp206
 sg140
 g23
 ((I2013
@@ -628,34 +629,34 @@ I58
 I0
 I126
 I1
-tp206
-(dp207
-tp208
-Rp209
+tp207
+(dp208
+tp209
+Rp210
 sg145
-g209
+g210
 sg146
 VInsist Solo
-p210
-sbsa(dp211
+p211
+sbsa(dp212
 g12
 I00
 sg13
-(lp212
+(lp213
 I1130
 aI150
 asg15
 (itiddlywiki
 Tiddler
-p213
-(dp214
+p214
+(dp215
 g136
 Vtry { macros['randomword'] = { \u000a\u000a  handler: function(place,macroName,params,parser) {\u000a    var state = 0;\u000a    var passageflag = false;\u000a    var chance = 100;\u000a    var r = Math.random() * 100;\u000a    \u000a    for(var i = 0; i < params.length; i++) {\u000a      switch(state) {\u000a        case 0:\u000a          if(params[i] == 'passage') {\u000a            passageflag = true;\u000a            state = 1;\u000a            break;\u000a          }\u000a          //No break !!! fall through if keyword 'passage' is not used\u000a          \u000a        case 1:\u000a          chance -= params[i];\u000a          state = 2;\u000a          break;\u000a          \u000a        case 2:\u000a          if(r >= chance) {\u000a            if(passageflag) macros.display.handler(place,macroName,[ params[i] ]); \u000a            else new Wikifier(place, params[i]);\u000a            return;\u000a          }\u000a          state = 0;\u000a          break;\u000a      }\u000a    }\u000a  },\u000a\u000a  init: function() { }\u000a  \u000a};} catch(e) { \u000a  throwError(place,"Macro Randomword Error: "+e.message); \u000a}
-p215
+p216
 sg138
-(lp216
+(lp217
 Vscript
-p217
+p218
 asg140
 g23
 ((I2013
@@ -667,31 +668,32 @@ I29
 I0
 I126
 I1
-tp218
-(dp219
-tp220
-Rp221
+tp219
+(dp220
+tp221
+Rp222
 sg145
-g221
+g222
 sg146
 Vrandomword
-p222
-sbsa(dp223
+p223
+sbsa(dp224
 g12
 I00
 sg13
-(lp224
+(lp225
 I210
 aI880
 asg15
 (itiddlywiki
 Tiddler
-p225
-(dp226
+p226
+(dp227
 g136
-g163
+VIt's your turn to pick a champion, who would you like to play in <<print $wantrole>> lane?\u000a\u000a<<if $wantrole eq "top">>\u000a[[Singed|Insist Solo 3]]\u000a[[Riven|Insist Solo 3]]\u000a[[Rumble|Insist Solo 3]]\u000a[[Shen|Insist Solo 3]]\u000a<<else>>\u000a[[Lux|Insist Solo 3]]\u000a[[Karthus|Insist Solo 3]]\u000a[[Ahri|Insist Solo 3]]\u000a[[Anivia|Insist Solo 3]]\u000a<<endif>>
+p228
 sg138
-(lp227
+(lp229
 sg140
 g23
 ((I2013
@@ -703,16 +705,57 @@ I18
 I0
 I126
 I1
-tp228
-(dp229
 tp230
-Rp231
+(dp231
+tp232
+Rp233
 sg145
-g231
+g233
 sg146
 VInsist Solo 2
-p232
+p234
+sbsa(dp235
+g12
+I00
+sg13
+(lp236
+I211
+aI1037
+asg15
+(itiddlywiki
+Tiddler
+p237
+(dp238
+S'text'
+p239
+g163
+sS'tags'
+p240
+(lp241
+sS'created'
+p242
+g23
+((I2013
+I5
+I13
+I0
+I50
+I26
+I0
+I133
+I1
+tp243
+(dp244
+tp245
+Rp246
+sS'modified'
+p247
+g246
+sS'title'
+p248
+VInsist Solo 3
+p249
 sbsasS'scale'
-p233
+p250
 I1
 ss.
