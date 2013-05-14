@@ -460,8 +460,8 @@ g12
 I00
 sg13
 (lp160
-I570
-aI570
+I1028
+aI634
 asg15
 (itiddlywiki
 Tiddler
@@ -497,8 +497,8 @@ g12
 I00
 sg13
 (lp171
-I430
-aI570
+I857
+aI639
 asg15
 (itiddlywiki
 Tiddler
@@ -533,8 +533,8 @@ g12
 I00
 sg13
 (lp181
-I710
-aI570
+I1195
+aI634
 asg15
 (itiddlywiki
 Tiddler
@@ -570,8 +570,8 @@ g12
 I00
 sg13
 (lp192
-I522
-aI739
+I869
+aI320
 asg15
 (itiddlywiki
 Tiddler
@@ -643,8 +643,8 @@ g12
 I00
 sg13
 (lp213
-I1130
-aI150
+F1268.75
+aF10.0
 asg15
 (itiddlywiki
 Tiddler
@@ -690,7 +690,7 @@ Tiddler
 p226
 (dp227
 g136
-VIt's your turn to pick a champion, who would you like to play in <<print $wantrole>> lane?\u000a\u000a<<if $wantrole eq "top">>\u000a[[Singed|Insist Solo 3]]\u000a[[Riven|Insist Solo 3]]\u000a[[Rumble|Insist Solo 3]]\u000a[[Shen|Insist Solo 3]]\u000a<<else>>\u000a[[Lux|Insist Solo 3]]\u000a[[Karthus|Insist Solo 3]]\u000a[[Ahri|Insist Solo 3]]\u000a[[Anivia|Insist Solo 3]]\u000a<<endif>>
+VIt's your turn to pick a champion, who would you like to play in <<print $wantrole>> lane?\u000a\u000a<<if $wantrole eq "top">>\u000a<<display "Top Lane Champions">>\u000a<<else>>\u000a<<display "Mid Lane Champions">>\u000a<<endif>>
 p228
 sg138
 (lp229
@@ -719,8 +719,8 @@ g12
 I00
 sg13
 (lp236
-I211
-aI1037
+F126.25
+aF1020.0
 asg15
 (itiddlywiki
 Tiddler
@@ -728,34 +728,109 @@ p237
 (dp238
 S'text'
 p239
-g163
-sS'tags'
+V<html>\u000a<a href="#" onclick="javascript:state.display('Irelia', this); return false;"><img src="champs/irelia.png" /></a>\u000a<a href="#" onclick="javascript:state.display('Riven', this); return false;"><img src="champs/riven.png" /></a>\u000a<a href="#" onclick="javascript:state.display('Rumble', this); return false;"><img src="champs/rumble.png" /></a>\u000a<a href="#" onclick="javascript:state.display('Shen', this); return false;"><img src="champs/shen.png" /></a>\u000a<a href="#" onclick="javascript:state.display('Singed', this); return false;"><img src="champs/singed.png" /></a>\u000a</html>
 p240
-(lp241
+sS'tags'
+p241
+(lp242
 sS'created'
-p242
+p243
 g23
 ((I2013
 I5
 I13
-I0
-I50
-I26
+I21
+I42
+I55
 I0
 I133
 I1
-tp243
-(dp244
-tp245
-Rp246
+tp244
+(dp245
+tp246
+Rp247
 sS'modified'
-p247
-g246
-sS'title'
 p248
-VInsist Solo 3
+g247
+sS'title'
 p249
-sbsasS'scale'
+VTop Lane Champions
 p250
+sbsa(dp251
+g12
+I00
+sg13
+(lp252
+F282.5
+aF1020.0
+asg15
+(itiddlywiki
+Tiddler
+p253
+(dp254
+g239
+V<html>\u000a<a href="#" onclick="javascript:state.display('Ahri', this); return false;"><img src="champs/ahri.png" /></a>\u000a<a href="#" onclick="javascript:state.display('Anivia', this); return false;"><img src="champs/anivia.png" /></a>\u000a<a href="#" onclick="javascript:state.display('Karthus', this); return false;"><img src="champs/karthus.png" /></a>\u000a<a href="#" onclick="javascript:state.display('Lux', this); return false;"><img src="champs/lux.png" /></a>\u000a<a href="#" onclick="javascript:state.display('Ryze', this); return false;"><img src="champs/ryze.png" /></a>\u000a</html>
+p255
+sg241
+(lp256
+sg243
+g23
+((I2013
+I5
+I13
+I21
+I45
+I45
+I0
+I133
 I1
+tp257
+(dp258
+tp259
+Rp260
+sg248
+g260
+sg249
+VMid Lane Champions
+p261
+sbsa(dp262
+g12
+I01
+sg13
+(lp263
+F95.0
+aF1170.0
+asg15
+(itiddlywiki
+Tiddler
+p264
+(dp265
+g239
+V<html>\u000a<div style="background-image: url(splash/shen.jpg); opacity: 0.5; width: 100%; height: 540px;"><h1>Fuck yeah Shen!</h1></div>\u000a</html>
+p266
+sg241
+(lp267
+sg243
+g23
+((I2013
+I5
+I13
+I21
+I58
+I55
+I0
+I133
+I1
+tp268
+(dp269
+tp270
+Rp271
+sg248
+g271
+sg249
+VShen
+p272
+sbsasS'scale'
+p273
+F0.80000000000000004
 ss.
