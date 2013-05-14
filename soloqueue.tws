@@ -795,7 +795,7 @@ VMid Lane Champions
 p261
 sbsa(dp262
 g12
-I01
+I00
 sg13
 (lp263
 F95.0
@@ -806,7 +806,7 @@ Tiddler
 p264
 (dp265
 g239
-V<html>\u000a<div style="background-image: url(splash/shen.jpg); opacity: 0.5; width: 100%; height: 540px;"><h1>Fuck yeah Shen!</h1></div>\u000a</html>
+V<html>\u000a<div style="background-image: url(splash/shen.png); width: 100%; height: 540px;">\u000a<h1>Fuck yeah Shen!</h1>\u000a<p style="width:500px;">You can't believe he wasn't banned! Shen is super tanky AND his taunt forces enemies to attack him. Most importantly, his ult lets you shield and teleport to any ally on the map. You can be split pushing all day and still show up the moment a team fight breaks out.</p>\u000a<p><a href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>\u000a</div>\u000a</html>
 p266
 sg241
 (lp267
@@ -830,7 +830,90 @@ g271
 sg249
 VShen
 p272
+sbsa(dp273
+g12
+I00
+sg13
+(lp274
+F196.25
+aF1348.75
+asg15
+(itiddlywiki
+Tiddler
+p275
+(dp276
+S'text'
+p277
+g163
+sS'tags'
+p278
+(lp279
+sS'created'
+p280
+g23
+((I2013
+I5
+I14
+I0
+I35
+I11
+I1
+I134
+I1
+tp281
+(dp282
+tp283
+Rp284
+sS'modified'
+p285
+g284
+sS'title'
+p286
+VInsist Solo 3
+p287
+sbsa(dp288
+g12
+I00
+sg13
+(lp289
+F235.0
+aF1170.0
+asg15
+(itiddlywiki
+Tiddler
+p290
+(dp291
+S'text'
+p292
+V<html>\u000a<div style="background-image: url(splash/singed.png); width: 100%; height: 540px;">\u000a<h1>Fuck yeah Singed!</h1>\u000a<p style="width:500px;">In theory everyone knows not to chase a Singed, yet most opponents can't resist. They'll be choking on your poison cloud while trying in vain to whittle down your massive HP bar. You can sit in top lane all day and still win the game.</p>\u000a<p><a href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>\u000a</div>\u000a</html>
+p293
+sS'tags'
+p294
+(lp295
+sS'created'
+p296
+g23
+((I2013
+I5
+I13
+I21
+I58
+I55
+I0
+I133
+I1
+tp297
+(dp298
+tp299
+Rp300
+sS'modified'
+p301
+g300
+sS'title'
+p302
+VSinged
+p303
 sbsasS'scale'
-p273
+p304
 F0.80000000000000004
 ss.
