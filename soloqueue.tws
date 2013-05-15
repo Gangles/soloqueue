@@ -390,7 +390,7 @@ p134
 (dp135
 S'text'
 p136
-V<<set $wantrole = "top">>You: top\u000a<<print $ally4>>: top\u000a<<print $ally2>>: mid or adc\u000a<<print $ally3>>: can I jungle?\u000a\u000aA few second later...\u000a\u000a<<print $ally1>>: yo I called top\u000a\u000a[[I called it first|Insist Solo]]\u000a[[*sigh* fine I'll just fill whatever we need|Fill]]
+V<<set $wantrole = "top">>You: top\u000a<<print $ally4>>: top\u000a<<print $ally2>>: mid or adc\u000a<<print $ally3>>: can I jungle?\u000a\u000aA few second later...\u000a\u000a<<print $ally4>>: yo I called top\u000a\u000a[[I called it first|Insist Solo]]\u000a[[*sigh* fine I'll just fill whatever we need|Fill]]
 p137
 sS'tags'
 p138
@@ -431,7 +431,7 @@ Tiddler
 p150
 (dp151
 g136
-VMid. The shortest and safest lane, with opportunities to quickly roam top and bottom to set up ganks.\u000a\u000a<<set $wantrole = "mid">>You: mid\u000a<<print $ally4>>: mid\u000a<<print $ally2>>: top or adc\u000a<<print $ally3>>: lemme jungle\u000a\u000aA few second later...\u000a\u000a<<print $ally1>>: yo I called mid\u000a\u000a[[I called it first|Insist Solo]]\u000a[[*sigh* fine I'll just fill whatever we need|Fill]]
+VMid. The shortest and safest lane, with opportunities to quickly roam top and bottom to set up ganks.\u000a\u000a<<set $wantrole = "mid">>You: mid\u000a<<print $ally4>>: mid\u000a<<print $ally2>>: top or adc\u000a<<print $ally3>>: lemme jungle\u000a\u000aA few second later...\u000a\u000a<<print $ally4>>: yo I called mid\u000a\u000a[[I called it first|Insist Solo]]\u000a[[*sigh* fine I'll just fill whatever we need|Fill]]
 p152
 sg138
 (lp153
@@ -460,8 +460,8 @@ g12
 I00
 sg13
 (lp160
-I1028
-aI634
+F899.25
+aF536.5
 asg15
 (itiddlywiki
 Tiddler
@@ -497,8 +497,8 @@ g12
 I00
 sg13
 (lp171
-I857
-aI639
+F720.75
+aF537.75
 asg15
 (itiddlywiki
 Tiddler
@@ -533,8 +533,8 @@ g12
 I00
 sg13
 (lp181
-I1195
-aI634
+F812.5
+aF389.0
 asg15
 (itiddlywiki
 Tiddler
@@ -570,8 +570,8 @@ g12
 I00
 sg13
 (lp192
-I869
-aI320
+F546.5
+aF842.5
 asg15
 (itiddlywiki
 Tiddler
@@ -614,7 +614,7 @@ Tiddler
 p203
 (dp204
 g136
-VLast time you let someone else get <<print $wantrole>> lane they played <<if $wantrole eq "top">><<randomword 50 "Teemo" 999 "Fiora">><<else>><<randomword 50 "Master Yi" 999 "Pantheon">><<endif>>, never warded and fed like crazy. You don't trust anyone with <<print $wantrole>> but yourself.\u000a\u000aYou: I called <<print $wantrole>> first\u000aYou: and I pick before you\u000a<<print $ally1>>: i called <<print $wantrole>>\u000a<<print $ally1>>: i will carry\u000a<<print $ally1>>: <<print $wantrole>> or I feed\u000a\u000aYou'd rather not lose another match due to a troll teammate.\u000a\u000a<<if $wantrole eq "top">>\u000a[[*sigh* fine you can have top|Fill]]\u000a<<else>>\u000a[[*sigh* fine you can have mid|Fill]]\u000a<<endif>>\u000a[[I pick first, deal with it|Insist Solo 2]]
+VLast time you let someone else get <<print $wantrole>> lane they played <<if $wantrole eq "top">><<randomword 50 "Teemo" 999 "Fiora">><<else>><<randomword 50 "Master Yi" 999 "Pantheon">><<endif>>, never warded and fed like crazy. You don't trust anyone with <<print $wantrole>> but yourself.\u000a\u000aYou: I called <<print $wantrole>> first\u000aYou: and I pick before you\u000a<<print $ally4>>: i called <<print $wantrole>>\u000a<<print $ally4>>: i will carry\u000a<<print $ally4>>: <<print $wantrole>> or I feed\u000a\u000aYou'd rather not lose another match due to a troll teammate.\u000a\u000a<<if $wantrole eq "top">>\u000a[[*sigh* fine you can have top|Fill]]\u000a<<else>>\u000a[[*sigh* fine you can have mid|Fill]]\u000a<<endif>>\u000a[[I pick first, deal with it|Insist Solo 2]]
 p205
 sg138
 (lp206
@@ -719,8 +719,8 @@ g12
 I00
 sg13
 (lp236
-F126.25
-aF1020.0
+F38.75
+aF822.5
 asg15
 (itiddlywiki
 Tiddler
@@ -761,8 +761,8 @@ g12
 I00
 sg13
 (lp252
-F282.5
-aF1020.0
+F37.5
+aF975.0
 asg15
 (itiddlywiki
 Tiddler
@@ -798,15 +798,15 @@ g12
 I00
 sg13
 (lp263
-F95.0
-aF1170.0
+F1125.0
+aF1065.0
 asg15
 (itiddlywiki
 Tiddler
 p264
 (dp265
 g239
-V<html>\u000a<div style="background-image: url(splash/shen.png); width: 100%; height: 540px;">\u000a<h1>Fuck yeah Shen!</h1>\u000a<p style="width:500px;">You can't believe he wasn't banned! Shen is super tanky AND his taunt forces enemies to attack him. Most importantly, his ult lets you shield and teleport to any ally on the map. You can be split pushing all day and still show up the moment a team fight breaks out.</p>\u000a<p><a href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>\u000a</div>\u000a</html>
+V<<set $champ = "Shen">>\u000a<html>\u000a<div style="background-image: url(splash/shen.png); width: 100%; height: 540px;">\u000a<h1>Fuck yeah Shen!</h1>\u000a<p style="width:500px;">You can't believe he wasn't banned! Shen is super tanky AND his taunt forces enemies to attack him. Most importantly, his ult lets you shield and teleport to any ally on the map. You can be split pushing all day and still show up the moment a team fight breaks out.</p>\u000a<p><a href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>\u000a</div>\u000a</html>
 p266
 sg241
 (lp267
@@ -835,8 +835,8 @@ g12
 I00
 sg13
 (lp274
-F196.25
-aF1348.75
+F210.0
+aF1026.25
 asg15
 (itiddlywiki
 Tiddler
@@ -844,12 +844,13 @@ p275
 (dp276
 S'text'
 p277
-g163
-sS'tags'
+VSomeone is not pleased with your choice of champion\u000a\u000a<<print $ally4>>: i called <<print $wantrole>> lane asshole\u000a<<print $ally4>>: <<print $wantrole>> or feed\u000a<<print $ally2>>: I'm on promotion series :(\u000a<<print $ally4>>: trade me <<print $champ>> or i feed\u000a\u000aWhat will you do?\u000a[[Fine I'll trade, I don't want to lose because of a troll|Fill]]\u000a[[Call his bluff, he doesn't want to lose either|Insist Solo 4]]
 p278
-(lp279
+sS'tags'
+p279
+(lp280
 sS'created'
-p280
+p281
 g23
 ((I2013
 I5
@@ -860,38 +861,38 @@ I11
 I1
 I134
 I1
-tp281
-(dp282
-tp283
-Rp284
+tp282
+(dp283
+tp284
+Rp285
 sS'modified'
-p285
-g284
-sS'title'
 p286
-VInsist Solo 3
+g285
+sS'title'
 p287
-sbsa(dp288
+VInsist Solo 3
+p288
+sbsa(dp289
 g12
 I00
 sg13
-(lp289
-F235.0
-aF1170.0
+(lp290
+F990.0
+aF1071.25
 asg15
 (itiddlywiki
 Tiddler
-p290
-(dp291
+p291
+(dp292
 S'text'
-p292
-V<html>\u000a<div style="background-image: url(splash/singed.png); width: 100%; height: 540px;">\u000a<h1>Fuck yeah Singed!</h1>\u000a<p style="width:500px;">In theory everyone knows not to chase a Singed, yet most opponents can't resist. They'll be choking on your poison cloud while trying in vain to whittle down your massive HP bar. You can sit in top lane all day and still win the game.</p>\u000a<p><a href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>\u000a</div>\u000a</html>
 p293
-sS'tags'
+V<<set $champ = "Singed">>\u000a<html>\u000a<div style="background-image: url(splash/singed.png); width: 100%; height: 540px;">\u000a<h1>Fuck yeah Singed!</h1>\u000a<p style="width:500px;">In theory everyone knows not to chase a Singed, yet most opponents can't resist. They'll be choking on your poison cloud while trying in vain to whittle down your massive HP bar. You can sit in top lane all day and still win the game.</p>\u000a<p><a href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>\u000a</div>\u000a</html>
 p294
-(lp295
+sS'tags'
+p295
+(lp296
 sS'created'
-p296
+p297
 g23
 ((I2013
 I5
@@ -902,18 +903,104 @@ I55
 I0
 I133
 I1
-tp297
-(dp298
-tp299
-Rp300
+tp298
+(dp299
+tp300
+Rp301
 sS'modified'
-p301
-g300
-sS'title'
 p302
-VSinged
+g301
+sS'title'
 p303
-sbsasS'scale'
+VSinged
 p304
+sbsa(dp305
+g12
+I00
+sg13
+(lp306
+F210.0
+aF1173.75
+asg15
+(itiddlywiki
+Tiddler
+p307
+(dp308
+S'text'
+p309
+V<<print $ally4>> continues to rage, locking in Clarity/Revive Heimerdinger to solidify his threat. You're not buying it, and won't let a troll bully you around.\u000a\u000aA few seconds before the match begins...\u000a<html>\u000a<a href="#" onclick="javascript:state.display('Matchmaking', this); return false;">Game Alert: <span id="ally4">ally4</span> has left during champion selection and you have been placed back in the matchmaking queue.</a>\u000a</html>\u000a<<variablereplace>>
+p310
+sS'tags'
+p311
+(lp312
+sS'created'
+p313
+g23
+((I2013
+I5
+I15
+I0
+I55
+I28
+I2
+I135
+I1
+tp314
+(dp315
+tp316
+Rp317
+sS'modified'
+p318
+g317
+sS'title'
+p319
+VInsist Solo 4
+p320
+sbsa(dp321
+g12
+I00
+sg13
+(lp322
+F1401.25
+aF10.0
+asg15
+(itiddlywiki
+Tiddler
+p323
+(dp324
+S'text'
+p325
+Vtry {\u000a  version.extensions['macrodemoMacro'] = { \u000a    major:1, minor:0, revision:0 \u000a  };\u000a  macros['variablereplace'] = {\u000a    handler: function(place, macroName, params, parser) {\u000a		var element = document.getElementById("ally4");\u000a		if(element != null)\u000a		{\u000a			element.innerHTML = state.history[0].variables['ally4'];\u000a		}\u000a    },\u000a    init: function() { },\u000a  };\u000a} catch(e) {\u000a  throwError(place,"macrodemo Setup Error: "+e.message); \u000a}
+p326
+sS'tags'
+p327
+(lp328
+Vscript
+p329
+asS'created'
+p330
+g23
+((I2013
+I5
+I15
+I9
+I1
+I58
+I2
+I135
+I1
+tp331
+(dp332
+tp333
+Rp334
+sS'modified'
+p335
+g334
+sS'title'
+p336
+Vvariablereplace
+p337
+sbsasS'scale'
+p338
 F0.80000000000000004
 ss.
