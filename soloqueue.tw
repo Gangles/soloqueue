@@ -1,0 +1,207 @@
+:: StoryTitle [title]
+Solo Queue
+
+
+:: StorySubtitle
+An excercise in serenity
+
+
+:: StoryAuthor [title]
+Matthew Gallant
+
+
+:: Start
+<<display Matchmaking>>
+
+
+:: Matchmaking
+<html><img src="ranked.png"/>
+<h1>Classic - Summoner's Rift</h1>
+<p>Work with your allies to siege the enemy base and destroy their Nexus. Average game length is 30-45 minutes.</p></html>
+Last Step:
+[[Solo: match me with teammates|Solo]]
+[[Duo: I will invite a duo partner|Duo]]
+
+
+:: Duo
+You take a look at your friend's list. Everyone you know is either offline or already in a match.
+
+[[Okay, solo queue it is.|Solo]]
+
+
+:: Solo
+After <<randomnumber 30 50>> seconds of matchmaking...
+
+<html>
+<img src="match_found.png" usemap="#solo" />
+<map name="solo">
+	<area shape="rect" coords="200,250,310,285" alt="Accept" href="#" onclick="javascript:state.display('Champion Select', this); return false;">
+	<area shape="rect" coords="395,250,490,285" alt="Accept" href="#" onclick="javascript:state.display('Matchmaking', this); return false;">
+</map></html>
+
+
+:: Champion Select
+You're placed in a match with 4 teammates.
+<<silently>>
+<<set $ally1 = "Nachobek">>
+<<set $ally2 = "MegaDancer">>
+<<set $ally3 = "lungjuno">>
+<<set $ally4 = "Krazehz">>
+<<endsilently>>
+You have third pick in the draft.
+
+You can call a role in team chat...
+[[Call top lane|Call Top]]
+[[Call mid lane|Call Mid]]
+[[Call AD carry|Call ADC]]
+[[Call support|Call Support]]
+[[Call jungle|Call Jungle]]
+
+Or say nothing at all and [[fill whatever role is needed|Fill]].
+
+
+:: Call Support
+Support. Noone's going to contest you for that pick. At least you can guarantee that your lane will have good ward coverage. You might even feed your ADC a kill or two if you're lucky.
+
+<<set $wantrole = "support">>You: I'll support
+<<print $ally4>>: mid
+<<print $ally2>>: top or adc
+<<print $ally3>>: lemme jungle
+
+
+:: Call Jungle
+
+
+
+:: Call ADC
+
+
+
+:: Call Top
+<<set $wantrole = "top">>You: top
+<<print $ally4>>: top
+<<print $ally2>>: mid or adc
+<<print $ally3>>: can I jungle?
+
+A few second later...
+
+<<print $ally4>>: yo I called top
+
+[[I called it first|Insist Solo]]
+[[*sigh* fine I'll just fill whatever we need|Fill]]
+
+
+:: Call Mid
+Mid. The shortest and safest lane, with opportunities to quickly roam top and bottom to set up ganks.
+
+<<set $wantrole = "mid">>You: mid
+<<print $ally4>>: mid
+<<print $ally2>>: top or adc
+<<print $ally3>>: lemme jungle
+
+A few second later...
+
+<<print $ally4>>: yo I called mid
+
+[[I called it first|Insist Solo]]
+[[*sigh* fine I'll just fill whatever we need|Fill]]
+
+
+:: Insist Solo
+Last time you let someone else get <<print $wantrole>> lane they played <<if $wantrole eq "top">><<randomword 50 "Teemo" 999 "Fiora">><<else>><<randomword 50 "Master Yi" 999 "Pantheon">><<endif>>, never warded and fed like crazy. You don't trust anyone with <<print $wantrole>> but yourself.
+
+You: I called <<print $wantrole>> first
+You: and I pick before you
+<<print $ally4>>: i called <<print $wantrole>>
+<<print $ally4>>: i will carry
+<<print $ally4>>: <<print $wantrole>> or I feed
+
+You'd rather not lose another match due to a troll teammate.
+
+<<if $wantrole eq "top">>
+[[*sigh* fine you can have top|Fill]]
+<<else>>
+[[*sigh* fine you can have mid|Fill]]
+<<endif>>
+[[I pick first, deal with it|Insist Solo 2]]
+
+
+:: Top Lane Champions
+<html>
+<a href="#" onclick="javascript:state.display('Irelia', this); return false;"><img src="champs/irelia.png" /></a>
+<a href="#" onclick="javascript:state.display('Riven', this); return false;"><img src="champs/riven.png" /></a>
+<a href="#" onclick="javascript:state.display('Rumble', this); return false;"><img src="champs/rumble.png" /></a>
+<a href="#" onclick="javascript:state.display('Shen', this); return false;"><img src="champs/shen.png" /></a>
+<a href="#" onclick="javascript:state.display('Singed', this); return false;"><img src="champs/singed.png" /></a>
+</html>
+
+
+:: Fill
+
+
+
+:: Insist Solo 2
+It's your turn to pick a champion, who would you like to play in <<print $wantrole>> lane?
+
+<<if $wantrole eq "top">>
+<<display "Top Lane Champions">>
+<<else>>
+<<display "Mid Lane Champions">>
+<<endif>>
+
+
+:: Mid Lane Champions
+<html>
+<a href="#" onclick="javascript:state.display('Ahri', this); return false;"><img src="champs/ahri.png" /></a>
+<a href="#" onclick="javascript:state.display('Anivia', this); return false;"><img src="champs/anivia.png" /></a>
+<a href="#" onclick="javascript:state.display('Karthus', this); return false;"><img src="champs/karthus.png" /></a>
+<a href="#" onclick="javascript:state.display('Lux', this); return false;"><img src="champs/lux.png" /></a>
+<a href="#" onclick="javascript:state.display('Ryze', this); return false;"><img src="champs/ryze.png" /></a>
+</html>
+
+
+:: Insist Solo 3
+Someone is not pleased with your choice of champion
+
+<<print $ally4>>: i called <<print $wantrole>> lane asshole
+<<print $ally4>>: <<print $wantrole>> or feed
+<<print $ally2>>: I'm on promotion series :(
+<<print $ally4>>: trade me <<print $champ>> or i feed
+
+What will you do?
+[[Fine I'll trade, I don't want to lose because of a troll|Fill]]
+[[Call his bluff, he doesn't want to lose either|Insist Solo 4]]
+
+
+:: Shen
+<<set $champ = "Shen">>
+<html>
+<div style="background-image: url(splash/shen.png); width: 100%; height: 540px;">
+<h1>Fuck yeah Shen!</h1>
+<p style="width:500px;">You can't believe he wasn't banned! Shen is super tanky AND his taunt forces enemies to attack him. Most importantly, his ult lets you shield and teleport to any ally on the map. You can be split pushing all day and still show up the moment a team fight breaks out.</p>
+<p><a href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>
+</div>
+</html>
+
+
+:: Singed
+<<set $champ = "Singed">>
+<html>
+<div style="background-image: url(splash/singed.png); width: 100%; height: 540px;">
+<h1>Fuck yeah Singed!</h1>
+<p style="width:500px;">In theory everyone knows not to chase a Singed, yet most opponents can't resist. They'll be choking on your poison cloud while trying in vain to whittle down your massive HP bar. You can sit in top lane all day and still win the game.</p>
+<p><a href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>
+</div>
+</html>
+
+
+:: Insist Solo 4
+<<print $ally4>> continues to rage, locking in Clarity/Revive Heimerdinger to solidify his threat. You're not buying it, and won't let a troll bully you around.
+
+A few seconds before the match begins...
+<html>
+<a href="#" onclick="javascript:state.display('Matchmaking', this); return false;">Game Alert: <span id="ally4">ally4</span> has left during champion selection and you have been placed back in the matchmaking queue.</a>
+</html>
+<<variablereplace>>
+
+
