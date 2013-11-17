@@ -2,7 +2,7 @@
 Solo Queue
 
 
-:: StorySubtitle
+:: StorySubtitle [title]
 An excercise in serenity
 
 
@@ -60,17 +60,30 @@ You can call a role in team chat...
 Or say nothing at all and [[fill whatever role is needed|Fill]].
 
 
+:: Fill
+
+
+
 :: Call Support
-Support. Noone's going to contest you for that pick. At least you can guarantee that your lane will have good ward coverage. You might even feed your ADC a kill or two if you're lucky.
+Support: noone's going to contest you for that pick. At least you can guarantee that your lane will have good ward coverage. You might even feed your ADC a kill or two if you're lucky.
 
 <<set $wantrole = "support">>You: I'll support
 <<print $ally4>>: mid
 <<print $ally2>>: top or adc
 <<print $ally3>>: lemme jungle
 
+<<display "Support Champions">>
+
 
 :: Call Jungle
+Jungling, good call. You'll be able to help out any lane that's having a tough time.
 
+<<set $wantrole = "jungle">>You: jungle
+<<print $ally4>>: top or adc
+<<print $ally2>>: fill
+<<print $ally3>>: mid
+
+<<display "Jungle Champions">>
 
 
 :: Call ADC
@@ -126,20 +139,6 @@ You'd rather not lose another match due to a troll teammate.
 [[I pick first, deal with it|Insist Solo 2]]
 
 
-:: Top Lane Champions
-<html>
-<a href="#" onclick="javascript:state.display('Irelia', this); return false;"><img src="champs/irelia.png" /></a>
-<a href="#" onclick="javascript:state.display('Riven', this); return false;"><img src="champs/riven.png" /></a>
-<a href="#" onclick="javascript:state.display('Rumble', this); return false;"><img src="champs/rumble.png" /></a>
-<a href="#" onclick="javascript:state.display('Shen', this); return false;"><img src="champs/shen.png" /></a>
-<a href="#" onclick="javascript:state.display('Singed', this); return false;"><img src="champs/singed.png" /></a>
-</html>
-
-
-:: Fill
-
-
-
 :: Insist Solo 2
 It's your turn to pick a champion, who would you like to play in <<print $wantrole>> lane?
 
@@ -148,16 +147,6 @@ It's your turn to pick a champion, who would you like to play in <<print $wantro
 <<else>>
 <<display "Mid Lane Champions">>
 <<endif>>
-
-
-:: Mid Lane Champions
-<html>
-<a href="#" onclick="javascript:state.display('Ahri', this); return false;"><img src="champs/ahri.png" /></a>
-<a href="#" onclick="javascript:state.display('Anivia', this); return false;"><img src="champs/anivia.png" /></a>
-<a href="#" onclick="javascript:state.display('Karthus', this); return false;"><img src="champs/karthus.png" /></a>
-<a href="#" onclick="javascript:state.display('Lux', this); return false;"><img src="champs/lux.png" /></a>
-<a href="#" onclick="javascript:state.display('Ryze', this); return false;"><img src="champs/ryze.png" /></a>
-</html>
 
 
 :: Insist Solo 3
@@ -171,6 +160,52 @@ Someone is not pleased with your choice of champion
 What will you do?
 [[Fine I'll trade, I don't want to lose because of a troll|Fill]]
 [[Call his bluff, he doesn't want to lose either|Insist Solo 4]]
+
+
+:: Insist Solo 4
+<<print $ally4>> continues to rage, locking in Clarity/Revive Heimerdinger to solidify his threat. You're not buying it, and won't let a troll bully you around.
+
+A few seconds before the match begins...
+<html>
+<a href="#" onclick="javascript:state.display('Matchmaking', this); return false;">Game Alert: <span id="ally4">ally4</span> has left during champion selection and you have been placed back in the matchmaking queue.</a>
+</html>
+<<variablereplace>>
+
+
+:: Top Lane Champions
+<html>
+<a href="#" onclick="javascript:state.display('Irelia', this); return false;"><img src="champs/irelia.png" /></a>
+<a href="#" onclick="javascript:state.display('Riven', this); return false;"><img src="champs/riven.png" /></a>
+<a href="#" onclick="javascript:state.display('Rumble', this); return false;"><img src="champs/rumble.png" /></a>
+<a href="#" onclick="javascript:state.display('Shen', this); return false;"><img src="champs/shen.png" /></a>
+<a href="#" onclick="javascript:state.display('Singed', this); return false;"><img src="champs/singed.png" /></a>
+</html>
+
+
+:: Mid Lane Champions
+<html>
+<a href="#" onclick="javascript:state.display('Ahri', this); return false;"><img src="champs/ahri.png" /></a>
+<a href="#" onclick="javascript:state.display('Anivia', this); return false;"><img src="champs/anivia.png" /></a>
+<a href="#" onclick="javascript:state.display('Karthus', this); return false;"><img src="champs/karthus.png" /></a>
+<a href="#" onclick="javascript:state.display('Lux', this); return false;"><img src="champs/lux.png" /></a>
+<a href="#" onclick="javascript:state.display('Ryze', this); return false;"><img src="champs/ryze.png" /></a>
+</html>
+
+
+:: Support Champions
+<html>
+<a href="#" onclick="javascript:state.display('Sona', this); return false;"><img src="champs/sona.png" /></a>
+<a href="#" onclick="javascript:state.display('Taric', this); return false;"><img src="champs/taric.png" /></a>
+<a href="#" onclick="javascript:state.display('Thresh', this); return false;"><img src="champs/thresh.png" /></a>
+</html>
+
+
+:: Jungle Champions
+<html>
+<a href="#" onclick="javascript:state.display('Lee Sin', this); return false;"><img src="champs/leesin.png" /></a>
+<a href="#" onclick="javascript:state.display('Maokai', this); return false;"><img src="champs/maokai.png" /></a>
+<a href="#" onclick="javascript:state.display('Shyvana', this); return false;"><img src="champs/shyvana.png" /></a>
+</html>
 
 
 :: Shen
@@ -193,15 +228,3 @@ What will you do?
 <p><a href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>
 </div>
 </html>
-
-
-:: Insist Solo 4
-<<print $ally4>> continues to rage, locking in Clarity/Revive Heimerdinger to solidify his threat. You're not buying it, and won't let a troll bully you around.
-
-A few seconds before the match begins...
-<html>
-<a href="#" onclick="javascript:state.display('Matchmaking', this); return false;">Game Alert: <span id="ally4">ally4</span> has left during champion selection and you have been placed back in the matchmaking queue.</a>
-</html>
-<<variablereplace>>
-
-
