@@ -67,7 +67,7 @@ Or say nothing at all and [[fill whatever role is needed|Fill]].
 :: Call Support
 Support: noone's going to contest you for that pick. At least you can guarantee that your lane will have good ward coverage. You might even feed your ADC a kill or two if you're lucky.
 
-<<set $wantrole = "support">>You: I'll support
+<<set $want_role = "support">>You: I'll support
 <<print $ally4>>: mid
 <<print $ally2>>: top or adc
 <<print $ally3>>: lemme jungle
@@ -78,7 +78,7 @@ Support: noone's going to contest you for that pick. At least you can guarantee 
 :: Call Jungle
 Jungling, good call. You'll be able to help out any lane that's having a tough time.
 
-<<set $wantrole = "jungle">>You: jungle
+<<set $want_role = "jungle">>You: jungle
 <<print $ally4>>: top or adc
 <<print $ally2>>: fill
 <<print $ally3>>: mid
@@ -91,7 +91,7 @@ Jungling, good call. You'll be able to help out any lane that's having a tough t
 
 
 :: Call Top
-<<set $wantrole = "top">>You: top
+<<set $want_role = "top">>You: top
 <<print $ally4>>: top
 <<print $ally2>>: mid or adc
 <<print $ally3>>: can I jungle?
@@ -107,7 +107,7 @@ A few second later...
 :: Call Mid
 Mid. The shortest and safest lane, with opportunities to quickly roam top and bottom to set up ganks.
 
-<<set $wantrole = "mid">>You: mid
+<<set $want_role = "mid">>You: mid
 <<print $ally4>>: mid
 <<print $ally2>>: top or adc
 <<print $ally3>>: lemme jungle
@@ -121,17 +121,17 @@ A few second later...
 
 
 :: Insist Solo
-Last time you let someone else get <<print $wantrole>> lane they played <<if $wantrole eq "top">><<randomword 50 "Teemo" 999 "Fiora">><<else>><<randomword 50 "Master Yi" 999 "Pantheon">><<endif>>, never warded and fed like crazy. You don't trust anyone with <<print $wantrole>> but yourself.
+Last time you let someone else get <<print $want_role>> lane they played <<if $want_role eq "top">><<randomword 50 "Teemo" 999 "Fiora">><<else>><<randomword 50 "Master Yi" 999 "Pantheon">><<endif>>, never warded and fed like crazy. You don't trust anyone with <<print $want_role>> but yourself.
 
-You: I called <<print $wantrole>> first
+You: I called <<print $want_role>> first
 You: and I pick before you
-<<print $ally4>>: i called <<print $wantrole>>
+<<print $ally4>>: i called <<print $want_role>>
 <<print $ally4>>: i will carry
-<<print $ally4>>: <<print $wantrole>> or I feed
+<<print $ally4>>: <<print $want_role>> or I feed
 
 You'd rather not lose another match due to a troll teammate.
 
-<<if $wantrole eq "top">>
+<<if $want_role eq "top">>
 [[*sigh* fine you can have top|Fill]]
 <<else>>
 [[*sigh* fine you can have mid|Fill]]
@@ -140,9 +140,9 @@ You'd rather not lose another match due to a troll teammate.
 
 
 :: Insist Solo 2
-It's your turn to pick a champion, who would you like to play in <<print $wantrole>> lane?
+It's your turn to pick a champion, who would you like to play in <<print $want_role>> lane?
 
-<<if $wantrole eq "top">>
+<<if $want_role eq "top">>
 <<display "Top Lane Champions">>
 <<else>>
 <<display "Mid Lane Champions">>
@@ -152,8 +152,8 @@ It's your turn to pick a champion, who would you like to play in <<print $wantro
 :: Insist Solo 3
 Someone is not pleased with your choice of champion
 
-<<print $ally4>>: i called <<print $wantrole>> lane asshole
-<<print $ally4>>: <<print $wantrole>> or feed
+<<print $ally4>>: i called <<print $want_role>> lane asshole
+<<print $ally4>>: <<print $want_role>> or feed
 <<print $ally2>>: I'm on promotion series :(
 <<print $ally4>>: trade me <<print $champ>> or i feed
 
@@ -228,3 +228,63 @@ A few seconds before the match begins...
 <p><a href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>
 </div>
 </html>
+
+
+:: Lee Sin
+<<set $champ = "Lee Sin">><<set $jungle_cc = "Sonic Wave">>
+<html>
+<div style="background-image: url(splash/leesin.png); width: 100%; height: 540px;">
+<h1>Fuck yeah Lee Sin!</h1>
+<p style="width:500px;">Something cool about Lee Sin here.</p>
+<p><a href="#" onclick="javascript:state.display('Jungle Game Start', this); return false;">Alright, let's do this.</a><p>
+</div>
+</html>
+
+
+:: Jungle Game Start
+Welcome to Summoner's Rift!
+You use your initial gold to pick up a Hunter's Machete and a bunch of health potions. You cast you eye towards the jungle and start planning your route. Where should you start?
+<html><img src="champs/golem.png" /></html>[[I need mana, I'll start at Ancient Golem to get the blue buff.|Jungle Start Blue]]
+<html><img src="champs/lizard.png" /></html>[[I want some early aggression, I'll start at Lizard Elder to get the red buff.|Jungle Start Red]]
+
+
+:: Jungle Start Blue
+<<set $jungle_mob = "Golem">><<set $jungle_buff = "blue">><<set $jungle_other_buff = "red">>
+<<display "Jungle Start">>
+
+
+:: Jungle Start Red
+<<set $jungle_mob = "Lizard">><<set $jungle_buff = "red">><<set $jungle_other_buff = "blue">>
+<<display "Jungle Start">>
+
+
+:: Jungle Start
+You ping the <<print $jungle_mob>> and ask your mid laner to help get you started. You roam back and forth in the bushes, apprehensive of a level 1 invasion. The game starts quietly though, and you secure the <<print $jungle_buff>> buff without incident.
+Looking to the minimap, you notice that the enemy top laner has already pushed the lane past the river. What should you do next?
+[[Help top lane|Jungle Gank Top]]
+[[Help mid lane|Jungle Gank Mid]]
+[[Help bot lane|Jungle Gank Bot]]
+[[Continue jungling|Jungle Farm]]
+
+
+:: Jungle Gank Top
+<<set $jungle_gank_lane = "top">><<set $jungle_gank_target = "Darius">><<display "Jungle Gank Solo">>
+
+
+:: Jungle Gank Top
+<<set $jungle_gank_lane = "mid">><<set $jungle_gank_target = "Lux">><<display "Jungle Gank Solo">>
+
+
+:: Jungle Gank Solo
+You ping the <<print $jungle_gank_lane>> lane and sneak your way over through the jungle. You lurk for a moment in the river bush, but the enemy <<print $jungle_gank_target>> keeps farming. Confident that you've caught your opponent unaware, you rush into lane with your <<print $jungle_cc>> ability. Together, you secure an easy first blood for your <<print $jungle_gank_lane>> laner.
+[[Excellent start! Where to next?|Jungle Fail]]
+
+
+:: Jungle Gank Bot
+Getting a double kill in bot would really get the lane going. You ping the lane and sneak your way over through the river. Unfortunately, enemy Ezreal & Sona back off as soon as you get close. They must have the lane warded, you're wasting your time here.
+[[On well, where to next?|Jungle Fail]]
+
+
+:: Jungle Farm
+Since none of the lanes look ripe for ganking, you decide to gain some more gold and experience by continuing to kill the jungle creeps. You take out wolves, wraiths and the <<print $jungle_other_buff>> buff to gain level 4. With your full suite of abilities and double buffs, your lane invasions should be even more fearsome.
+[[Excellent, where to next?|Jungle Fail]]
