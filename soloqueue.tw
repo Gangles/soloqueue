@@ -41,7 +41,7 @@ After <<randomnumber 30 50>> seconds of matchmaking...
 
 
 :: Champion Select
-You're placed in a match with 4 teammates.
+You're placed in a match with 4 <<cyclinglink "teammates" "strangers" "strangers who you somehow need to cooperate with" end>>.
 <<silently>>
 <<set $ally1 = "Nachobek">>
 <<set $ally2 = "MegaDancer">>
@@ -87,7 +87,9 @@ Jungling, good call. You'll be able to help out any lane that's having a tough t
 
 
 :: Call ADC
+The AD Carry (or "Marksman" in Riot's new lingo) is weak in the early game, but scales into a monster with enough gold. If the lane phase goes well, hopefully you can //carry// your team to victory.
 
+<<display "ADC Champions">>
 
 
 :: Call Top
@@ -121,7 +123,7 @@ A few second later...
 
 
 :: Insist Solo
-Last time you let someone else get <<print $want_role>> lane they played <<if $want_role eq "top">><<randomword 50 "Teemo" 999 "Fiora">><<else>><<randomword 50 "Master Yi" 999 "Pantheon">><<endif>>, never warded and fed like crazy. You don't trust anyone with <<print $want_role>> but yourself.
+Last time you let someone else get <<print $want_role>> lane they played <<if $want_role eq "top">><<cyclinglink "Teemo" "Fiora" "Warwick">><<else>><<cyclinglink "Master Yi" "Pantheon" "Sion">><<endif>>, never warded and fed like crazy. You don't trust anyone with <<print $want_role>> but yourself.
 
 You: I called <<print $want_role>> first
 You: and I pick before you
@@ -192,6 +194,14 @@ A few seconds before the match begins...
 </html>
 
 
+:: ADC Champions
+<html>
+<a href="#" onclick="javascript:state.display('Ashe', this); return false;"><img src="champs/ashe.png" /></a>
+<a href="#" onclick="javascript:state.display('Corki', this); return false;"><img src="champs/corki.png" /></a>
+<a href="#" onclick="javascript:state.display('Twitch', this); return false;"><img src="champs/twitch.png" /></a>
+</html>
+
+
 :: Support Champions
 <html>
 <a href="#" onclick="javascript:state.display('Sona', this); return false;"><img src="champs/sona.png" /></a>
@@ -209,7 +219,6 @@ A few seconds before the match begins...
 
 
 :: Shen
-<<set $champ = "Shen">>
 <html>
 <div style="background-image: url(splash/shen.png); width: 100%; height: 540px;">
 <h1>Fuck yeah Shen!</h1>
@@ -217,10 +226,10 @@ A few seconds before the match begins...
 <p><a href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>
 </div>
 </html>
+<<set $champ = "Shen">>
 
 
 :: Singed
-<<set $champ = "Singed">>
 <html>
 <div style="background-image: url(splash/singed.png); width: 100%; height: 540px;">
 <h1>Fuck yeah Singed!</h1>
@@ -228,10 +237,10 @@ A few seconds before the match begins...
 <p><a href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>
 </div>
 </html>
+<<set $champ = "Singed">>
 
 
 :: Lee Sin
-<<set $champ = "Lee Sin">><<set $jungle_cc = "Sonic Wave">>
 <html>
 <div style="background-image: url(splash/leesin.png); width: 100%; height: 540px;">
 <h1>Fuck yeah Lee Sin!</h1>
@@ -239,10 +248,22 @@ A few seconds before the match begins...
 <p><a href="#" onclick="javascript:state.display('Jungle Game Start', this); return false;">Alright, let's do this.</a><p>
 </div>
 </html>
+<<set $champ = "Lee Sin">><<set $jungle_cc = "Sonic Wave">>
+
+
+:: Corki
+<html>
+<div style="background-image: url(splash/corki.png); width: 100%; height: 540px;">
+<h1>Fuck yeah Corki!</h1>
+<p style="width:500px;">Something cool about Corki here.</p>
+<p><a href="#" onclick="javascript:state.display('ADC Game Start', this); return false;">Alright, let's do this.</a><p>
+</div>
+</html>
+<<set $champ = "Corki">>
 
 
 :: Jungle Game Start
-Welcome to Summoner's Rift!
+"Welcome to Summoner's Rift!"
 You use your initial gold to pick up a Hunter's Machete and a bunch of health potions. You cast you eye towards the jungle and start planning your route. Where should you start?
 <html><img src="champs/golem.png" /></html>[[I need mana, I'll start at Ancient Golem to get the blue buff.|Jungle Start Blue]]
 <html><img src="champs/lizard.png" /></html>[[I want some early aggression, I'll start at Lizard Elder to get the red buff.|Jungle Start Red]]
@@ -276,15 +297,33 @@ Looking to the minimap, you notice that the enemy top laner has already pushed t
 
 
 :: Jungle Gank Solo
-You ping the <<print $jungle_gank_lane>> lane and sneak your way over through the jungle. You lurk for a moment in the river bush, but the enemy <<print $jungle_gank_target>> keeps farming. Confident that you've caught your opponent unaware, you rush into lane with your <<print $jungle_cc>> ability. Together, you secure an easy first blood for your <<print $jungle_gank_lane>> laner.
+You ping the <<print $jungle_gank_lane>> lane and sneak your way over through the jungle. You lurk for a moment in the river bush, but the enemy <<print $jungle_gank_target>> keeps farming. <<replace>>You haven't been spotted.
+<<gains>> Confident that you've caught your opponent unaware, you rush into lane with your <<print $jungle_cc>> ability. Together, you secure an easy first blood for your <<print $jungle_gank_lane>> laner.
 [[Excellent start! Where to next?|Jungle Fail]]
+<<endreplace>>
 
 
 :: Jungle Gank Bot
-Getting a double kill in bot would really get the lane going. You ping the lane and sneak your way over through the river. Unfortunately, enemy Ezreal & Sona back off as soon as you get close. They must have the lane warded, you're wasting your time here.
+Getting a double kill in bot would really get the lane going. You ping the lane and sneak your way over through the river. <<replace>>Do they see me coming?
+<<gains> Unfortunately, the enemy duo back off as soon as you get close. They must have the lane warded, you're wasting your time here.
 [[On well, where to next?|Jungle Fail]]
+<<endreplace>>
 
 
 :: Jungle Farm
 Since none of the lanes look ripe for ganking, you decide to gain some more gold and experience by continuing to kill the jungle creeps. You take out wolves, wraiths and the <<print $jungle_other_buff>> buff to gain level 4. With your full suite of abilities and double buffs, your lane invasions should be even more fearsome.
 [[Excellent, where to next?|Jungle Fail]]
+
+
+;; Jungle Fail
+
+
+:: ADC Game Start
+"Welcome to Summoner's Rift!"
+<html><img src="items/doransblade.png" /></html>
+You grab a stalwart Doran's Blade and run towards the bottom lane.
+You are accompanied by your lane partner, a support champion whose goal is to help you stay in lane and outfarm the opposition. Your teammate has chosen <<cyclinglink $allysupport "Nidalee" "Lux" "Shaco">>, the champion of choice for players who don't like playing support. <<replace>>Not a good sign.
+<<gains>> The opposing minion waves collide, and you cautiously advance. How should you play?
+[[Play aggressively, push the lane|ADC push]]
+[[Play safely, just go for last hits|ADC safe]]
+<<endreplace>>
