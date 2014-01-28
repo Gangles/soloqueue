@@ -1,0 +1,3 @@
+[submodule "twee"]
+	path = twee
+	url = git://github.com/tweecode/twee.git
