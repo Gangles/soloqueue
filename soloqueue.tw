@@ -61,33 +61,41 @@ Or say nothing at all and [[fill whatever role is needed|Fill]].
 
 
 :: Fill
+You let your teammates choose first; hopefully they'll peform best in a comfortable role. However, that does relegate you to the least popular position: <<replace>>support.<<gains>>
 
+<<display "Call Support 2">><<endreplace>>
 
 
 :: Call Support
-Support: noone's going to contest you for that pick. At least you can guarantee that your lane will have good ward coverage. You might even feed your ADC a kill or two if you're lucky.
+As expected, your claim goes uncontested. Your teammates are happy that the least popular slot has been filled, and quietly fill out the remaining roles.
 
-<<set $want_role = "support">>You: I'll support
-<<print $ally4>>: mid
-<<print $ally2>>: top or adc
-<<print $ally3>>: lemme jungle
+<<display "Call Support 2">>
+
+
+:: Call Support 2
+Playing support gives you the best chance of snowballing your lane to victory. Good warding and dragon control should give your team a strategic edge.
+
+Time to choose which champion to play:
 
 <<display "Support Champions">>
 
 
 :: Call Jungle
-Jungling, good call. You'll be able to help out any lane that's having a tough time.
+Your claim goes uncontested, and your teammates quietly fill out the remaining roles.
 
-<<set $want_role = "jungle">>You: jungle
-<<print $ally4>>: top or adc
-<<print $ally2>>: fill
-<<print $ally3>>: mid
+As the jungler, you'll be able to help out any lane that's having a tough time. With any luck, your well-timed intervention should help your teammates <<cyclinglink "get ahead" "not feed" end>>
+
+Time to choose which champion to play:
 
 <<display "Jungle Champions">>
 
 
 :: Call ADC
+Your lane claim goes uncontested, and your teammates quietly fill out the remaining roles.
+
 The AD Carry (or "Marksman" in Riot's new lingo) is weak in the early game, but scales into a monster with enough gold. If the lane phase goes well, hopefully you can //carry// your team to victory.
+
+Time to choose which champion to play:
 
 <<display "ADC Champions">>
 
@@ -176,9 +184,7 @@ A few seconds before the match begins...
 
 :: Top Lane Champions
 <html>
-<a href="#" onclick="javascript:state.display('Irelia', this); return false;"><img src="champs/irelia.png" /></a>
 <a href="#" onclick="javascript:state.display('Riven', this); return false;"><img src="champs/riven.png" /></a>
-<a href="#" onclick="javascript:state.display('Rumble', this); return false;"><img src="champs/rumble.png" /></a>
 <a href="#" onclick="javascript:state.display('Shen', this); return false;"><img src="champs/shen.png" /></a>
 <a href="#" onclick="javascript:state.display('Singed', this); return false;"><img src="champs/singed.png" /></a>
 </html>
@@ -189,8 +195,6 @@ A few seconds before the match begins...
 <a href="#" onclick="javascript:state.display('Ahri', this); return false;"><img src="champs/ahri.png" /></a>
 <a href="#" onclick="javascript:state.display('Anivia', this); return false;"><img src="champs/anivia.png" /></a>
 <a href="#" onclick="javascript:state.display('Karthus', this); return false;"><img src="champs/karthus.png" /></a>
-<a href="#" onclick="javascript:state.display('Lux', this); return false;"><img src="champs/lux.png" /></a>
-<a href="#" onclick="javascript:state.display('Ryze', this); return false;"><img src="champs/ryze.png" /></a>
 </html>
 
 
@@ -248,7 +252,11 @@ A few seconds before the match begins...
 <p><a href="#" onclick="javascript:state.display('Jungle Game Start', this); return false;">Alright, let's do this.</a><p>
 </div>
 </html>
-<<set $champ = "Lee Sin">><<set $jungle_cc = "Sonic Wave">>
+<<set $champ = "Lee Sin">><<set $jungle_cc = "Resonating Strike">>
+
+
+:: Resonating Strike
+<html><img src="abilities/resonatingstrike.png" /></html>
 
 
 :: Corki
@@ -263,25 +271,41 @@ A few seconds before the match begins...
 
 
 :: Jungle Game Start
-"Welcome to Summoner's Rift!"
-You use your initial gold to pick up a Hunter's Machete and a bunch of health potions. You cast you eye towards the jungle and start planning your route. Where should you start?
-<html><img src="champs/golem.png" /></html>[[I need mana, I'll start at Ancient Golem to get the blue buff.|Jungle Start Blue]]
-<html><img src="champs/lizard.png" /></html>[[I want some early aggression, I'll start at Lizard Elder to get the red buff.|Jungle Start Red]]
+An unseen announcer greets you: "Welcome to Summoner's Rift!"
+
+<html><img src="items/huntersmachete.png" /></html>
+
+You grab a Hunter's Machete and as many health potions as you can afford. You'll need all the help you can get to take on the fearsome <<cyclinglink "wolves" "wraiths" "golems">> that lurk between the lanes. Your teammates are counting on you to be fast and mobile, applying lane pressure wherever it's needed.
+
+You cast you eye towards the jungle and <<replace>>start planning your route.<<gains>> Where should you start?
+
+<html><img src="jungle/golem.png" style="width:60px;height:60px;vertical-align:middle" /></html>[[I need mana, I'll start at Ancient Golem to get the blue buff.|Jungle Start Blue]]
+<html><img src="jungle/lizard.png" style="width:60px;height:60px;vertical-align:middle" /></html>[[I want some early aggression, I'll start at Lizard Elder to get the red buff.|Jungle Start Red]]<<endreplace>>
 
 
 :: Jungle Start Blue
-<<set $jungle_mob = "Golem">><<set $jungle_buff = "blue">><<set $jungle_other_buff = "red">>
-<<display "Jungle Start">>
+<<set $jungle_mob = "Ancient Golem">><<set $jungle_buff = "blue">><<set $jungle_other_buff = "red">><<display "Jungle Start">>
 
 
 :: Jungle Start Red
-<<set $jungle_mob = "Lizard">><<set $jungle_buff = "red">><<set $jungle_other_buff = "blue">>
-<<display "Jungle Start">>
+<<set $jungle_mob = "Lizard Elder">><<set $jungle_buff = "red">><<set $jungle_other_buff = "blue">><<display "Jungle Start">>
+
+
+:: Ancient Golem
+<html><img src="jungle/golem2.jpg" /></html>
+
+
+:: Lizard Elder
+<html><img src="jungle/lizard2.jpg" /></html>
 
 
 :: Jungle Start
+<<print tale.get($jungle_mob).text>>
+
 You ping the <<print $jungle_mob>> and ask your mid laner to help get you started. You roam back and forth in the bushes, apprehensive of a level 1 invasion. The game starts quietly though, and you secure the <<print $jungle_buff>> buff without incident.
+
 Looking to the minimap, you notice that the enemy top laner has already pushed the lane past the river. What should you do next?
+
 [[Help top lane|Jungle Gank Top]]
 [[Help mid lane|Jungle Gank Mid]]
 [[Help bot lane|Jungle Gank Bot]]
@@ -292,22 +316,26 @@ Looking to the minimap, you notice that the enemy top laner has already pushed t
 <<set $jungle_gank_lane = "top">><<set $jungle_gank_target = "Darius">><<display "Jungle Gank Solo">>
 
 
-:: Jungle Gank Top
-<<set $jungle_gank_lane = "mid">><<set $jungle_gank_target = "Lux">><<display "Jungle Gank Solo">>
+:: Jungle Gank Mid
+<<set $jungle_gank_lane = "mid">><<set $jungle_gank_target = "Karthus">><<display "Jungle Gank Solo">>
 
 
 :: Jungle Gank Solo
-You ping the <<print $jungle_gank_lane>> lane and sneak your way over through the jungle. You lurk for a moment in the river bush, but the enemy <<print $jungle_gank_target>> keeps farming. <<replace>>You haven't been spotted.
-<<gains>> Confident that you've caught your opponent unaware, you rush into lane with your <<print $jungle_cc>> ability. Together, you secure an easy first blood for your <<print $jungle_gank_lane>> laner.
-[[Excellent start! Where to next?|Jungle Fail]]
-<<endreplace>>
+You ping the <<print $jungle_gank_lane>> lane and sneak your way over through the jungle. You lurk for a moment in the river bush, but the enemy <<print $jungle_gank_target>> keeps farming. <<replace>>You haven't been spotted.<<gains>>
+
+<<print tale.get($jungle_cc).text>>
+
+Confident that you've caught your opponent unaware, you rush into lane with your <<print $jungle_cc>> ability. Together, you secure an easy first blood for your <<print $jungle_gank_lane>> laner.
+
+[[Excellent start! Where to next?|Jungle Fail]]<<endreplace>>
 
 
 :: Jungle Gank Bot
-Getting a double kill in bot would really get the lane going. You ping the lane and sneak your way over through the river. <<replace>>Do they see me coming?
-<<gains> Unfortunately, the enemy duo back off as soon as you get close. They must have the lane warded, you're wasting your time here.
-[[On well, where to next?|Jungle Fail]]
-<<endreplace>>
+Getting a double kill in bot would really get the lane going. You ping the lane and sneak your way over through the river. <<replace>>Do they see me coming?<<gains>
+
+Unfortunately, the enemy duo back off as soon as you get close. They must have the lane warded, you're wasting your time here.
+
+[[On well, where to next?|Jungle Fail]]<<endreplace>>
 
 
 :: Jungle Farm
@@ -315,15 +343,32 @@ Since none of the lanes look ripe for ganking, you decide to gain some more gold
 [[Excellent, where to next?|Jungle Fail]]
 
 
-;; Jungle Fail
+:: Jungle Fail
+TODO: everything goes poorly
 
 
 :: ADC Game Start
-"Welcome to Summoner's Rift!"
+An unseen announcer greets you: "Welcome to Summoner's Rift!"
+
 <html><img src="items/doransblade.png" /></html>
-You grab a stalwart Doran's Blade and run towards the bottom lane.
+
+You grab a stalwart Doran's Blade and <<replace>>run towards the bottom lane.<<gains>>
+
+<<display "ADC Game Start 2">><<endreplace>>
+
+
+:: ADC Game Start 2
 You are accompanied by your lane partner, a support champion whose goal is to help you stay in lane and outfarm the opposition. Your teammate has chosen <<cyclinglink $allysupport "Nidalee" "Lux" "Shaco">>, the champion of choice for players who don't like playing support. <<replace>>Not a good sign.
+
 <<gains>> The opposing minion waves collide, and you cautiously advance. How should you play?
-[[Play aggressively, push the lane|ADC push]]
-[[Play safely, just go for last hits|ADC safe]]
-<<endreplace>>
+
+[[Play aggressively, push the lane|ADC Push]]
+[[Play safely, just go for last hits|ADC Safe]]<<endreplace>>
+
+
+:: ADC Push
+TODO: something here
+
+
+:: ADC Safe
+TODO: something here
