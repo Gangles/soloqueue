@@ -270,6 +270,17 @@ A few seconds before the match begins...
 <<set $champ = "Corki">>
 
 
+:: Sona
+<html>
+<div style="background-image: url(splash/sona.png); width: 100%; height: 540px;">
+<h1>Fuck yeah Sona!</h1>
+<p style="width:500px;">Something cool about Sona here.</p>
+<p><a href="#" onclick="javascript:state.display('Support Game Start', this); return false;">Alright, let's do this.</a><p>
+</div>
+</html>
+<<set $champ = "Sona">>
+
+
 :: Jungle Game Start
 An unseen announcer greets you: "Welcome to Summoner's Rift!"
 
@@ -371,4 +382,25 @@ TODO: something here
 
 
 :: ADC Safe
+TODO: something here
+
+
+:: Support Game Start
+An unseen announcer greets you: "Welcome to Summoner's Rift!"
+
+You open the shop window to spend your initial gold, pausing for a moment to <<replace>>consider the options. <<gains>>You'd like to pick up something with defense and sustain, but you know that sight wards are critical for spotting the enemy jungler.
+
+What will you buy?
+
+<html><a href="#" onclick="javascript:state.display('Support Buy Shield', this); return false;"><img src="items/doransshield.png" width="540" /></a>
+<br/><br/>
+<a href="#" onclick="javascript:state.display('Support Buy Wards', this); return false;"><img src="items/sightward.png" width="540" /></a></html>
+<<endreplace>>
+
+
+:: Support Buy Shield
+TODO: something here
+
+
+:: Support Buy Wards
 TODO: something here
