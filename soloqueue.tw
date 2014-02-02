@@ -63,13 +63,13 @@ Or say nothing at all and [[fill whatever role is needed|Fill]].
 
 
 :: Call Solo Top
-TODO: something about top lane here
+Isolated from the rest of the map, top lane is be a brutal 1v1 brawl. However, since the current meta tends to favour tanky champions in this lane, the combat tends to be slow and drawn-out; who can sustain longer?
 
 <<set $want_role = "top">><<display "Call Solo">>
 
 
 :: Call Solo Mid
-Mid. The shortest and safest lane, with opportunities to quickly roam top and bottom to set up ganks.
+The middle lane is short, which makes it the relatively safe. Its central location provides opportunities to roam around the map, helping other lanes. In the current meta, an AP mage or assassin is usually picked for this lane.
 
 <<set $want_role = "mid">><<display "Call Solo">>
 
@@ -117,7 +117,7 @@ Time to choose which champion to play:
 :: Call Jungle
 Your claim goes uncontested, and your teammates quietly fill out the remaining roles.
 
-As the jungler, you'll prey on the neutral monsters that live between the lane. While roaming, you'll be able to help out any lane that's having a tough time. With any luck, your well-timed intervention should help your teammates <<cyclinglink "get ahead" "not feed" end>>.
+As the jungler, you'll prey on the neutral monsters that live between the lane. While roaming, you'll be able to help out any lane that's having a tough time. With any luck, your well-timed intervention should help your teammates <<cyclinglink "get ahead" "go even" "not feed" end>> in lane.
 
 Time to choose which champion to play:
 
@@ -137,7 +137,7 @@ Invariably, this leaves you with the least popular position: <<replace>>support.
 
 
 :: Insist Solo
-Last time you let someone else get <<print $want_role>> lane they played <<if $want_role eq "top">><<cyclinglink "Teemo" "Fiora" "Warwick">><<else>><<cyclinglink "Master Yi" "Pantheon" "Sion">><<endif>>, never warded and fed like crazy. You politely insist that you will be keeping your claim to <<print $want_role>> lane.
+In your last game, someone else played <<if $want_role eq "top">><<cyclinglink "Fiora" "Teemo" "Warwick" "Poppy">><<else>><<cyclinglink "Master Yi" "Pantheon" "Sion" "Akali">><<endif>> in <<print $want_role>>. They pushed the lane, never warded and fed like crazy. You politely insist that you will be keeping your claim to <<print $want_role>> lane.
 
 <<replace>>Your obstinate teammate responds...<<gains>>
 
@@ -186,7 +186,9 @@ You hit Alt + F4 to exit the game and dodge having to play with a troll.
 
 Reopening the client, you notice that you've lost 10 League Points in the ranked ladder. You also have a time penalty before you can play again.
 
-<<replace>>5 minutes later...<<becomes>>4 minutes later...<<becomes>>3 minutes later...<<becomes>>2 minutes later...<<becomes>>1 minute later...<<becomes>><<display "Matchmaking">><<endreplace>>
+''Because you abandoned a recent game during champion selection, you are currently unable to join the queue.'' <<replace>>5 minutes later...<<becomes>>4 minutes later...<<becomes>>3 minutes later...<<becomes>>2 minutes later...<<becomes>>1 minute later...<<becomes>>
+
+<<display "Matchmaking">><<endreplace>>
 
 
 :: Top Lane Champions
@@ -229,12 +231,17 @@ Reopening the client, you notice that you've lost 10 League Points in the ranked
 </html>
 
 
+:: Riven
+TODO: description
+<<set $champ = "Riven">>
+
+
 :: Shen
 <html>
-<div style="background-image: url(splash/shen.png); width: 100%; height: 540px;">
+<div style="background-image: url(splash/shen.png); background-repeat: no-repeat; width: 100%; height: 540px;">
 <h1>Fuck yeah Shen!</h1>
 <p style="width:500px;">You can't believe he wasn't banned! Shen is super tanky AND his taunt forces enemies to attack him. Most importantly, his ult lets you shield and teleport to any ally on the map. You can be split pushing all day and still show up the moment a team fight breaks out.</p>
-<p><a href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>
+<p><a class="internalLink" href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>
 </div>
 </html>
 <<set $champ = "Shen">>
@@ -242,10 +249,10 @@ Reopening the client, you notice that you've lost 10 League Points in the ranked
 
 :: Singed
 <html>
-<div style="background-image: url(splash/singed.png); width: 100%; height: 540px;">
+<div style="background-image: url(splash/singed.png); background-repeat: no-repeat; width: 100%; height: 540px;">
 <h1>Fuck yeah Singed!</h1>
 <p style="width:500px;">In theory everyone knows not to chase a Singed, yet most opponents can't resist. They'll be choking on your poison cloud while trying in vain to whittle down your massive HP bar. You can sit in top lane all day and still win the game.</p>
-<p><a href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>
+<p><a class="internalLink" href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>
 </div>
 </html>
 <<set $champ = "Singed">>
@@ -253,10 +260,10 @@ Reopening the client, you notice that you've lost 10 League Points in the ranked
 
 :: Lee Sin
 <html>
-<div style="background-image: url(splash/leesin.png); width: 100%; height: 540px;">
+<div style="background-image: url(splash/leesin.png); background-repeat: no-repeat; width: 100%; height: 540px;">
 <h1>Fuck yeah Lee Sin!</h1>
 <p style="width:500px;">Something cool about Lee Sin here.</p>
-<p><a href="#" onclick="javascript:state.display('Jungle Game Start', this); return false;">Alright, let's do this.</a><p>
+<p><a class="internalLink" href="#" onclick="javascript:state.display('Jungle Game Start', this); return false;">Alright, let's do this.</a><p>
 </div>
 </html>
 <<set $champ = "Lee Sin">><<set $jungle_cc = "Resonating Strike">>
@@ -268,10 +275,10 @@ Reopening the client, you notice that you've lost 10 League Points in the ranked
 
 :: Corki
 <html>
-<div style="background-image: url(splash/corki.png); width: 100%; height: 540px;">
+<div style="background-image: url(splash/corki.png); background-repeat: no-repeat; width: 100%; height: 540px;">
 <h1>Fuck yeah Corki!</h1>
 <p style="width:500px;">Something cool about Corki here.</p>
-<p><a href="#" onclick="javascript:state.display('ADC Game Start', this); return false;">Alright, let's do this.</a><p>
+<p><a class="internalLink" href="#" onclick="javascript:state.display('ADC Game Start', this); return false;">Alright, let's do this.</a><p>
 </div>
 </html>
 <<set $champ = "Corki">>
@@ -279,10 +286,10 @@ Reopening the client, you notice that you've lost 10 League Points in the ranked
 
 :: Sona
 <html>
-<div style="background-image: url(splash/sona.png); width: 100%; height: 540px;">
+<div style="background-image: url(splash/sona.png); background-repeat: no-repeat; width: 100%; height: 540px;">
 <h1>Fuck yeah Sona!</h1>
 <p style="width:500px;">Something cool about Sona here.</p>
-<p><a href="#" onclick="javascript:state.display('Support Game Start', this); return false;">Alright, let's do this.</a><p>
+<p><a class="internalLink" href="#" onclick="javascript:state.display('Support Game Start', this); return false;">Alright, let's do this.</a><p>
 </div>
 </html>
 <<set $champ = "Sona">>
