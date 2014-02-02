@@ -10,6 +10,12 @@ An excercise in serenity
 Matthew Gallant
 
 
+:: Replace Macro CSS [stylesheet]
+.revision-span-in {opacity: 0;}
+.revision-span:not(.revision-span-out) {transition: 1s; -webkit-transition: 1s;}
+.revision-span-out {position:absolute; opacity: 0;}
+
+
 :: Start
 <<display Matchmaking>>
 
@@ -19,17 +25,17 @@ Matthew Gallant
 <h1>Classic - Summoner's Rift</h1>
 <p>Work with your allies to siege the enemy base and destroy their Nexus. Average game length is 30-45 minutes.</p></html>
 Last Step:
-[[Solo: match me with teammates|Solo]]
-[[Duo: I will invite a duo partner|Duo]]
+[[Solo: match me with teammates|Matchmaking Solo]]
+[[Duo: I will invite a duo partner|Matchmaking Duo]]
 
 
-:: Duo
+:: Matchmaking Duo
 You take a look at your friend's list. Everyone you know is either offline or already in a match.
 
-[[Okay, solo queue it is.|Solo]]
+[[Okay, solo queue it is.|Matchmaking Solo]]
 
 
-:: Solo
+:: Matchmaking Solo
 After <<randomnumber 30 50>> seconds of matchmaking...
 
 <html>
@@ -42,28 +48,56 @@ After <<randomnumber 30 50>> seconds of matchmaking...
 
 :: Champion Select
 You're placed in a match with 4 <<cyclinglink "teammates" "strangers" "strangers who you somehow need to cooperate with" end>>.
-<<silently>>
-<<set $ally1 = "Nachobek">>
-<<set $ally2 = "MegaDancer">>
-<<set $ally3 = "lungjuno">>
-<<set $ally4 = "Krazehz">>
-<<endsilently>>
-You have third pick in the draft.
 
-You can call a role in team chat...
-[[Call top lane|Call Top]]
-[[Call mid lane|Call Mid]]
-[[Call AD carry|Call ADC]]
-[[Call support|Call Support]]
+<html><img src="lanes.png" /></html>
+
+You have first pick in the draft, so you can call which role you'll be playing in team chat:
+
+[[Call top lane|Call Solo Top]]
+[[Call middle lane|Call Solo Mid]]
+[[Call bottom lane (AD carry)|Call ADC]]
+[[Call bottom lane (support)|Call Support]]
 [[Call jungle|Call Jungle]]
 
 Or say nothing at all and [[fill whatever role is needed|Fill]].
 
 
-:: Fill
-You let your teammates choose first; hopefully they'll peform best in a comfortable role
+:: Call Solo Top
+TODO: something about top lane here
 
-However, that does relegate you to the least popular position: <<replace>>support.<<gains>> <<display "Call Support 2">><<endreplace>>
+<<set $want_role = "top">><<display "Call Solo">>
+
+
+:: Call Solo Mid
+Mid. The shortest and safest lane, with opportunities to quickly roam top and bottom to set up ganks.
+
+<<set $want_role = "mid">><<display "Call Solo">>
+
+
+:: Call Solo
+You call your desired role in team chat, and your teammates follow suit. Jungle, AD carry and <<if $want_role eq "top">>mid<<else>>top<<endif>> are claimed in quick succession. The player with last pick remains conspicuously silent, <<replace>>until...<<gains>>
+
+''some_jerk77 :'' i want <<print $want_role>>
+''some_jerk77 :'' i am platinum rank, this my smurf account
+
+Traditionally, pick order in the draft is used to resolve such disputes. As first pick, you have the right to play whatever role you'd like. Plus you have serious doubts as to the veracity of alleged platinum account. How should you respond?
+
+<<if $want_role eq "top">>
+[[I have first pick, I'm playing top|Insist Solo]]
+<<else>>
+[[I have first pick, I'm playing mid|Insist Solo]]
+<<endif>>
+[[*sigh* I'll just fill whatever we need|Fill Begrudging]]<<endreplace>>
+
+
+:: Call ADC
+Your lane claim goes uncontested, and your teammates quietly fill out the remaining roles.
+
+The AD Carry (or "Marksman" in Riot's new lingo) is weak in the early game, but scales into a monster with enough gold. If the lane phase goes well, hopefully you can //carry// your team to victory.
+
+Time to choose which champion to play:
+
+<<display "ADC Champions">>
 
 
 :: Call Support
@@ -83,74 +117,45 @@ Time to choose which champion to play:
 :: Call Jungle
 Your claim goes uncontested, and your teammates quietly fill out the remaining roles.
 
-As the jungler, you'll be able to help out any lane that's having a tough time. With any luck, your well-timed intervention should help your teammates <<cyclinglink "get ahead" "not feed" end>>
+As the jungler, you'll prey on the neutral monsters that live between the lane. While roaming, you'll be able to help out any lane that's having a tough time. With any luck, your well-timed intervention should help your teammates <<cyclinglink "get ahead" "not feed" end>>.
 
 Time to choose which champion to play:
 
 <<display "Jungle Champions">>
 
 
-:: Call ADC
-Your lane claim goes uncontested, and your teammates quietly fill out the remaining roles.
+:: Fill
+You let your teammates choose first, hoping that they'll peform best in comfortable roles.
 
-The AD Carry (or "Marksman" in Riot's new lingo) is weak in the early game, but scales into a monster with enough gold. If the lane phase goes well, hopefully you can //carry// your team to victory.
-
-Time to choose which champion to play:
-
-<<display "ADC Champions">>
+However, that does relegate you to the least popular position: <<replace>>support.<<gains>> <<display "Call Support 2">><<endreplace>>
 
 
-:: Call Top
-<<set $want_role = "top">>You: top
-<<print $ally4>>: top
-<<print $ally2>>: mid or adc
-<<print $ally3>>: can I jungle?
+:: Fill Begrudging
+You decide you'd rather not risk a ranked loss by calling a troll's bluff. You relenquish your call on <<print $want_role>> lane and opt to fill whatever role is needed.
 
-A few second later...
-
-<<print $ally4>>: yo I called top
-
-[[I called it first|Insist Solo]]
-[[*sigh* fine I'll just fill whatever we need|Fill]]
-
-
-:: Call Mid
-Mid. The shortest and safest lane, with opportunities to quickly roam top and bottom to set up ganks.
-
-<<set $want_role = "mid">>You: mid
-<<print $ally4>>: mid
-<<print $ally2>>: top or adc
-<<print $ally3>>: lemme jungle
-
-A few second later...
-
-<<print $ally4>>: yo I called mid
-
-[[I called it first|Insist Solo]]
-[[*sigh* fine I'll just fill whatever we need|Fill]]
+Invariably, this leaves you with the least popular position: <<replace>>support.<<gains>> <<display "Call Support 2">><<endreplace>>
 
 
 :: Insist Solo
-Last time you let someone else get <<print $want_role>> lane they played <<if $want_role eq "top">><<cyclinglink "Teemo" "Fiora" "Warwick">><<else>><<cyclinglink "Master Yi" "Pantheon" "Sion">><<endif>>, never warded and fed like crazy. You don't trust anyone with <<print $want_role>> but yourself.
+Last time you let someone else get <<print $want_role>> lane they played <<if $want_role eq "top">><<cyclinglink "Teemo" "Fiora" "Warwick">><<else>><<cyclinglink "Master Yi" "Pantheon" "Sion">><<endif>>, never warded and fed like crazy. You politely insist that you will be keeping your claim to <<print $want_role>> lane.
 
-You: I called <<print $want_role>> first
-You: and I pick before you
-<<print $ally4>>: i called <<print $want_role>>
-<<print $ally4>>: i will carry
-<<print $ally4>>: <<print $want_role>> or I feed
+<<replace>>Your obstinate teammate responds...<<gains>>
 
-You'd rather not lose another match due to a troll teammate.
+''some_jerk77 :'' newb
+''some_jerk77 :'' gimme <<print $want_role>> or I feed
+
+You contemplate whether you're willing to lose another ranked match due to a troll.
 
 <<if $want_role eq "top">>
-[[*sigh* fine you can have top|Fill]]
+[[*sigh* fine you can have top|Fill Begrudging]]
 <<else>>
-[[*sigh* fine you can have mid|Fill]]
+[[*sigh* fine you can have mid|Fill Begrudging]]
 <<endif>>
-[[I pick first, deal with it|Insist Solo 2]]
+[[I pick first, deal with it|Insist Solo 2]]<<endreplace>>
 
 
 :: Insist Solo 2
-It's your turn to pick a champion, who would you like to play in <<print $want_role>> lane?
+Ignoring your ill-mannered teammate for the moment, your thoughts turn to champion selection. Who would you like to play in <<print $want_role>> lane?
 
 <<if $want_role eq "top">>
 <<display "Top Lane Champions">>
@@ -160,26 +165,28 @@ It's your turn to pick a champion, who would you like to play in <<print $want_r
 
 
 :: Insist Solo 3
-Someone is not pleased with your choice of champion
+You optimistically lock in <<print $champ>>, but the situation does not improve. In a rage, your troll teammate employs all the profanity in mispelled profanity in his limited vocabulary. When it's his turn to pick a champion, he locks in <<cyclinglink "Heimerdinger" "Sejuani" "Viktor" "Galio">> with <<cyclinglink "Clairvoyance / Heal" "Clarity / Teleport" "Smite / Revive">>.
 
-<<print $ally4>>: i called <<print $want_role>> lane asshole
-<<print $ally4>>: <<print $want_role>> or feed
-<<print $ally2>>: I'm on promotion series :(
-<<print $ally4>>: trade me <<print $champ>> or i feed
+It appears your teammate intends to make good on his threat of intentionally throwing the game. It may be preferable to close the client and dodge the game. You'll take a small rank penalty, but you'll save yourself twenty minutes of frustration in a guaranteed loss. What will you do?
 
-What will you do?
-[[Fine I'll trade, I don't want to lose because of a troll|Fill]]
-[[Call his bluff, he doesn't want to lose either|Insist Solo 4]]
+[[Dodge the game, I don't want to play with this troll|Dodge Troll]]
+[[Call the troll's bluff, nobody likes to lose|Insist Solo 4]]
 
 
 :: Insist Solo 4
-<<print $ally4>> continues to rage, locking in Clarity/Revive Heimerdinger to solidify his threat. You're not buying it, and won't let a troll bully you around.
-
 A few seconds before the match begins...
-<html>
-<a href="#" onclick="javascript:state.display('Matchmaking', this); return false;">Game Alert: <span id="ally4">ally4</span> has left during champion selection and you have been placed back in the matchmaking queue.</a>
-</html>
-<<variablereplace>>
+
+''Game Alert: some_jerk77 has left during champion selection and you have been placed back in the matchmaking queue.''
+
+[[Good riddance...|Matchmaking]]
+
+
+:: Dodge Troll
+You hit Alt + F4 to exit the game and dodge having to play with a troll.
+
+Reopening the client, you notice that you've lost 10 League Points in the ranked ladder. You also have a time penalty before you can play again.
+
+<<replace>>5 minutes later...<<becomes>>4 minutes later...<<becomes>>3 minutes later...<<becomes>>2 minutes later...<<becomes>>1 minute later...<<becomes>><<display "Matchmaking">><<endreplace>>
 
 
 :: Top Lane Champions
@@ -419,3 +426,11 @@ The opposing minion waves collide, and you cautiously advance. How should you pl
 
 [[Poke the enemy laners, playing aggressively will deny them gold|Support Push]]
 [[Stay back and avoid engaging, just let your ADC farm|Support Safe]]<<endreplace>>
+
+
+:: Support Push
+TODO: bad trade in lane
+
+
+:: Support Safe
+TODO: you get tower dived
