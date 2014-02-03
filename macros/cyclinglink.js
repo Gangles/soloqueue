@@ -1,6 +1,6 @@
 // Cycling Link macro by Leon Arnott
 // http://www.glorioustrainwrecks.com/node/5020
-version.extensions['randomnumber'] = { major:3, minor:3, revision:0 };
+version.extensions['cyclingLink'] = { major:3, minor:3, revision:0 };
 macros.cyclinglink = {
 	handler: function(a, b, c) {
 		var rl = "cyclingLink";

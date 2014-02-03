@@ -15,6 +15,8 @@ Matthew Gallant
 .revision-span:not(.revision-span-out) {transition: 1s; -webkit-transition: 1s;}
 .revision-span-out {position:absolute; opacity: 0;}
 
+:: Champion Background CSS [stylesheet]
+.champ-background {background-repeat: no-repeat; background-size: contain; min-height: 540px}
 
 :: Start
 <<display Matchmaking>>
@@ -63,7 +65,7 @@ Or say nothing at all and [[fill whatever role is needed|Fill]].
 
 
 :: Call Solo Top
-Isolated from the rest of the map, top lane is be a brutal 1v1 brawl. However, since the current meta tends to favour tanky champions in this lane, the combat tends to be slow and drawn-out; who can sustain longer?
+Isolated from the rest of the map, top lane is a brutal 1v1 brawl. However, since the current meta tends to favour tanky champions in this lane, the combat tends to be slow and drawn-out; who can sustain longer?
 
 <<set $want_role = "top">><<display "Call Solo">>
 
@@ -147,11 +149,12 @@ In your last game, someone else played <<if $want_role eq "top">><<cyclinglink "
 You contemplate whether you're willing to lose another ranked match due to a troll.
 
 <<if $want_role eq "top">>
-[[*sigh* fine you can have top|Fill Begrudging]]
+[[Concede, let the troll have top lane|Fill Begrudging]]
+[[Stand your ground, you're going top|Insist Solo 2]]
 <<else>>
-[[*sigh* fine you can have mid|Fill Begrudging]]
-<<endif>>
-[[I pick first, deal with it|Insist Solo 2]]<<endreplace>>
+[[Concede, let the troll have middle lane|Fill Begrudging]]
+[[Stand your ground, you're going mid|Insist Solo 2]]
+<<endif>><<endreplace>>
 
 
 :: Insist Solo 2
@@ -184,11 +187,9 @@ A few seconds before the match begins...
 :: Dodge Troll
 You hit Alt + F4 to exit the game and dodge having to play with a troll.
 
-Reopening the client, you notice that you've lost 10 League Points in the ranked ladder. You also have a time penalty before you can play again.
+Reopening the client, you notice that you've lost <<randomnumber 7 10>> League Points in the ranked ladder. You also have a time penalty before you can play again.
 
-''Because you abandoned a recent game during champion selection, you are currently unable to join the queue.'' <<replace>>5 minutes later...<<becomes>>4 minutes later...<<becomes>>3 minutes later...<<becomes>>2 minutes later...<<becomes>>1 minute later...<<becomes>>
-
-<<display "Matchmaking">><<endreplace>>
+''Because you abandoned a recent game during champion selection, you are currently unable to join the queue.'' <<replace>>5 minutes later...<<becomes>>4 minutes later...<<becomes>>3 minutes later...<<becomes>>2 minutes later...<<becomes>>1 minute later...<<becomes>><<goto "Matchmaking">><<endreplace>>
 
 
 :: Top Lane Champions
@@ -202,8 +203,8 @@ Reopening the client, you notice that you've lost 10 League Points in the ranked
 :: Mid Lane Champions
 <html>
 <a href="#" onclick="javascript:state.display('Ahri', this); return false;"><img src="champs/ahri.png" /></a>
-<a href="#" onclick="javascript:state.display('Anivia', this); return false;"><img src="champs/anivia.png" /></a>
-<a href="#" onclick="javascript:state.display('Karthus', this); return false;"><img src="champs/karthus.png" /></a>
+<a href="#" onclick="javascript:state.display('Kassadin', this); return false;"><img src="champs/kassadin.png" /></a>
+<a href="#" onclick="javascript:state.display('Orianna', this); return false;"><img src="champs/orianna.png" /></a>
 </html>
 
 
@@ -232,15 +233,21 @@ Reopening the client, you notice that you've lost 10 League Points in the ranked
 
 
 :: Riven
-TODO: description
+<html>
+<div class="champ-background" style="background-image: url(splash/riven.png);">
+<h1>Fuck yeah Riven!</h1>
+<p style="width:500px;">TODO: something cool about Riven here</p>
+<p><a class="internalLink" href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>
+</div>
+</html>
 <<set $champ = "Riven">>
 
 
 :: Shen
 <html>
-<div style="background-image: url(splash/shen.png); background-repeat: no-repeat; width: 100%; height: 540px;">
+<div class="champ-background" style="background-image: url(splash/shen.png);">
 <h1>Fuck yeah Shen!</h1>
-<p style="width:500px;">You can't believe he wasn't banned! Shen is super tanky AND his taunt forces enemies to attack him. Most importantly, his ult lets you shield and teleport to any ally on the map. You can be split pushing all day and still show up the moment a team fight breaks out.</p>
+<p style="max-width:500px;">You can't believe he wasn't banned! Shen is super tanky AND his taunt forces enemies to attack him. Most importantly, his ult lets you shield and teleport to any ally on the map. You can be split pushing all day and still show up the moment a team fight breaks out.</p>
 <p><a class="internalLink" href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>
 </div>
 </html>
@@ -249,7 +256,7 @@ TODO: description
 
 :: Singed
 <html>
-<div style="background-image: url(splash/singed.png); background-repeat: no-repeat; width: 100%; height: 540px;">
+<div class="champ-background" style="background-image: url(splash/singed.png);">
 <h1>Fuck yeah Singed!</h1>
 <p style="width:500px;">In theory everyone knows not to chase a Singed, yet most opponents can't resist. They'll be choking on your poison cloud while trying in vain to whittle down your massive HP bar. You can sit in top lane all day and still win the game.</p>
 <p><a class="internalLink" href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>
@@ -258,9 +265,42 @@ TODO: description
 <<set $champ = "Singed">>
 
 
+:: Ahri
+<html>
+<div class="champ-background" style="background-image: url(splash/ahri.png);">
+<h1>Fuck yeah Ahri!</h1>
+<p style="width:500px;">TODO: something cool about Ahri here</p>
+<p><a class="internalLink" href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>
+</div>
+</html>
+<<set $champ = "Ahri">>
+
+
+:: Kassadin
+<html>
+<div class="champ-background" style="background-image: url(splash/kassadin.png);">
+<h1>Fuck yeah Kassadin!</h1>
+<p style="width:500px;">TODO: something cool about Kassadin here</p>
+<p><a class="internalLink" href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>
+</div>
+</html>
+<<set $champ = "Kassadin">>
+
+
+:: Orianna
+<html>
+<div class="champ-background" style="background-image: url(splash/orianna.png);">
+<h1>Fuck yeah Orianna!</h1>
+<p style="width:500px;">TODO: something cool about Orianna here</p>
+<p><a class="internalLink" href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>
+</div>
+</html>
+<<set $champ = "Orianna">>
+
+
 :: Lee Sin
 <html>
-<div style="background-image: url(splash/leesin.png); background-repeat: no-repeat; width: 100%; height: 540px;">
+<div class="champ-background" style="background-image: url(splash/leesin.png);">
 <h1>Fuck yeah Lee Sin!</h1>
 <p style="width:500px;">Something cool about Lee Sin here.</p>
 <p><a class="internalLink" href="#" onclick="javascript:state.display('Jungle Game Start', this); return false;">Alright, let's do this.</a><p>
@@ -275,7 +315,7 @@ TODO: description
 
 :: Corki
 <html>
-<div style="background-image: url(splash/corki.png); background-repeat: no-repeat; width: 100%; height: 540px;">
+<div class="champ-background" style="background-image: url(splash/corki.png);">
 <h1>Fuck yeah Corki!</h1>
 <p style="width:500px;">Something cool about Corki here.</p>
 <p><a class="internalLink" href="#" onclick="javascript:state.display('ADC Game Start', this); return false;">Alright, let's do this.</a><p>
@@ -286,7 +326,7 @@ TODO: description
 
 :: Sona
 <html>
-<div style="background-image: url(splash/sona.png); background-repeat: no-repeat; width: 100%; height: 540px;">
+<div class="champ-background" style="background-image: url(splash/sona.png);">
 <h1>Fuck yeah Sona!</h1>
 <p style="width:500px;">Something cool about Sona here.</p>
 <p><a class="internalLink" href="#" onclick="javascript:state.display('Support Game Start', this); return false;">Alright, let's do this.</a><p>
