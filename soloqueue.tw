@@ -15,8 +15,11 @@ Matthew Gallant
 .revision-span:not(.revision-span-out) {transition: 1s; -webkit-transition: 1s;}
 .revision-span-out {position:absolute; opacity: 0;}
 
+
 :: Champion Background CSS [stylesheet]
 .champ-background {background-repeat: no-repeat; background-size: contain; min-height: 540px}
+.champ-description {max-width:500px;}
+
 
 :: Start
 <<display Matchmaking>>
@@ -32,9 +35,7 @@ Last Step:
 
 
 :: Matchmaking Duo
-You take a look at your friend's list. Everyone you know is either offline or already in a match.
-
-[[Okay, solo queue it is.|Matchmaking Solo]]
+You take a look at your friend's list. Everyone you know is either offline or already in a match. [[Solo queue it is.|Matchmaking Solo]]
 
 
 :: Matchmaking Solo
@@ -51,7 +52,7 @@ After <<randomnumber 30 50>> seconds of matchmaking...
 :: Champion Select
 You're placed in a match with 4 <<cyclinglink "teammates" "strangers" "strangers who you somehow need to cooperate with" end>>.
 
-<html><img src="lanes.png" /></html>
+<html><img src="lanes.png" width="300" /></html>
 
 You have first pick in the draft, so you can call which role you'll be playing in team chat:
 
@@ -194,118 +195,104 @@ Reopening the client, you notice that you've lost <<randomnumber 7 10>> League P
 
 :: Top Lane Champions
 <html>
-<a href="#" onclick="javascript:state.display('Riven', this); return false;"><img src="champs/riven.png" /></a>
-<a href="#" onclick="javascript:state.display('Shen', this); return false;"><img src="champs/shen.png" /></a>
-<a href="#" onclick="javascript:state.display('Singed', this); return false;"><img src="champs/singed.png" /></a>
+<a href="#" onclick="javascript:state.display('Choose Riven', this); return false;"><img src="champs/riven.png" /></a>
+<a href="#" onclick="javascript:state.display('Choose Shen', this); return false;"><img src="champs/shen.png" /></a>
+<a href="#" onclick="javascript:state.display('Choose Singed', this); return false;"><img src="champs/singed.png" /></a>
 </html>
 
 
 :: Mid Lane Champions
 <html>
-<a href="#" onclick="javascript:state.display('Ahri', this); return false;"><img src="champs/ahri.png" /></a>
-<a href="#" onclick="javascript:state.display('Kassadin', this); return false;"><img src="champs/kassadin.png" /></a>
-<a href="#" onclick="javascript:state.display('Orianna', this); return false;"><img src="champs/orianna.png" /></a>
+<a href="#" onclick="javascript:state.display('Choose Ahri', this); return false;"><img src="champs/ahri.png" /></a>
+<a href="#" onclick="javascript:state.display('Choose Kassadin', this); return false;"><img src="champs/kassadin.png" /></a>
+<a href="#" onclick="javascript:state.display('Choose Orianna', this); return false;"><img src="champs/orianna.png" /></a>
 </html>
 
 
 :: ADC Champions
 <html>
-<a href="#" onclick="javascript:state.display('Ashe', this); return false;"><img src="champs/ashe.png" /></a>
-<a href="#" onclick="javascript:state.display('Corki', this); return false;"><img src="champs/corki.png" /></a>
-<a href="#" onclick="javascript:state.display('Twitch', this); return false;"><img src="champs/twitch.png" /></a>
+<a href="#" onclick="javascript:state.display('Choose Ashe', this); return false;"><img src="champs/ashe.png" /></a>
+<a href="#" onclick="javascript:state.display('Choose Corki', this); return false;"><img src="champs/corki.png" /></a>
+<a href="#" onclick="javascript:state.display('Choose Twitch', this); return false;"><img src="champs/twitch.png" /></a>
 </html>
 
 
 :: Support Champions
 <html>
-<a href="#" onclick="javascript:state.display('Sona', this); return false;"><img src="champs/sona.png" /></a>
-<a href="#" onclick="javascript:state.display('Taric', this); return false;"><img src="champs/taric.png" /></a>
-<a href="#" onclick="javascript:state.display('Thresh', this); return false;"><img src="champs/thresh.png" /></a>
+<a href="#" onclick="javascript:state.display('Choose Sona', this); return false;"><img src="champs/sona.png" /></a>
+<a href="#" onclick="javascript:state.display('Choose Taric', this); return false;"><img src="champs/taric.png" /></a>
+<a href="#" onclick="javascript:state.display('Choose Thresh', this); return false;"><img src="champs/thresh.png" /></a>
 </html>
 
 
 :: Jungle Champions
 <html>
-<a href="#" onclick="javascript:state.display('Lee Sin', this); return false;"><img src="champs/leesin.png" /></a>
-<a href="#" onclick="javascript:state.display('Maokai', this); return false;"><img src="champs/maokai.png" /></a>
-<a href="#" onclick="javascript:state.display('Shyvana', this); return false;"><img src="champs/shyvana.png" /></a>
+<a href="#" onclick="javascript:state.display('Choose Lee Sin', this); return false;"><img src="champs/leesin.png" /></a>
+<a href="#" onclick="javascript:state.display('Choose Vi', this); return false;"><img src="champs/vi.png" /></a>
+<a href="#" onclick="javascript:state.display('Choose Volibear', this); return false;"><img src="champs/volibear.png" /></a>
 </html>
 
 
-:: Riven
-<html>
-<div class="champ-background" style="background-image: url(splash/riven.png);">
+:: Choose Riven
+<html><div class="champ-background" style="background-image: url(splash/riven.png);">
 <h1>Fuck yeah Riven!</h1>
-<p style="width:500px;">TODO: something cool about Riven here</p>
-<p><a class="internalLink" href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>
-</div>
-</html>
+<p class="champ-description">TODO: something cool about Riven here</p>
+<p><a class="internalLink" href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a></p>
+</div></html>
 <<set $champ = "Riven">>
 
 
-:: Shen
-<html>
-<div class="champ-background" style="background-image: url(splash/shen.png);">
+:: Choose Shen
+<html><div class="champ-background" style="background-image: url(splash/shen.png);">
 <h1>Fuck yeah Shen!</h1>
-<p style="max-width:500px;">You can't believe he wasn't banned! Shen is super tanky AND his taunt forces enemies to attack him. Most importantly, his ult lets you shield and teleport to any ally on the map. You can be split pushing all day and still show up the moment a team fight breaks out.</p>
-<p><a class="internalLink" href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>
-</div>
-</html>
+<p class="champ-description">You can't believe he wasn't banned! Shen is super tanky AND his taunt forces enemies to attack him. Most importantly, his ult lets you shield and teleport to any ally on the map. You can be split pushing all day and still show up the moment a team fight breaks out.</p>
+<p><a class="internalLink" href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a></p>
+</div></html>
 <<set $champ = "Shen">>
 
 
-:: Singed
-<html>
-<div class="champ-background" style="background-image: url(splash/singed.png);">
+:: Choose Singed
+<html><div class="champ-background" style="background-image: url(splash/singed.png);">
 <h1>Fuck yeah Singed!</h1>
-<p style="width:500px;">In theory everyone knows not to chase a Singed, yet most opponents can't resist. They'll be choking on your poison cloud while trying in vain to whittle down your massive HP bar. You can sit in top lane all day and still win the game.</p>
-<p><a class="internalLink" href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>
-</div>
-</html>
+<p class="champ-description">In theory everyone knows not to chase a Singed, yet most opponents can't resist. They'll be choking on your poison cloud while trying in vain to whittle down your massive HP bar. You can sit in top lane all day and still win the game.</p>
+<p><a class="internalLink" href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a></p>
+</div></html>
 <<set $champ = "Singed">>
 
 
-:: Ahri
-<html>
-<div class="champ-background" style="background-image: url(splash/ahri.png);">
+:: Choose Ahri
+<html><div class="champ-background" style="background-image: url(splash/ahri.png);">
 <h1>Fuck yeah Ahri!</h1>
-<p style="width:500px;">TODO: something cool about Ahri here</p>
-<p><a class="internalLink" href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>
-</div>
-</html>
+<p class="champ-description">TODO: something cool about Ahri here</p>
+<p><a class="internalLink" href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a></p>
+</div></html>
 <<set $champ = "Ahri">>
 
 
-:: Kassadin
-<html>
-<div class="champ-background" style="background-image: url(splash/kassadin.png);">
+:: Choose Kassadin
+<html><div class="champ-background" style="background-image: url(splash/kassadin.png);">
 <h1>Fuck yeah Kassadin!</h1>
-<p style="width:500px;">TODO: something cool about Kassadin here</p>
-<p><a class="internalLink" href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>
-</div>
-</html>
+<p class="champ-description">TODO: something cool about Kassadin here</p>
+<p><a class="internalLink" href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a></p>
+</div></html>
 <<set $champ = "Kassadin">>
 
 
-:: Orianna
-<html>
-<div class="champ-background" style="background-image: url(splash/orianna.png);">
+:: Choose Orianna
+<html><div class="champ-background" style="background-image: url(splash/orianna.png);">
 <h1>Fuck yeah Orianna!</h1>
-<p style="width:500px;">TODO: something cool about Orianna here</p>
-<p><a class="internalLink" href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>
-</div>
-</html>
+<p class="champ-description">TODO: something cool about Orianna here</p>
+<p><a class="internalLink" href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a></p>
+</div></html>
 <<set $champ = "Orianna">>
 
 
-:: Lee Sin
-<html>
-<div class="champ-background" style="background-image: url(splash/leesin.png);">
+:: Choose Lee Sin
+<html><div class="champ-background" style="background-image: url(splash/leesin.png);">
 <h1>Fuck yeah Lee Sin!</h1>
-<p style="width:500px;">Something cool about Lee Sin here.</p>
-<p><a class="internalLink" href="#" onclick="javascript:state.display('Jungle Game Start', this); return false;">Alright, let's do this.</a><p>
-</div>
-</html>
+<p class="champ-description">TODO: Something cool about Lee Sin here.</p>
+<p><a class="internalLink" href="#" onclick="javascript:state.display('Jungle Game Start', this); return false;">Alright, let's do this.</a></p>
+</div></html>
 <<set $champ = "Lee Sin">><<set $jungle_cc = "Resonating Strike">>
 
 
@@ -313,26 +300,84 @@ Reopening the client, you notice that you've lost <<randomnumber 7 10>> League P
 <html><img src="abilities/resonatingstrike.png" /></html>
 
 
-:: Corki
-<html>
-<div class="champ-background" style="background-image: url(splash/corki.png);">
+:: Choose Volibear
+<html><div class="champ-background" style="background-image: url(splash/volibear.png);">
+<h1>Fuck yeah Volibear!</h1>
+<p class="champ-description">TODO: Something cool about Volibear here.</p>
+<p><a class="internalLink" href="#" onclick="javascript:state.display('Jungle Game Start', this); return false;">Alright, let's do this.</a></p>
+</div></html>
+<<set $champ = "Volibear">><<set $jungle_cc = "Rolling Thunder">>
+
+
+:: Rolling Thunder
+<html><img src="abilities/rollingthunder.png" /></html>
+
+
+:: Choose Vi
+<html><div class="champ-background" style="background-image: url(splash/vi.png);">
+<h1>Fuck yeah Vi!</h1>
+<p class="champ-description">TODO: Something cool about Vi here.</p>
+<p><a class="internalLink" href="#" onclick="javascript:state.display('Jungle Game Start', this); return false;">Alright, let's do this.</a></p>
+</div></html>
+<<set $champ = "Vi">><<set $jungle_cc = "Vault Breaker">>
+
+
+:: Vault Breaker
+<html><img src="abilities/vaultbreaker.png" /></html>
+
+
+:: Choose Ashe
+<html><div class="champ-background" style="background-image: url(splash/ashe.png);">
+<h1>Fuck yeah Ashe!</h1>
+<p class="champ-description">TODO: Something cool about Ashe here.</p>
+<p><a class="internalLink" href="#" onclick="javascript:state.display('ADC Game Start', this); return false;">Alright, let's do this.</a></p>
+</div></html>
+<<set $champ = "Ashe">>
+
+
+:: Choose Corki
+<html><div class="champ-background" style="background-image: url(splash/corki.png);">
 <h1>Fuck yeah Corki!</h1>
-<p style="width:500px;">Something cool about Corki here.</p>
-<p><a class="internalLink" href="#" onclick="javascript:state.display('ADC Game Start', this); return false;">Alright, let's do this.</a><p>
-</div>
-</html>
+<p class="champ-description">TODO: Something cool about Corki here.</p>
+<p><a class="internalLink" href="#" onclick="javascript:state.display('ADC Game Start', this); return false;">Alright, let's do this.</a></p>
+</div></html>
 <<set $champ = "Corki">>
 
 
-:: Sona
-<html>
-<div class="champ-background" style="background-image: url(splash/sona.png);">
+:: Choose Twitch
+<html><div class="champ-background" style="background-image: url(splash/twitch.png);">
+<h1>Fuck yeah Twitch!</h1>
+<p class="champ-description">TODO: Something cool about Twitch here.</p>
+<p><a class="internalLink" href="#" onclick="javascript:state.display('ADC Game Start', this); return false;">Alright, let's do this.</a></p>
+</div></html>
+<<set $champ = "Twitch">>
+
+
+:: Choose Sona
+<html><div class="champ-background" style="background-image: url(splash/sona.png);">
 <h1>Fuck yeah Sona!</h1>
-<p style="width:500px;">Something cool about Sona here.</p>
-<p><a class="internalLink" href="#" onclick="javascript:state.display('Support Game Start', this); return false;">Alright, let's do this.</a><p>
-</div>
-</html>
+<p class="champ-description">TODO: Something cool about Sona here.</p>
+<p><a class="internalLink" href="#" onclick="javascript:state.display('Support Game Start', this); return false;">Alright, let's do this.</a></p>
+</div></html>
 <<set $champ = "Sona">>
+
+
+:: Choose Taric
+<html><div class="champ-background" style="background-image: url(splash/taric.png);">
+<h1>Fuck yeah Taric!</h1>
+<p class="champ-description">TODO: Something cool about Taric here.</p>
+<p><a class="internalLink" href="#" onclick="javascript:state.display('Support Game Start', this); return false;">Alright, let's do this.</a></p>
+</div></html>
+<<set $champ = "Taric">>
+
+
+:: Choose Thresh
+<html><div class="champ-background" style="background-image: url(splash/thresh.png);">
+<h1>Fuck yeah Thresh!</h1>
+<p class="champ-description">TODO: Something cool about Thresh here.</p>
+<p><a class="internalLink" href="#" onclick="javascript:state.display('Support Game Start', this); return false;">Alright, let's do this.</a></p>
+</div></html>
+<<set $champ = "Thresh">>
 
 
 :: Jungle Game Start
@@ -344,8 +389,8 @@ You grab a Hunter's Machete and as many health potions as you can afford. You'll
 
 You cast you eye towards the jungle and <<replace>>start planning your route.<<gains>> Where should you start?
 
-<html><img src="jungle/golem.png" style="width:60px;height:60px;vertical-align:middle" /></html>[[I need mana, I'll start at Ancient Golem to get the blue buff.|Jungle Start Blue]]
-<html><img src="jungle/lizard.png" style="width:60px;height:60px;vertical-align:middle" /></html>[[I want some early aggression, I'll start at Lizard Elder to get the red buff.|Jungle Start Red]]<<endreplace>>
+<html><img src="jungle/golem.png" style="width:60px;height:60px;vertical-align:middle" /></html> [[I need mana, I'll start at Ancient Golem to get the blue buff.|Jungle Start Blue]]
+<html><img src="jungle/lizard.png" style="width:60px;height:60px;vertical-align:middle" /></html> [[I want some early aggression, I'll start at Lizard Elder to get the red buff.|Jungle Start Red]]<<endreplace>>
 
 
 :: Jungle Start Blue
@@ -442,12 +487,14 @@ TODO: something here
 :: Support Game Start
 An unseen announcer greets you: "Welcome to Summoner's Rift!"
 
-You open the shop window to spend your initial gold, pausing for a moment to <<replace>>consider the options. <<gains>>You'd like to pick up something with defense and sustain, but you know that sight wards are critical for spotting the enemy jungler.
+<html><img src="sr_start.png" /></html>
+
+You open the shop window to spend your initial gold, pausing for a moment to consider the options. You'd like to pick up something with defense and sustain, but you know that sight wards are critical for spotting the enemy jungler.
 
 What will you buy?
 
 [[I can't poke if I'm unprotected, I need Doran's Shield.|Support Buy Shield]]
-[[I can't play strategically without vision, I need Sight Wards|Support Buy Wards]]<<endreplace>>
+[[I can't play strategically without vision, I need Sight Wards|Support Buy Wards]]
 
 
 :: Support Buy Shield
