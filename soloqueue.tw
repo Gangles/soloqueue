@@ -423,11 +423,11 @@ Looking to the minimap, you notice that the enemy top laner has already pushed t
 
 
 :: Jungle Gank Top
-<<set $jungle_gank_lane = "top">><<set $jungle_gank_target = "Darius">><<display "Jungle Gank Solo">>
+<<set $jungle_gank_lane = "top">><<set $jungle_gank_target = "Darius">><<set $jungle_action = "ganking top lane">><<display "Jungle Gank Solo">>
 
 
 :: Jungle Gank Mid
-<<set $jungle_gank_lane = "mid">><<set $jungle_gank_target = "Karthus">><<display "Jungle Gank Solo">>
+<<set $jungle_gank_lane = "mid">><<set $jungle_gank_target = "Karthus">><<set $jungle_action = "ganking mid lane">><<display "Jungle Gank Solo">>
 
 
 :: Jungle Gank Solo
@@ -438,23 +438,58 @@ You ping the <<print $jungle_gank_lane>> lane and sneak your way over through th
 Confident that you've caught your opponent unaware, you rush into lane with your <<print $jungle_cc>> ability. Together, you secure an easy first blood for your <<print $jungle_gank_lane>> laner.
 
 [[Excellent start! Where to next?|Jungle Fail]]<<endreplace>>
-
+<<set $jungle_fail_action = "invaded bottom lane & secured a double kill for their AD carry">>
+<<set $jungle_losing_lane = "bottom">>
 
 :: Jungle Gank Bot
-Getting a double kill in bot would really get the lane going. You ping the lane and sneak your way over through the river. <<replace>>Do they see me coming?<<gains>
+<<set $jungle_gank_lane = "bottom">>Getting a double kill in bot would really get the lane going. You ping the lane and sneak your way over through the river. <<replace>>Do they see me coming?<<gains>
 
 Unfortunately, the enemy duo back off as soon as you get close. They must have the lane warded, you're wasting your time here.
 
 [[On well, where to next?|Jungle Fail]]<<endreplace>>
+<<set $jungle_action = "ganking bot lane">>
+<<set $jungle_fail_action = "roamed top & secured First Blood for their Riven">>
+<<set $jungle_losing_lane = "top">>
 
 
 :: Jungle Farm
 Since none of the lanes look ripe for ganking, you decide to gain some more gold and experience by continuing to kill the jungle creeps. You take out wolves, wraiths and the <<print $jungle_other_buff>> buff to gain level 4. With your full suite of abilities and double buffs, your lane invasions should be even more fearsome.
-[[Excellent, where to next?|Jungle Fail]]
+[[Excellent, where to next?|Jungle Fail]]<<set $jungle_action "farming">>
 
 
 :: Jungle Fail
-TODO: everything goes poorly
+Unfortunately, while you were busy <<print $jungle_action>>, the enemy jungler <<print $jungle_fail_action>>. An early setback like this can snowball into a lost game, but you're confident that your team can pull it together. However, one teammate does not share your confidence...
+
+''some_jerk77 :'' gg, noob jungler wont gank
+
+Bad players always blame the jungler for their mistakes. You try to ignore your raging teammate and focus on retaking the advantage. Where should you go next?
+
+[[Help the lane that's losing|Help Hard Lane]]
+<<if $jungle_gank_lane eq "top">>
+[[Continue pressuring top lane|Help Easy Lane]]
+<<else if $jungle_gank_lane eq "mid">>
+[[Continue pressuring mid lane|Help Easy Lane]]
+<<else>>
+[[Continue pressuring bottom lane|Help Easy Lane]]
+<<endif>><<endreplace>>
+
+
+:: Help Hard Lane
+<<if $jungle_losing_lane eq "top">>
+You race over to the losing lane to try and stop the bleeding. The enemy top laner is zoning out your teammate with their early advantage. You hastily rush in with your <<print $jungle_cc>>, <<replace>>but...<<gains>>
+
+Riven is stronger than the both of you combined; she turns your 2v1 gank into a double kill. She has aquired your <<print $jungle_buff>> buff and a massive gold advantage, which will allow her to dominate the lane.<<endreplace>>
+<<else>>
+You race over to bottom lane to try and stop the bleeding. The enemy duo are zoning out your teammates with their early advantage. You hastily rush in with your <<print $jungle_cc>>, <<replace>>but...<<gains>>
+
+The enemy Hecarim races into lane at the exact same moment, distracting your teammates. The enemy duo quickly focus you down, granting another kill and <<print $jungle_buff>> buff to their AD carry.<<endreplace>>
+<<endif>>
+
+TODO: your teammates rage
+
+
+:: Help Easy Lane
+TODO: you get another kill, but your losing lane rages
 
 
 :: ADC Game Start

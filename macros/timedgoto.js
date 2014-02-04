@@ -1,10 +1,6 @@
 // Timed Goto macro by Leon Arnott
 // http://www.glorioustrainwrecks.com/node/5108
-version.extensions.timedgotoMacro = {
-	major: 1,
-	minor: 2,
-	revision: 0
-};
+version.extensions.timedgotoMacro = { major:1, minor:2, revision:0 };
 macros["goto"] = macros.timedgoto = {
 	timer: null,
 	handler: function(a, b, c, d) {
