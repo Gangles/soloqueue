@@ -526,20 +526,36 @@ You grab a stalwart Doran's Blade and <<replace>>run towards the bottom lane.<<g
 
 
 :: ADC Game Start 2
-You are accompanied by your lane partner, a support champion whose goal is to help you stay in lane and outfarm the opposition. Your teammate has chosen <<cyclinglink $allysupport "Nidalee" "Lux" "Shaco">>, the champion of choice for players who don't like playing support. <<replace>>Not a good sign.
+You are accompanied by your lane partner, a support champion whose goal is to help you stay in lane and outfarm the opposition. Your teammate has chosen <<cyclinglink $allysupport "Nidalee" "Lux" "Morgana">>, the champion of choice for players who don't like playing support. <<replace>>Not a good sign.<<gains>>
 
-<<gains>> The opposing minion waves collide, and you cautiously advance. How should you play?
+The opposing minion waves collide, and you cautiously advance. How should you play?
 
 [[Play aggressively, push the lane|ADC Push]]
 [[Play safely, just go for last hits|ADC Safe]]<<endreplace>>
 
 
 :: ADC Push
-TODO: something here
+You decide to play aggressively and push the wave towards the enemy's base. While risky, forcing them to farm under their tower will deny some of their minion gold. The XP advantage can also afford opportunities for advantageous 2v2 fights.
+
+As you're attacking the minions, <<print $allysupport>> assists you by depleting their mana pool as quickly as possible, ineffectually throwing skillshots towards the enemy team. Your teammate follows your aggressively lead with inadvisable zeal, roaming deep into the side bushes. <<replace>>It's only a matter of time before...<<gains>>
+
+<html><img src="abilities/zenithblade.png" /></html>
+
+The enemy Leona lands Zenith Blade on <<print $allysupport>>. The enemy AD carry quickly focuses your out-of-position support, granting them first blood. [[Overall, an unfortunate early setback.|ADC Rage]]<<endreplace>>
 
 
 :: ADC Safe
-TODO: something here
+You decide to play cauiously in lane, farming the minions safely so you can scale well into late game. You avoid trading damage with the enemy AD carry, and focus instead of securing every minion kill. Your support <<print $allysupport>> matches your prudence, and concentrates on depleting their mana pool as quickly as possible, ineffectually throwing skillshots towards the enemy team.
+
+The enemy duo employ the opposite strategy, and begin pushing the wave towards you. Their aggressive positioning forces you backwards, making you miss out on XP and gold. The minion wave is soon directly under your tower, complicating your farming task even further. <<replace>>You hold out as best you can, but...<<gains>>
+
+<html><img src="abilities/bolastrike.png" /></html>
+
+The enemy Rengar suddenly leaps out of the jungle, diving towards you under your turret. He lands his bola, the enemy duo focuses their damage, and they quickly secure first blood. <<print $allysupport>>, being out of mana, watches them take down your tower and harmlessly retreats back to base. [[Overall, an unfortunate early setback.|ADC Rage]]<<endreplace>>
+
+
+:: ADC Rage
+TODO: teammate raging
 
 
 :: Support Game Start
