@@ -448,48 +448,71 @@ Unfortunately, the enemy duo back off as soon as you get close. They must have t
 
 [[On well, where to next?|Jungle Fail]]<<endreplace>>
 <<set $jungle_action = "ganking bot lane">>
-<<set $jungle_fail_action = "roamed top & secured First Blood for their Riven">>
+<<set $jungle_fail_action = "roamed top & secured first blood for their Riven">>
 <<set $jungle_losing_lane = "top">>
 
 
 :: Jungle Farm
 Since none of the lanes look ripe for ganking, you decide to gain some more gold and experience by continuing to kill the jungle creeps. You take out wolves, wraiths and the <<print $jungle_other_buff>> buff to gain level 4. With your full suite of abilities and double buffs, your lane invasions should be even more fearsome.
-[[Excellent, where to next?|Jungle Fail]]<<set $jungle_action "farming">>
+[[Excellent, where to next?|Jungle Fail]]
+<<set $jungle_action = "farming">>
+<<set $jungle_fail_action = "roamed top & secured first blood for their Riven">>
+<<set $jungle_losing_lane = "top">>
 
 
 :: Jungle Fail
 Unfortunately, while you were busy <<print $jungle_action>>, the enemy jungler <<print $jungle_fail_action>>. An early setback like this can snowball into a lost game, but you're confident that your team can pull it together. However, one teammate does not share your confidence...
 
-''some_jerk77 :'' gg, noob jungler wont gank
+''some_jerk77 :'' gg, noob jungler
 
 Bad players always blame the jungler for their mistakes. You try to ignore your raging teammate and focus on retaking the advantage. Where should you go next?
 
-[[Help the lane that's losing|Help Hard Lane]]
+[[Help the lane that's losing|Jungle Help Hard Lane]]
 <<if $jungle_gank_lane eq "top">>
-[[Continue pressuring top lane|Help Easy Lane]]
+[[Continue pressuring top lane|Jungle Help Easy Lane]]
 <<else if $jungle_gank_lane eq "mid">>
-[[Continue pressuring mid lane|Help Easy Lane]]
+[[Continue pressuring mid lane|Jungle Help Easy Lane]]
 <<else>>
-[[Continue pressuring bottom lane|Help Easy Lane]]
+[[Continue pressuring bottom lane|Jungle Help Easy Lane]]
 <<endif>><<endreplace>>
 
 
-:: Help Hard Lane
+:: Jungle Help Hard Lane
 <<if $jungle_losing_lane eq "top">>
 You race over to the losing lane to try and stop the bleeding. The enemy top laner is zoning out your teammate with their early advantage. You hastily rush in with your <<print $jungle_cc>>, <<replace>>but...<<gains>>
 
-Riven is stronger than the both of you combined; she turns your 2v1 gank into a double kill. She has aquired your <<print $jungle_buff>> buff and a massive gold advantage, which will allow her to dominate the lane.<<endreplace>>
+Her early kill has made Riven stronger than the both of you combined; she turns your 2v1 gank into a double kill. The enemy top laner has aquired your <<print $jungle_buff>> buff and a large gold advantage, which will allow her to dominate the lane. [[Your irritable teammate is not pleased...|Jungle Fail 2]]<<endreplace>>
 <<else>>
 You race over to bottom lane to try and stop the bleeding. The enemy duo are zoning out your teammates with their early advantage. You hastily rush in with your <<print $jungle_cc>>, <<replace>>but...<<gains>>
 
-The enemy Hecarim races into lane at the exact same moment, distracting your teammates. The enemy duo quickly focus you down, granting another kill and <<print $jungle_buff>> buff to their AD carry.<<endreplace>>
+The enemy Hecarim races into lane at the exact same moment, distracting your teammates. Their bot duo focus their damage on you, granting another kill and <<print $jungle_buff>> buff to their AD carry. The situation in bot lane just got dire; [[your irritable teammate is not pleased...|Jungle Fail 2]]<<endreplace>>
 <<endif>>
 
-TODO: your teammates rage
+
+:: Jungle Help Easy Lane
+<<if $jungle_gank_lane eq "bottom">>
+Knowing that the enemy jungler is on the other side of the map, you commit to making something happen in bottom lane. You sweep out the river with your Sweeping Lens trinket and start setting up an ambush. The enemy bot duo remain cautious at first, but soon return to farming minions. <<replace>>They think you've moved on...<<gains>>
+
+<<print tale.get($jungle_cc).text>>
+
+Your persistence has paid off. You signal your teammates and dive onto their AD carry with <<print $jungle_cc>>. The three of you focus your damage for an easy kill, and the enemy support player is forced to escape with Flash. [[Will this quell your irritable teammate?|Jungle Fail 2]]<<endreplace>>
+<<else>>
+Invading a losing lane is too risky; you decide you'd rather continuing to press your advantage in <<print $jungle_gank_lane>>. When <<print $jungle_gank_target>> gets back to lane, you're already <<replace>>lurking in the bush to greet him.<<gains>>
+
+You rush in to attempt another 2v1 kill, but the enemy laner nimbly reacts with <<cyclinglink "Flash" "Barrer" "Cleanse" "Ghost">> to escape. Nonetheless, you've applied even more pressure <<print $jungle_gank_lane>> and your teammate can hopefully begin to snowball off it. [[Will this quell your irritable teammate?|Jungle Fail 2]]<<endreplace>>
+<<endif>>
 
 
-:: Help Easy Lane
-TODO: you get another kill, but your losing lane rages
+:: Jungle Fail 2
+The raging continues...
+
+''some_jerk77 :'' <<cyclinglink "cant play with this n00b fkin jungler" "you suck, learn to jungle" "gg, noob team" "jungler feeding, gg">>
+
+The negative attitude spreads to your teammates. They chime in with their own insults, alternately directed at you or the original rager. Any semblance of team cohesion has been lost; the game might as well be over already. At the 20 minute mark, <<replace>>the surrender vote goes through.<<gains>>
+
+<html><img src="defeat.jpg" /></html>
+
+[[You dishonestly type "gg" in all chat.|Game End]]<<endreplace>>
 
 
 :: ADC Game Start
@@ -563,3 +586,7 @@ TODO: bad trade in lane
 
 :: Support Safe
 TODO: you get tower dived
+
+
+:: Game End
+TODO: generic ending
