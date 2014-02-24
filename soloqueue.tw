@@ -68,24 +68,24 @@ Or say nothing at all and [[fill whatever role is needed|Fill]].
 :: Call Solo Top
 Isolated from the rest of the map, top lane is a brutal 1v1 brawl. However, since the current meta tends to favour tanky champions in this lane, the combat tends to be slow and drawn-out; who can sustain longer?
 
-<<set $want_role = "top">><<display "Call Solo">>
+<<set $your_role = "top">><<display "Call Solo">>
 
 
 :: Call Solo Mid
 The middle lane is short, which makes it the relatively safe. Its central location provides opportunities to roam around the map, helping other lanes. In the current meta, an AP mage or assassin is usually picked for this lane.
 
-<<set $want_role = "mid">><<display "Call Solo">>
+<<set $your_role = "mid">><<display "Call Solo">>
 
 
 :: Call Solo
-You call your desired role in team chat, and your teammates follow suit. Jungle, AD carry and <<if $want_role eq "top">>mid<<else>>top<<endif>> are claimed in quick succession. The player with last pick remains conspicuously silent, <<replace>>until...<<gains>>
+You call your desired role in team chat, and your teammates follow suit. Jungle, AD carry and <<if $your_role eq "top">>mid<<else>>top<<endif>> are claimed in quick succession. The player with last pick remains conspicuously silent, <<replace>>until...<<gains>>
 
-''some_jerk77 :'' i want <<print $want_role>>
+''some_jerk77 :'' i want <<print $your_role>>
 ''some_jerk77 :'' i am platinum rank, this my smurf account
 
 Traditionally, pick order in the draft is used to resolve such disputes. As first pick, you have the right to play whatever role you'd like. Plus you have serious doubts as to the veracity of alleged platinum account. How should you respond?
 
-<<if $want_role eq "top">>
+<<if $your_role eq "top">>
 [[I have first pick, I'm playing top|Insist Solo]]
 <<else>>
 [[I have first pick, I'm playing mid|Insist Solo]]
@@ -100,7 +100,7 @@ The AD Carry (or "Marksman" in Riot's new lingo) is weak in the early game, but 
 
 Time to choose which champion to play:
 
-<<display "ADC Champions">>
+<<set $your_role = "adc">><<display "ADC Champions">>
 
 
 :: Call Support
@@ -114,7 +114,7 @@ Playing support gives you the best chance of snowballing your lane to victory. G
 
 Time to choose which champion to play:
 
-<<display "Support Champions">>
+<<set $your_role = "support">><<display "Support Champions">>
 
 
 :: Call Jungle
@@ -124,7 +124,7 @@ As the jungler, you'll prey on the neutral monsters that live between the lane. 
 
 Time to choose which champion to play:
 
-<<display "Jungle Champions">>
+<<set $your_role = "jungle">><<display "Jungle Champions">>
 
 
 :: Fill
@@ -134,22 +134,22 @@ However, that does relegate you to the least popular position: <<replace>>suppor
 
 
 :: Fill Begrudging
-You decide you'd rather not risk a ranked loss by calling a troll's bluff. You relenquish your call on <<print $want_role>> lane and opt to fill whatever role is needed.
+You decide you'd rather not risk a ranked loss by calling a troll's bluff. You relenquish your call on <<print $your_role>> lane and opt to fill whatever role is needed.
 
 Invariably, this leaves you with the least popular position: <<replace>>support.<<gains>> <<display "Call Support 2">><<endreplace>>
 
 
 :: Insist Solo
-In your last game, someone else played <<if $want_role eq "top">><<cyclinglink "Fiora" "Teemo" "Warwick" "Poppy">><<else>><<cyclinglink "Master Yi" "Pantheon" "Sion" "Akali">><<endif>> in <<print $want_role>>. They pushed the lane, never warded and fed like crazy. You politely insist that you will be keeping your claim to <<print $want_role>> lane.
+In your last game, someone else played <<if $your_role eq "top">><<cyclinglink "Fiora" "Teemo" "Warwick" "Poppy">><<else>><<cyclinglink "Master Yi" "Pantheon" "Sion" "Akali">><<endif>> in <<print $your_role>>. They pushed the lane, never warded and fed like crazy. You politely insist that you will be keeping your claim to <<print $your_role>> lane.
 
 <<replace>>Your obstinate teammate responds...<<gains>>
 
 ''some_jerk77 :'' newb
-''some_jerk77 :'' gimme <<print $want_role>> or I feed
+''some_jerk77 :'' gimme <<print $your_role>> or I feed
 
 You contemplate whether you're willing to lose another ranked match due to a troll.
 
-<<if $want_role eq "top">>
+<<if $your_role eq "top">>
 [[Concede, let the troll have top lane|Fill Begrudging]]
 [[Stand your ground, you're going top|Insist Solo 2]]
 <<else>>
@@ -159,9 +159,9 @@ You contemplate whether you're willing to lose another ranked match due to a tro
 
 
 :: Insist Solo 2
-Ignoring your ill-mannered teammate for the moment, your thoughts turn to champion selection. Who would you like to play in <<print $want_role>> lane?
+Ignoring your ill-mannered teammate for the moment, your thoughts turn to champion selection. Who would you like to play in <<print $your_role>> lane?
 
-<<if $want_role eq "top">>
+<<if $your_role eq "top">>
 <<display "Top Lane Champions">>
 <<else>>
 <<display "Mid Lane Champions">>
@@ -446,7 +446,7 @@ Confident that you've caught your opponent unaware, you rush into lane with your
 
 Unfortunately, the enemy duo back off as soon as you get close. They must have the lane warded, you're wasting your time here.
 
-[[On well, where to next?|Jungle Fail]]<<endreplace>>
+[[Oh well, where to next?|Jungle Fail]]<<endreplace>>
 <<set $jungle_action = "ganking bot lane">>
 <<set $jungle_fail_action = "roamed top & secured first blood for their Riven">>
 <<set $jungle_losing_lane = "top">>
@@ -481,11 +481,11 @@ Bad players always blame the jungler for their mistakes. You try to ignore your 
 <<if $jungle_losing_lane eq "top">>
 You race over to the losing lane to try and stop the bleeding. The enemy top laner is zoning out your teammate with their early advantage. You hastily rush in with your <<print $jungle_cc>>, <<replace>>but...<<gains>>
 
-Her early kill has made Riven stronger than the both of you combined; she turns your 2v1 gank into a double kill. The enemy top laner has aquired your <<print $jungle_buff>> buff and a large gold advantage, which will allow her to dominate the lane. [[Your irritable teammate is not pleased...|Jungle Fail 2]]<<endreplace>>
+Her early kill has made Riven stronger than the both of you combined; she turns your 2v1 gank into a double kill. The enemy top laner has aquired your <<print $jungle_buff>> buff and a large gold advantage, which will allow her to dominate the lane. [[Your irritable teammate is not pleased...|Everybody Raging]]<<endreplace>>
 <<else>>
 You race over to bottom lane to try and stop the bleeding. The enemy duo are zoning out your teammates with their early advantage. You hastily rush in with your <<print $jungle_cc>>, <<replace>>but...<<gains>>
 
-The enemy Hecarim races into lane at the exact same moment, distracting your teammates. Their bot duo focus their damage on you, granting another kill and <<print $jungle_buff>> buff to their AD carry. The situation in bot lane just got dire; [[your irritable teammate is not pleased...|Jungle Fail 2]]<<endreplace>>
+The enemy Hecarim races into lane at the exact same moment, distracting your teammates. Their bot duo focus their damage on you, granting another kill and <<print $jungle_buff>> buff to their AD carry. The situation in bot lane just got dire; [[your irritable teammate is not pleased...|Everybody Raging]]<<endreplace>>
 <<endif>>
 
 
@@ -495,37 +495,19 @@ Knowing that the enemy jungler is on the other side of the map, you commit to ma
 
 <<print tale.get($jungle_cc).text>>
 
-Your persistence has paid off. You signal your teammates and dive onto their AD carry with <<print $jungle_cc>>. The three of you focus your damage for an easy kill, and the enemy support player is forced to escape with Flash. [[Will this quell your irritable teammate?|Jungle Fail 2]]<<endreplace>>
+Your persistence has paid off. You signal your teammates and dive onto their AD carry with <<print $jungle_cc>>. The three of you focus your damage for an easy kill, and the enemy support player is forced to escape with Flash. [[Will this quell your irritable teammate?|Everybody Raging]]<<endreplace>>
 <<else>>
 Invading a losing lane is too risky; you decide you'd rather continuing to press your advantage in <<print $jungle_gank_lane>>. When <<print $jungle_gank_target>> gets back to lane, you're already <<replace>>lurking in the bush to greet him.<<gains>>
 
-You rush in to attempt another 2v1 kill, but the enemy laner nimbly reacts with <<cyclinglink "Flash" "Barrer" "Cleanse" "Ghost">> to escape. Nonetheless, you've applied even more pressure <<print $jungle_gank_lane>> and your teammate can hopefully begin to snowball off it. [[Will this quell your irritable teammate?|Jungle Fail 2]]<<endreplace>>
+You rush in to attempt another 2v1 kill, but the enemy laner nimbly reacts with <<cyclinglink "Flash" "Barrer" "Cleanse" "Ghost">> to escape. Nonetheless, you've applied even more pressure <<print $jungle_gank_lane>> and your teammate can hopefully begin to snowball off it. [[Will this quell your irritable teammate?|Everybody Raging]]<<endreplace>>
 <<endif>>
 
 
-:: Jungle Fail 2
-The raging continues...
-
-''some_jerk77 :'' <<cyclinglink "cant play with this n00b fkin jungler" "you suck, learn to jungle" "gg, noob team" "jungler feeding, gg">>
-
-The negative attitude spreads to your teammates. They chime in with their own insults, alternately directed at you or the original rager. Any semblance of team cohesion has been lost; the game might as well be over already. At the 20 minute mark, <<replace>>the surrender vote goes through.<<gains>>
-
-<html><img src="defeat.jpg" /></html>
-
-[[You dishonestly type "gg" in all chat.|Game End]]<<endreplace>>
-
-
 :: ADC Game Start
-An unseen announcer greets you: "Welcome to Summoner's Rift!"
+An unseen announcer greets you: "Welcome to Summoner's Rift!" You grab a stalwart Doran's Blade and run towards the bottom lane.
 
 <html><img src="items/doransblade.png" /></html>
 
-You grab a stalwart Doran's Blade and <<replace>>run towards the bottom lane.<<gains>>
-
-<<display "ADC Game Start 2">><<endreplace>>
-
-
-:: ADC Game Start 2
 You are accompanied by your lane partner, a support champion whose goal is to help you stay in lane and outfarm the opposition. Your teammate has chosen <<cyclinglink $allysupport "Nidalee" "Lux" "Morgana">>, the champion of choice for players who don't like playing support. <<replace>>Not a good sign.<<gains>>
 
 The opposing minion waves collide, and you cautiously advance. How should you play?
@@ -537,25 +519,48 @@ The opposing minion waves collide, and you cautiously advance. How should you pl
 :: ADC Push
 You decide to play aggressively and push the wave towards the enemy's base. While risky, forcing them to farm under their tower will deny some of their minion gold. The XP advantage can also afford opportunities for advantageous 2v2 fights.
 
-As you're attacking the minions, <<print $allysupport>> assists you by depleting their mana pool as quickly as possible, ineffectually throwing skillshots towards the enemy team. Your teammate follows your aggressively lead with inadvisable zeal, roaming deep into the side bushes. <<replace>>It's only a matter of time before...<<gains>>
+As you're attacking the minions, <<print $allysupport>> assists you by depleting her mana pool as quickly as possible, ineffectually throwing skillshots towards the enemy team. Your teammate follows your aggressively lead with inadvisable zeal, roaming deep into the side bushes. <<replace>>It's only a matter of time before...<<gains>>
 
 <html><img src="abilities/zenithblade.png" /></html>
 
-The enemy Leona lands Zenith Blade on <<print $allysupport>>. The enemy AD carry quickly focuses your out-of-position support, granting them first blood. [[Overall, an unfortunate early setback.|ADC Rage]]<<endreplace>>
+The enemy Leona lands Zenith Blade on <<print $allysupport>>. The enemy AD carry quickly focuses your out-of-position support, granting them first blood. [[Overall, an unfortunate early setback.|ADC MIA]]<<endreplace>>
 
 
 :: ADC Safe
-You decide to play cauiously in lane, farming the minions safely so you can scale well into late game. You avoid trading damage with the enemy AD carry, and focus instead of securing every minion kill. Your support <<print $allysupport>> matches your prudence, and concentrates on depleting their mana pool as quickly as possible, ineffectually throwing skillshots towards the enemy team.
+You decide to play cauiously in lane, farming the minions safely so you can scale well into late game. You avoid trading damage with the enemy AD carry, and focus instead of securing every minion kill. Your support <<print $allysupport>> matches your prudence, and concentrates on depleting her mana pool as quickly as possible, ineffectually throwing skillshots towards the enemy team.
 
 The enemy duo employ the opposite strategy, and begin pushing the wave towards you. Their aggressive positioning forces you backwards, making you miss out on XP and gold. The minion wave is soon directly under your tower, complicating your farming task even further. <<replace>>You hold out as best you can, but...<<gains>>
 
 <html><img src="abilities/bolastrike.png" /></html>
 
-The enemy Rengar suddenly leaps out of the jungle, diving towards you under your turret. He lands his bola, the enemy duo focuses their damage, and they quickly secure first blood. <<print $allysupport>>, being out of mana, watches them take down your tower and harmlessly retreats back to base. [[Overall, an unfortunate early setback.|ADC Rage]]<<endreplace>>
+The enemy Rengar suddenly leaps out of the jungle, diving towards you under your turret. He lands his bola, the enemy duo focuses their damage, and they quickly secure first blood. <<print $allysupport>>, being out of mana, watches them take down your tower and harmlessly retreats back to base. [[Overall, an unfortunate early setback.|ADC MIA]]<<endreplace>>
 
 
-:: ADC Rage
-TODO: teammate raging
+:: ADC MIA
+You spend your meager gold on <<cyclinglink "a second Doran's Blade" "Boots of Speed" "a couple of of wards">> and start running back into lane. You lost track of the enemy duo while you were shopping; they're nowhere to be seen on the map. You fear that they may have joined their jungler in taking down the dragon, which would expand their early gold lead.
+
+<html><img src="jungle/dragon.jpg" /></html>
+
+[[Warn your teammates and try to head them off|ADC Dragon Check]]
+[[You're in no position to contest dragon, just head back to lane|ADC Return]]
+
+
+:: ADC Dragon Check
+You ping the river and instruct your teammates to converge on them. You approach the Dragon from below as your team's mid laner pincers them from above. Your jungler is, however, is conspicuously absent.
+
+As you round the corner, the fog of war reveals four enemy champions whalloping a nearly-dead dragon. The enemy jungler slays the beast, and all four turn their attention towards you. Your mid lane teammate, seeing the uneven odds, retreats back to lane. Your death contributes even more gold to their advantage.
+
+[[That could have gone better...|Everybody Raging]]
+
+
+:: ADC Return
+You'd rather avoid a perlious team fight over dragon; it's more cautious to begin recovering the gold difference by returning bot lane farming. You return to lane and resume your quotidien farming.
+
+<html><img src="doublekill.png" width="300" /></html>
+
+Your focus on securing minion gold is broken by a quick succession of announcements: your team's middle laner and jungler have been slain. You discover that, rather than securing the dragon, the enemy bottom lane duo roamed into middle lane. Your teammates were out of position, so a 3v2 fight in the enemy's favour netted an easy double kill.
+
+[[That could have gone better...|Everybody Raging]]
 
 
 :: Support Game Start
@@ -604,5 +609,29 @@ TODO: bad trade in lane
 TODO: you get tower dived
 
 
-:: Game End
-TODO: generic ending
+:: Everybody Raging
+The raging continues...
+
+<<if $your_role eq "jungle">>
+''some_jerk77 :'' <<cyclinglink "cant play with this n00b fkin jungler" "you suck, learn to jungle" "gg, noob team" "jungler feeding, gg">>
+<<else if $your_role eq "adc">>
+''some_jerk77 :'' <<cyclinglink "cant play with this n00b fkin adc" "you suck, learn to adc" "gg, noob team" "bot feeding, gg">>
+<<else>>
+''some_jerk77 :'' <<cyclinglink "cant play with this n00b fkin support" "you suck, learn to support" "gg, noob team" "bot feeding, gg">>
+<<endif>>
+
+The negative attitude spreads to your teammates. They chime in with their own insults, alternately directed at you or the original rager. Any semblance of team cohesion has been lost; the game might as well be over already. At the 20 minute mark, <<replace>>the surrender vote goes through.<<gains>>
+
+<html><img src="defeat.jpg" /></html>
+
+[[You dishonestly type "gg" in all chat.|Lost Promotion]]<<endreplace>>
+
+
+:: Lost Promotion
+<html><a class="internalLink" href="#" onclick="javascript:state.display('Uninstall', this); return false;"><img src="defeat_series.png" /></a></html>
+
+
+:: Uninstall
+TODO: image of game being uninstalled
+
+<<timedcontinue 2.5s>>[[Reinstall and play again?|Matchmaking]]
