@@ -50,7 +50,7 @@ After <<randomnumber 30 50>> seconds of matchmaking...
 
 
 :: Champion Select
-You're placed in a match with 4 <<cyclinglink "teammates" "strangers" "strangers who you somehow need to cooperate with" end>>.
+You're placed in a match with 4 <<cyclinglink "teammates" "strangers" "strangers whom you somehow need to cooperate with" end>>.
 
 <html><img src="lanes.png" width="300" alt="Summoner's Rift Lanes" /></html>
 
@@ -169,7 +169,7 @@ Ignoring your ill-mannered teammate for the moment, your thoughts turn to champi
 
 
 :: Insist Solo 3
-You optimistically lock in <<print $champ>>, but the situation does not improve. In a rage, your troll teammate employs all the profanity in mispelled profanity in his limited vocabulary. When it's his turn to pick a champion, he locks in <<cyclinglink "Heimerdinger" "Sejuani" "Viktor" "Galio">> with <<cyclinglink "Clairvoyance / Heal" "Clarity / Teleport" "Smite / Revive">>.
+You optimistically lock in <<print $champ>>, but the situation does not improve. In a rage, your troll teammate employs all the profanity in mispelled profanity in his limited vocabulary. When it's his turn to pick a champion, he locks in <<cyclinglink "Heimerdinger" "Sejuani" "Viktor" "Galio">> with <<cyclinglink "Clairvoyance & Heal" "Clarity & Teleport" "Smite & Revive">>.
 
 It appears your teammate intends to make good on his threat of intentionally throwing the game. It may be preferable to close the client and dodge the game. You'll take a small rank penalty, but you'll save yourself twenty minutes of frustration in a guaranteed loss. What will you do?
 
@@ -236,7 +236,7 @@ Reopening the client, you notice that you've lost <<randomnumber 7 10>> League P
 :: Choose Riven
 <html><div class="champ-background" style="background-image: url(splash/riven.png);">
 <h1>Fuck yeah Riven!</h1>
-<p class="champ-description">TODO: something cool about Riven here</p>
+<p class="champ-description">Riven is a strong duelist and lane phase bully. Her abilities provide mobility, have short cooldowns and scale ridiculously well with attack damage. She's powerful in the early game, and can snowball out of control with a gold advantage.</p>
 <p><a class="internalLink" href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a></p>
 </div></html>
 <<set $champ = "Riven">>
@@ -245,7 +245,7 @@ Reopening the client, you notice that you've lost <<randomnumber 7 10>> League P
 :: Choose Shen
 <html><div class="champ-background" style="background-image: url(splash/shen.png);">
 <h1>Fuck yeah Shen!</h1>
-<p class="champ-description">You can't believe he wasn't banned! Shen is super tanky AND his taunt forces enemies to attack him. Most importantly, his ult lets you shield and teleport to any ally on the map. You can be split pushing all day and still show up the moment a team fight breaks out.</p>
+<p class="champ-description">Shen's stalwart tankiness won't ever dominate top lane, but his global map presence is invaluable. You can constantly split push the side lanes, then use Stand United to join your allies in a teamfight anywhere on the map.</p>
 <p><a class="internalLink" href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a></p>
 </div></html>
 <<set $champ = "Shen">>
@@ -254,7 +254,7 @@ Reopening the client, you notice that you've lost <<randomnumber 7 10>> League P
 :: Choose Singed
 <html><div class="champ-background" style="background-image: url(splash/singed.png);">
 <h1>Fuck yeah Singed!</h1>
-<p class="champ-description">In theory everyone knows not to chase a Singed, yet most opponents can't resist. They'll be choking on your poison cloud while trying in vain to whittle down your massive HP bar. You can sit in top lane all day and still win the game.</p>
+<p class="champ-description">Everyone knows you shouldn't chase Singed, yet most opponents can't resist. They'll be choking on your poison cloud while trying in vain to whittle down your massive HP bar. Keep farming into the late game and you'll be the unkillable distraction they can't afford to ignore.</p>
 <p><a class="internalLink" href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a></p>
 </div></html>
 <<set $champ = "Singed">>
@@ -263,7 +263,7 @@ Reopening the client, you notice that you've lost <<randomnumber 7 10>> League P
 :: Choose Ahri
 <html><div class="champ-background" style="background-image: url(splash/ahri.png);">
 <h1>Fuck yeah Ahri!</h1>
-<p class="champ-description">TODO: something cool about Ahri here</p>
+<p class="champ-description">Ahri can snare opponents with her Charm, then instantly melt them with her incredible magic damage. Spirit Rush gives her ridiculous mobility in teamfights, and she has excellent AOE damage and crowd control for an assassin.</p>
 <p><a class="internalLink" href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a></p>
 </div></html>
 <<set $champ = "Ahri">>
@@ -272,7 +272,7 @@ Reopening the client, you notice that you've lost <<randomnumber 7 10>> League P
 :: Choose Kassadin
 <html><div class="champ-background" style="background-image: url(splash/kassadin.png);">
 <h1>Fuck yeah Kassadin!</h1>
-<p class="champ-description">TODO: something cool about Kassadin here</p>
+<p class="champ-description">He wasn't banned!? Kassadin is the most feared mid lane assassin due to his incomporable mobility and snowball potential. You'll be riftwalking in and out of combat, blowing up high priority targets as you go.</p>
 <p><a class="internalLink" href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a></p>
 </div></html>
 <<set $champ = "Kassadin">>
@@ -281,7 +281,7 @@ Reopening the client, you notice that you've lost <<randomnumber 7 10>> League P
 :: Choose Orianna
 <html><div class="champ-background" style="background-image: url(splash/orianna.png);">
 <h1>Fuck yeah Orianna!</h1>
-<p class="champ-description">TODO: something cool about Orianna here</p>
+<p class="champ-description">The Lady of Clockwork is a strong pick into any mid lane matchup, pairing team utility with high damage and crowd control. You can shield a teammate with Command: Protect before they dive into the enemy team; they'll be lining up the Shockwave ult for you!</p>
 <p><a class="internalLink" href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a></p>
 </div></html>
 <<set $champ = "Orianna">>
@@ -290,7 +290,7 @@ Reopening the client, you notice that you've lost <<randomnumber 7 10>> League P
 :: Choose Lee Sin
 <html><div class="champ-background" style="background-image: url(splash/leesin.png);">
 <h1>Fuck yeah Lee Sin!</h1>
-<p class="champ-description">TODO: Something cool about Lee Sin here.</p>
+<p class="champ-description">InSec, Bengi, Amazing; pro League junglers are often defined by their ability to play Lee Sin. Only those with exceptional mechanical skill can harness his mobility, unpredictability and strength. With any luck, you'll be making some moves for the highlight reel.</p>
 <p><a class="internalLink" href="#" onclick="javascript:state.display('Jungle Game Start', this); return false;">Alright, let's do this.</a></p>
 </div></html>
 <<set $champ = "Lee Sin">><<set $jungle_cc = "Resonating Strike">>
@@ -303,7 +303,7 @@ Reopening the client, you notice that you've lost <<randomnumber 7 10>> League P
 :: Choose Volibear
 <html><div class="champ-background" style="background-image: url(splash/volibear.png);">
 <h1>Fuck yeah Volibear!</h1>
-<p class="champ-description">TODO: Something cool about Volibear here.</p>
+<p class="champ-description">Volibear's jungle ganks are a terror; catching an out of position laner with Rolling Thunder will just about guarantee a kill. His abilities scale with his health bar, and the damage from his Thunder Claws can bounce to strike enemies in the back line.</p>
 <p><a class="internalLink" href="#" onclick="javascript:state.display('Jungle Game Start', this); return false;">Alright, let's do this.</a></p>
 </div></html>
 <<set $champ = "Volibear">><<set $jungle_cc = "Rolling Thunder">>
@@ -316,7 +316,7 @@ Reopening the client, you notice that you've lost <<randomnumber 7 10>> League P
 :: Choose Vi
 <html><div class="champ-background" style="background-image: url(splash/vi.png);">
 <h1>Fuck yeah Vi!</h1>
-<p class="champ-description">TODO: Something cool about Vi here.</p>
+<p class="champ-description">With high damage, mobility and tankiness, there isn't much not to like about Vi (unless you're on the other team). Assault & Battery lets you dive through their entire front line and single out enemy carries.</p>
 <p><a class="internalLink" href="#" onclick="javascript:state.display('Jungle Game Start', this); return false;">Alright, let's do this.</a></p>
 </div></html>
 <<set $champ = "Vi">><<set $jungle_cc = "Vault Breaker">>
@@ -329,7 +329,7 @@ Reopening the client, you notice that you've lost <<randomnumber 7 10>> League P
 :: Choose Ashe
 <html><div class="champ-background" style="background-image: url(splash/ashe.png);">
 <h1>Fuck yeah Ashe!</h1>
-<p class="champ-description">TODO: Something cool about Ashe here.</p>
+<p class="champ-description">Ashe may the the tutorial champion, but her simplicity doesn't reduce her effectiveness. Enchanted Crystal Arrow is considered the best initiation ability in the game, and the stacking slow from Frost Shot makes her nigh impossible to escape.</p>
 <p><a class="internalLink" href="#" onclick="javascript:state.display('ADC Game Start', this); return false;">Alright, let's do this.</a></p>
 </div></html>
 <<set $champ = "Ashe">>
@@ -338,7 +338,7 @@ Reopening the client, you notice that you've lost <<randomnumber 7 10>> League P
 :: Choose Corki
 <html><div class="champ-background" style="background-image: url(splash/corki.png);">
 <h1>Fuck yeah Corki!</h1>
-<p class="champ-description">TODO: Something cool about Corki here.</p>
+<p class="champ-description">Corki is an unusual AD carry, typically picked for abilities rather than his auto attacks. The poke of Missile Barrage and the armour shred of Gatling Gun are invaluable, and his low cooldowns make building Trinity Force extremely effective.</p>
 <p><a class="internalLink" href="#" onclick="javascript:state.display('ADC Game Start', this); return false;">Alright, let's do this.</a></p>
 </div></html>
 <<set $champ = "Corki">>
@@ -347,7 +347,7 @@ Reopening the client, you notice that you've lost <<randomnumber 7 10>> League P
 :: Choose Twitch
 <html><div class="champ-background" style="background-image: url(splash/twitch.png);">
 <h1>Fuck yeah Twitch!</h1>
-<p class="champ-description">TODO: Something cool about Twitch here.</p>
+<p class="champ-description">Twitch being played as an AD carry belies his true role as an assassin. Ambush allows him to sneak up on high priority targets so he can burst them down with Expunge. With the right positioning, he can deal incredible AOE damage from the back lines with Spray & Pray.</p>
 <p><a class="internalLink" href="#" onclick="javascript:state.display('ADC Game Start', this); return false;">Alright, let's do this.</a></p>
 </div></html>
 <<set $champ = "Twitch">>
@@ -356,7 +356,7 @@ Reopening the client, you notice that you've lost <<randomnumber 7 10>> League P
 :: Choose Sona
 <html><div class="champ-background" style="background-image: url(splash/sona.png);">
 <h1>Fuck yeah Sona!</h1>
-<p class="champ-description">TODO: Something cool about Sona here.</p>
+<p class="champ-description">Sona may have less HP than a minion at level 1, but her inherent vulnerability is a tradeoff for incredible team utility. Her abilities not only poke and heal, but also provide lingering stat buffs for all nearby allies. With the right positioning, her ultimate Crescendo can lock up the entire enemy team.</p>
 <p><a class="internalLink" href="#" onclick="javascript:state.display('Support Game Start', this); return false;">Alright, let's do this.</a></p>
 </div></html>
 <<set $champ = "Sona">>
@@ -365,7 +365,7 @@ Reopening the client, you notice that you've lost <<randomnumber 7 10>> League P
 :: Choose Taric
 <html><div class="champ-background" style="background-image: url(splash/taric.png);">
 <h1>Fuck yeah Taric!</h1>
-<p class="champ-description">TODO: Something cool about Taric here.</p>
+<p class="champ-description">While his healing and aura abilities are not to be discounted, Taric is best known for his fearsome low-cooldown stun. Gemcraft and Shatter scale with armour, making his late game damage truly outrageous.</p>
 <p><a class="internalLink" href="#" onclick="javascript:state.display('Support Game Start', this); return false;">Alright, let's do this.</a></p>
 </div></html>
 <<set $champ = "Taric">>
@@ -374,7 +374,7 @@ Reopening the client, you notice that you've lost <<randomnumber 7 10>> League P
 :: Choose Thresh
 <html><div class="champ-background" style="background-image: url(splash/thresh.png);">
 <h1>Fuck yeah Thresh!</h1>
-<p class="champ-description">TODO: Something cool about Thresh here.</p>
+<p class="champ-description">Thresh is a champion designed for making big plays. Whether you're rescuing an ally with your lantern, immobilizing their carry with your hook, or dividing their team with your ultimate, you'll always be impactful in team fights.</p>
 <p><a class="internalLink" href="#" onclick="javascript:state.display('Support Game Start', this); return false;">Alright, let's do this.</a></p>
 </div></html>
 <<set $champ = "Thresh">>
