@@ -26,7 +26,7 @@ Matthew Gallant
 
 
 :: Matchmaking
-<html><img src="ranked.png"/>
+<html><img src="ranked.png" alt="Select Game Mode" />
 <h1>Classic - Summoner's Rift</h1>
 <p>Work with your allies to siege the enemy base and destroy their Nexus. Average game length is 30-45 minutes.</p></html>
 Last Step:
@@ -42,7 +42,7 @@ You take a look at your friend's list. Everyone you know is either offline or al
 After <<randomnumber 30 50>> seconds of matchmaking...
 
 <html>
-<img src="match_found.png" usemap="#solo" />
+<img src="match_found.png" usemap="#solo" alt="Match Found" />
 <map name="solo">
 	<area shape="rect" coords="200,250,310,285" alt="Accept" href="#" onclick="javascript:state.display('Champion Select', this); return false;">
 	<area shape="rect" coords="395,250,490,285" alt="Accept" href="#" onclick="javascript:state.display('Matchmaking', this); return false;">
@@ -52,7 +52,7 @@ After <<randomnumber 30 50>> seconds of matchmaking...
 :: Champion Select
 You're placed in a match with 4 <<cyclinglink "teammates" "strangers" "strangers who you somehow need to cooperate with" end>>.
 
-<html><img src="lanes.png" width="300" /></html>
+<html><img src="lanes.png" width="300" alt="Summoner's Rift Lanes" /></html>
 
 You have first pick in the draft, so you can call which role you'll be playing in team chat:
 
@@ -182,7 +182,7 @@ A few seconds before the match begins...
 
 ''Game Alert: some_jerk77 has left during champion selection and you have been placed back in the matchmaking queue.''
 
-[[Good riddance...|Matchmaking]]
+<html><a class="internalLink" href="#" onclick="javascript:state.restart(); return false;">Good riddance...</a></html>
 
 
 :: Dodge Troll
@@ -297,7 +297,7 @@ Reopening the client, you notice that you've lost <<randomnumber 7 10>> League P
 
 
 :: Resonating Strike
-<html><img src="abilities/resonatingstrike.png" /></html>
+<html><img src="abilities/resonatingstrike.png" alt="Resonating Strike" /></html>
 
 
 :: Choose Volibear
@@ -310,7 +310,7 @@ Reopening the client, you notice that you've lost <<randomnumber 7 10>> League P
 
 
 :: Rolling Thunder
-<html><img src="abilities/rollingthunder.png" /></html>
+<html><img src="abilities/rollingthunder.png" alt="Rolling Thunder" /></html>
 
 
 :: Choose Vi
@@ -323,7 +323,7 @@ Reopening the client, you notice that you've lost <<randomnumber 7 10>> League P
 
 
 :: Vault Breaker
-<html><img src="abilities/vaultbreaker.png" /></html>
+<html><img src="abilities/vaultbreaker.png" alt="Vault Breaker" /></html>
 
 
 :: Choose Ashe
@@ -383,7 +383,7 @@ Reopening the client, you notice that you've lost <<randomnumber 7 10>> League P
 :: Jungle Game Start
 An unseen announcer greets you: "Welcome to Summoner's Rift!"
 
-<html><img src="items/huntersmachete.png" /></html>
+<html><img src="items/huntersmachete.png" alt="Hunter's Machete" /></html>
 
 You grab a Hunter's Machete and as many health potions as you can afford. You'll need all the help you can get to take on the fearsome <<cyclinglink "wolves" "wraiths" "golems">> that lurk between the lanes. Your teammates are counting on you to be fast and mobile, applying lane pressure wherever it's needed.
 
@@ -402,11 +402,11 @@ You cast you eye towards the jungle and <<replace>>start planning your route.<<g
 
 
 :: Ancient Golem
-<html><img src="jungle/golem2.jpg" /></html>
+<html><img src="jungle/golem2.jpg" alt="Ancient Golem" /></html>
 
 
 :: Lizard Elder
-<html><img src="jungle/lizard2.jpg" /></html>
+<html><img src="jungle/lizard2.jpg" alt="Lizard Elder" /></html>
 
 
 :: Jungle Start
@@ -521,75 +521,48 @@ You decide to play aggressively and push the wave towards the enemy's base. Whil
 
 As you're attacking the minions, <<print $allysupport>> assists you by depleting her mana pool as quickly as possible, ineffectually throwing skillshots towards the enemy team. Your teammate follows your aggressively lead with inadvisable zeal, roaming deep into the side bushes. <<replace>>It's only a matter of time before...<<gains>>
 
-<html><img src="abilities/zenithblade.png" /></html>
+<html><img src="abilities/zenithblade.png" alt="Zenith Blade" /></html>
 
-The enemy Leona lands Zenith Blade on <<print $allysupport>>. The enemy AD carry quickly focuses your out-of-position support, granting them first blood. [[Overall, an unfortunate early setback.|ADC MIA]]<<endreplace>>
+The enemy Leona lands Zenith Blade on <<print $allysupport>>. The enemy AD carry quickly focuses your out-of-position support, granting them first blood. [[Overall, an unfortunate early setback.|Bot Lane MIA]]<<endreplace>>
 
 
 :: ADC Safe
-You decide to play cauiously in lane, farming the minions safely so you can scale well into late game. You avoid trading damage with the enemy AD carry, and focus instead of securing every minion kill. Your support <<print $allysupport>> matches your prudence, and concentrates on depleting her mana pool as quickly as possible, ineffectually throwing skillshots towards the enemy team.
+You decide to play cautiously in lane, farming the minions safely so you can scale well into late game. You avoid trading damage with the enemy AD carry, and focus instead of securing every minion kill. Your support <<print $allysupport>> matches your prudence, and concentrates on depleting her mana pool as quickly as possible, ineffectually throwing skillshots towards the enemy team.
 
 The enemy duo employ the opposite strategy, and begin pushing the wave towards you. Their aggressive positioning forces you backwards, making you miss out on XP and gold. The minion wave is soon directly under your tower, complicating your farming task even further. <<replace>>You hold out as best you can, but...<<gains>>
 
-<html><img src="abilities/bolastrike.png" /></html>
+<html><img src="abilities/bolastrike.png" alt="Bola Strike" /></html>
 
-The enemy Rengar suddenly leaps out of the jungle, diving towards you under your turret. He lands his bola, the enemy duo focuses their damage, and they quickly secure first blood. <<print $allysupport>>, being out of mana, watches them take down your tower and harmlessly retreats back to base. [[Overall, an unfortunate early setback.|ADC MIA]]<<endreplace>>
-
-
-:: ADC MIA
-You spend your meager gold on <<cyclinglink "a second Doran's Blade" "Boots of Speed" "a couple of of wards">> and start running back into lane. You lost track of the enemy duo while you were shopping; they're nowhere to be seen on the map. You fear that they may have joined their jungler in taking down the dragon, which would expand their early gold lead.
-
-<html><img src="jungle/dragon.jpg" /></html>
-
-[[Warn your teammates and try to head them off|ADC Dragon Check]]
-[[You're in no position to contest dragon, just head back to lane|ADC Return]]
-
-
-:: ADC Dragon Check
-You ping the river and instruct your teammates to converge on them. You approach the Dragon from below as your team's mid laner pincers them from above. Your jungler is, however, is conspicuously absent.
-
-As you round the corner, the fog of war reveals four enemy champions whalloping a nearly-dead dragon. The enemy jungler slays the beast, and all four turn their attention towards you. Your mid lane teammate, seeing the uneven odds, retreats back to lane. Your death contributes even more gold to their advantage.
-
-[[That could have gone better...|Everybody Raging]]
-
-
-:: ADC Return
-You'd rather avoid a perlious team fight over dragon; it's more cautious to begin recovering the gold difference by returning bot lane farming. You return to lane and resume your quotidien farming.
-
-<html><img src="doublekill.png" width="300" /></html>
-
-Your focus on securing minion gold is broken by a quick succession of announcements: your team's middle laner and jungler have been slain. You discover that, rather than securing the dragon, the enemy bottom lane duo roamed into middle lane. Your teammates were out of position, so a 3v2 fight in the enemy's favour netted an easy double kill.
-
-[[That could have gone better...|Everybody Raging]]
+The enemy Rengar suddenly leaps out of the jungle, diving towards you under your turret. He lands his bola, the enemy duo focus their damage, and together they quickly secure first blood. <<print $allysupport>>, being out of mana, watches them take down your tower and harmlessly retreats back to base. [[Overall, an unfortunate early setback.|Bot Lane MIA]]<<endreplace>>
 
 
 :: Support Game Start
 An unseen announcer greets you: "Welcome to Summoner's Rift!"
 
-<html><img src="sr_start.png" /></html>
+<html><img src="sr_start.png" alt="Summoner's Rift" /></html>
 
-You open the shop window to spend your initial gold, pausing for a moment to consider the options. You'd like to pick up something with defense and sustain, but you know that sight wards are critical for spotting the enemy jungler.
+You open the shop window to spend your initial gold, pausing for a moment to consider the options. You'd like to pick up something with defense and sustain, but you know that wards are critical for spotting the enemy jungler.
 
 What will you buy?
 
-[[I can't poke if I'm unprotected, I need Doran's Shield.|Support Buy Shield]]
-[[I can't play strategically without vision, I need Sight Wards|Support Buy Wards]]
+[[I can't poke if I'm unprotected, I need Doran's Shield|Support Buy Shield]]
+[[I can't play strategically without vision, I need wards|Support Buy Wards]]
 
 
 :: Support Buy Shield
-<html><img src="items/doransshield.png" width="540" /></html>
+<html><img src="items/doransshield.png" width="540" alt="Doran's Shield" /></html>
 
 You decide to pick up a defensive item; you're no use to your team if you give kills to the enemy duo. Doran's Shield should help keep you safe and improve your ability to trade damage in lane. With any luck, this small stat advantage will allow you to push your opponent out of lane and deny them from farming.
 
-<<set $support_wards = "false">><<display "Support Start Lane">>
+<<set $support_item = "shield">><<display "Support Start Lane">>
 
 
 :: Support Buy Wards
-<html><img src="items/sightward.png" width="540" /></html>
+<html><img src="items/sightward.png" width="540" alt="Stealth Ward" /></html> TODO: update picture
 
-Though you'd like to have some armour, you recognize that the vision granted by sight wards is the most effective defense of all. You'll be able to spot when the enemy jungler or mid laner is roaming towards a bot lane looking for a kill, and retreat beneath the safety of your tower.
+You grab a pair of Stealth Wards and an Ancient Coin. Though you'd like to have some armour, you recognize that the vision granted by wards is the most effective defense of all. You'll be able to spot when the enemy jungler or mid laner is roaming towards a bot lane looking for a kill, and retreat beneath the safety of your tower.
 
-<<set $support_wards = "true">><<display "Support Start Lane">>
+<<set $support_item = "wards">><<display "Support Start Lane">>
 
 
 :: Support Start Lane
@@ -602,11 +575,80 @@ The opposing minion waves collide, and you cautiously advance. How should you pl
 
 
 :: Support Push
-TODO: bad trade in lane
+You decide to play aggressively and push the wave towards the enemy's base. While risky, forcing them to farm under their tower will deny some of their minion gold. The XP advantage can also afford opportunities for advantageous 2v2 fights.
+
+<<if $support_item eq "wards">>
+<<display "Support Push Wards">>
+<<else>>
+<<display "Support Push Shield">>
+<<endif>>
+
+
+:: Support Push Wards
+You position yourself ahead of your ADC to zone out the enemy duo, but find that you're taking more damage than you're dishing out. A couple of bad trades take out three quarters of your healthbar, forcing you to recall back to base and heal up. Unfortunately, <<replace>>in your absence...<<gains>>
+
+<html><img src="abilities/rocketgrab.png" alt="Rocket Grab" /></html>
+
+The enemy Blitzcrank lands a hook on your solo lane mate. Without your protection, the enemy duo pounce on your AD carry and easily secure first blood. They have a significant gold lead in bot lane, [[will their ADC start to snowball?|Bot Lane MIA]]<<endreplace>>
+
+
+:: Support Push Shield
+You position yourself ahead of your ADC, using your superior trading to zone out the enemy duo. Your strategy works, and you've soon got the waved pushed to the enemy tower. Unfortunately, <<replace>>your only ward in the river just timed out...<<gains>>
+
+<html><img src="abilities/bearstance.png" alt="Bear Stance" /></html>
+
+The enemy Udyr suddenly lunges in from fog of war, diving towards you and your ADC. You're outnumbered and way out of position; the enemy team secures first blood and an easy double kill. They have a significant gold lead in bot lane, [[will their ADC start to snowball?|Bot Lane MIA]]<<endreplace>>
 
 
 :: Support Safe
-TODO: you get tower dived
+You decide to play cauiously in lane, acting as a bodyguard while your AD carry safely farms and scales into late game. You hang back and avoid engaging, focusing instead on guarding for jungle ganks.
+
+The enemy duo employ the opposite strategy, and begin pushing the wave towards you. Their aggressive positioning forces you backwards, making you miss out on XP and gold. The minion wave is soon directly under your tower, complicating your ADC's farming task even further. <<replace>>You hold out as best you can, but...<<gains>>
+
+<<if $support_item eq "wards">>
+<<display "Support Safe Wards">>
+<<else>>
+<<display "Support Safe Shield">>
+<<endif>><<endreplace>>
+
+
+:: Support Safe Wards
+<html><img src="abilities/piltover.png" alt="Piltover Peacemaker" /></html>
+
+The enemy duo are relentless, artfully timing their skillshots between tower shots and whittling down your health. Without early defensive stats, you simple cannot trade damage effectively. Before long, you and your teammate are forced to recall back to base and heal. The enemy duo quickly demolish your tower, giving the enemy team control of bot lane. [[Will your ADC fall behind?|Bot Lane MIA]]
+
+
+:: Support Safe Shield
+<html><img src="abilities/elasticslingshot.png" alt="Elastic Slingshot" /></html>
+
+The enemy Zac suddenly flies out of the jungle, diving towards you under your turret. He lands his crowd control, the enemy duo focus their damage, and together they quickly secure first blood. Hopelessly outnumbered, your ADC watches them take down your tower and harmlessly retreats back to base. They have a significant gold lead in bot lane, [[will their ADC start to snowball?|Bot Lane MIA]]
+
+
+:: Bot Lane MIA
+You spend your meager gold on <<if $your_role eq "adc">><<cyclinglink "a second Doran's Blade" "Boots of Speed" "a couple of of wards">><<else>><<cyclinglink "a few more wards" "Boots of Speed" "a Ruby Crystal">><<endif>> and start running back into lane. You lost track of the enemy duo while you were shopping; they're nowhere to be seen on the map. You fear that they may have joined their jungler in taking down the dragon, which would expand their early gold lead.
+
+<html><img src="jungle/dragon.jpg" alt="Dragon" /></html>
+
+[[Warn your teammates and try to head them off|Bot Lane Dragon]]
+[[You're in no position to contest dragon, just head back to lane|Bot Lane Return]]
+
+
+:: Bot Lane Dragon
+You ping the Dragon pit and instruct your teammates to converge. Two of your teammates respond and begin moving in that direction. Your jungler, on the other hand, decides instead that finishing off the jungle <<cyclinglink "wraiths" "wolves" "golems">> is the current top priority.
+
+As you round the corner into the river, the fog of war reveals four enemy champions whalloping a nearly-dead dragon. The enemy jungler uses Smite to slay the beast, and all four turn their attention towards you. Your teammates, seeing the uneven odds, retreat back to lane. Your death contributes even more gold to the enemy's advantage.
+
+[[That could have gone better...|Everybody Raging]]
+
+
+:: Bot Lane Return
+You'd rather avoid a perlious team fight over dragon; it's more cautious to begin recovering the gold difference by returning bot lane farming. You return to lane and resume <<if $your_role eq "adc">>your quotidien farming<<else>>guarding your ADC<<endif>>.
+
+<html><img src="doublekill.png" width="300" alt="Vayne Double Kill" /></html>
+
+Your focus on securing minion gold is broken by a quick succession of announcements: your team's middle laner and jungler have been slain. You discover that, rather than securing the dragon, the enemy bottom lane duo roamed into middle lane. Your teammates were out of position, so a 3v2 fight in the enemy's favour netted an easy double kill.
+
+[[That could have gone better...|Everybody Raging]]
 
 
 :: Everybody Raging
@@ -622,16 +664,16 @@ The raging continues...
 
 The negative attitude spreads to your teammates. They chime in with their own insults, alternately directed at you or the original rager. Any semblance of team cohesion has been lost; the game might as well be over already. At the 20 minute mark, <<replace>>the surrender vote goes through.<<gains>>
 
-<html><img src="defeat.jpg" /></html>
+<html><img src="defeat.jpg" alt="Defeat" /></html>
 
 [[You dishonestly type "gg" in all chat.|Lost Promotion]]<<endreplace>>
 
 
 :: Lost Promotion
-<html><a class="internalLink" href="#" onclick="javascript:state.display('Uninstall', this); return false;"><img src="defeat_series.png" /></a></html>
+<html><a class="internalLink" href="#" onclick="javascript:state.display('Uninstall', this); return false;"><img src="defeat_series.png" alt="Promotion Series Loss" /></a></html>
 
 
 :: Uninstall
-TODO: image of game being uninstalled
-
-<<timedcontinue 2.5s>>[[Reinstall and play again?|Matchmaking]]
+<html><img src="uninstall.png" alt="Uninstalling" /></html>
+<<timedcontinue 2.5s>>
+<html><a class="internalLink" href="#" onclick="javascript:state.restart(); return false;">Reinstall and play again?</a></html>
