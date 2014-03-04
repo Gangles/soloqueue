@@ -22,7 +22,7 @@ Matthew Gallant
 
 
 :: Start
-<<display Matchmaking>>
+<<preload "initial">><<display Matchmaking>>
 
 
 :: Matchmaking
@@ -68,13 +68,13 @@ Or say nothing at all and [[fill whatever role is needed|Fill]].
 :: Call Solo Top
 Isolated from the rest of the map, top lane is a brutal 1v1 brawl. However, since the current meta tends to favour tanky champions in this lane, the combat tends to be slow and drawn-out; who can sustain longer?
 
-<<set $your_role = "top">><<display "Call Solo">>
+<<set $your_role = "top">><<preload "top">><<display "Call Solo">>
 
 
 :: Call Solo Mid
 The middle lane is short, which makes it the relatively safe. Its central location provides opportunities to roam around the map, helping other lanes. In the current meta, an AP mage or assassin is usually picked for this lane.
 
-<<set $your_role = "mid">><<display "Call Solo">>
+<<set $your_role = "mid">><<preload "mid">><<display "Call Solo">>
 
 
 :: Call Solo
@@ -100,7 +100,7 @@ The AD Carry (or "Marksman" in Riot's new lingo) is weak in the early game, but 
 
 Time to choose which champion to play:
 
-<<set $your_role = "adc">><<display "ADC Champions">>
+<<set $your_role = "adc">><<preload "adc">><<display "ADC Champions">>
 
 
 :: Call Support
@@ -114,7 +114,7 @@ Playing support gives you the best chance of snowballing your lane to victory. G
 
 Time to choose which champion to play:
 
-<<set $your_role = "support">><<display "Support Champions">>
+<<set $your_role = "support">><<preload "support">><<display "Support Champions">>
 
 
 :: Call Jungle
@@ -124,7 +124,7 @@ As the jungler, you'll prey on the neutral monsters that live between the lane. 
 
 Time to choose which champion to play:
 
-<<set $your_role = "jungle">><<display "Jungle Champions">>
+<<set $your_role = "jungle">><<preload "jungle">><<display "Jungle Champions">>
 
 
 :: Fill
@@ -558,7 +558,7 @@ You decide to pick up a defensive item; you're no use to your team if you give k
 
 
 :: Support Buy Wards
-<html><img src="items/sightward.png" width="540" alt="Stealth Ward" /></html> TODO: update picture
+<html><img src="items/stealthward.png" width="540" alt="Stealth Ward" /></html> TODO: update picture
 
 You grab a pair of Stealth Wards and an Ancient Coin. Though you'd like to have some armour, you recognize that the vision granted by wards is the most effective defense of all. You'll be able to spot when the enemy jungler or mid laner is roaming towards a bot lane looking for a kill, and retreat beneath the safety of your tower.
 
@@ -652,7 +652,7 @@ Your focus on securing minion gold is broken by a quick succession of announceme
 
 
 :: Everybody Raging
-The raging continues...
+<<preload "ending">>The raging continues...
 
 <<if $your_role eq "jungle">>
 ''some_jerk77 :'' <<cyclinglink "cant play with this n00b fkin jungler" "you suck, learn to jungle" "gg, noob team" "jungler feeding, gg">>
