@@ -22,7 +22,7 @@ try {
 					"champs/sona.png",
 					"champs/taric.png",
 					"champs/thresh.png",
-					"defeat.jpg"
+					"defeat.png"
 				);
 				this.images.top = new Array(
 					"champs/riven.png",

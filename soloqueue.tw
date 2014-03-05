@@ -662,15 +662,20 @@ Your focus on securing minion gold is broken by a quick succession of announceme
 ''some_jerk77 :'' <<cyclinglink "cant play with this n00b fkin support" "you suck, learn to support" "gg, noob team" "bot feeding, gg">>
 <<endif>>
 
-The negative attitude spreads to your teammates. They chime in with their own insults, alternately directed at you or the original rager. Any semblance of team cohesion has been lost; the game might as well be over already. At the 20 minute mark, <<replace>>the surrender vote goes through.<<gains>>
+The negative attitude spreads to your teammates. They chime in with their own insults, alternately directed at you or the original rager. Any semblance of team cohesion has been lost; the game might as well be over already. At the 20 minute mark, the surrender vote goes through.
 
-<html><img src="defeat.jpg" alt="Defeat" /></html>
+[[You dishonestly type "gg" in all chat.|Defeat]]
 
-[[You dishonestly type "gg" in all chat.|Lost Promotion]]<<endreplace>>
+
+:: Defeat
+<html><img src="defeat.png" alt="Defeat" usemap="#defeat" />
+<map name="defeat"><area shape="rect" coords="295,316,412,350" alt="Continue" href="#" onclick="javascript:state.display('Lost Promotion', this); return false;"></map></html>
+TODO: better screenshot
 
 
 :: Lost Promotion
-<html><a class="internalLink" href="#" onclick="javascript:state.display('Uninstall', this); return false;"><img src="defeat_series.png" alt="Promotion Series Loss" /></a></html>
+<html><img src="defeat_series.png" alt="Promotion Series Loss" usemap="#defeat_series" />
+<map name="defeat_series"><area shape="rect" coords="315,253,411,279" alt="OK" href="#" onclick="javascript:state.display('Uninstall', this); return false;"></map></html>
 
 
 :: Uninstall
