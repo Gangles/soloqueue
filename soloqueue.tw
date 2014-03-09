@@ -669,8 +669,7 @@ The negative attitude spreads to your teammates. They chime in with their own in
 
 :: Defeat
 <html><img src="defeat.png" alt="Defeat" usemap="#defeat" />
-<map name="defeat"><area shape="rect" coords="295,316,412,350" alt="Continue" href="#" onclick="javascript:state.display('Lost Promotion', this); return false;"></map></html>
-TODO: better screenshot
+<map name="defeat"><area shape="rect" coords="290,341,412,377" alt="Continue" href="#" onclick="javascript:state.display('Lost Promotion', this); return false;"></map></html>
 
 
 :: Lost Promotion
