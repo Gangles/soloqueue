@@ -1,1006 +1,0 @@
-(dp0
-S'buildDestination'
-p1
-V/Users/matthew/Documents/code/Twine/Solo Queue/soloqueue.html
-p2
-sS'saveDestination'
-p3
-V/Users/matthew/Documents/code/Twine/Solo Queue/soloqueue.tws
-p4
-sS'target'
-p5
-S'sugarcane'
-p6
-sS'storyPanel'
-p7
-(dp8
-S'widgets'
-p9
-(lp10
-(dp11
-S'selected'
-p12
-I00
-sS'pos'
-p13
-(lp14
-I10
-aI150
-asS'passage'
-p15
-(itiddlywiki
-Tiddler
-p16
-(dp17
-S'text'
-p18
-V<html><img src="ranked.png"/>\u000a<h1>Classic - Summoner's Rift</h1>\u000a<p>Work with your allies to siege the enemy base and destroy their Nexus. Average game length is 30-45 minutes.</p></html>\u000aLast Step:\u000a[[Solo: match me with teammates|Solo]]\u000a[[Duo: I will invite a duo partner|Duo]]
-p19
-sS'tags'
-p20
-(lp21
-sS'created'
-p22
-ctime
-struct_time
-p23
-((I2013
-I4
-I29
-I0
-I24
-I50
-I0
-I119
-I1
-tp24
-(dp25
-tp26
-Rp27
-sS'modified'
-p28
-g27
-sS'title'
-p29
-VMatchmaking
-p30
-sbsa(dp31
-g12
-I00
-sg13
-(lp32
-I10
-aI293
-asg15
-(itiddlywiki
-Tiddler
-p33
-(dp34
-S'text'
-p35
-VAfter <<randomnumber 30 50>> seconds of matchmaking...\u000a\u000a<html>\u000a<img src="match_found.png" usemap="#solo" />\u000a<map name="solo">\u000a	<area shape="rect" coords="200,250,310,285" alt="Accept" href="#" onclick="javascript:state.display('Champion Select', this); return false;">\u000a	<area shape="rect" coords="395,250,490,285" alt="Accept" href="#" onclick="javascript:state.display('Matchmaking', this); return false;">\u000a</map></html>
-p36
-sS'tags'
-p37
-(lp38
-sS'created'
-p39
-g23
-((I2013
-I4
-I29
-I0
-I40
-I48
-I0
-I119
-I1
-tp40
-(dp41
-tp42
-Rp43
-sS'modified'
-p44
-g43
-sS'title'
-p45
-VSolo
-p46
-sbsa(dp47
-g12
-I00
-sg13
-(lp48
-I150
-aI150
-asg15
-(itiddlywiki
-Tiddler
-p49
-(dp50
-g35
-VYou take a look at your friend's list. Everyone you know is either offline or already in a match.\u000a\u000a[[Okay, solo queue it is.|Solo]]
-p51
-sg37
-(lp52
-sg39
-g23
-((I2013
-I4
-I29
-I0
-I40
-I48
-I0
-I119
-I1
-tp53
-(dp54
-tp55
-Rp56
-sg44
-g56
-sg45
-VDuo
-p57
-sbsa(dp58
-g12
-I00
-sg13
-(lp59
-I1130
-aI10
-asg15
-(itiddlywiki
-Tiddler
-p60
-(dp61
-g35
-Vtry {\u000a  version.extensions['randomnumber'] = { major:1, minor:0, revision:0 };\u000a  macros['randomnumber'] = {\u000a    handler: function(place, macroName, params, parser) {\u000a		if (params[0] === undefined) params[0] = 0;\u000a		if (params[1] === undefined) params[1] = 1;\u000a		var n = Math.round(Math.random()*params[1] + params[0]);\u000a		insertText(place, n);\u000a    },\u000a  };\u000a} catch(e) {\u000a  throwError(place,"recall Setup Error: "+e.message); \u000a}
-p62
-sg37
-(lp63
-Vscript
-p64
-asg39
-g23
-((I2013
-I4
-I29
-I0
-I59
-I27
-I0
-I119
-I1
-tp65
-(dp66
-tp67
-Rp68
-sg44
-g68
-sg45
-Vrandomnumber
-p69
-sbsa(dp70
-g12
-I00
-sg13
-(lp71
-I10
-aI10
-asg15
-(itiddlywiki
-Tiddler
-p72
-(dp73
-g35
-VSolo Queue
-p74
-sg37
-(lp75
-Vtitle
-p76
-asg39
-g23
-((I2013
-I4
-I29
-I1
-I31
-I43
-I0
-I119
-I1
-tp77
-(dp78
-tp79
-Rp80
-sg44
-g80
-sg45
-VStoryTitle
-p81
-sbsa(dp82
-g12
-I00
-sg13
-(lp83
-I290
-aI10
-asg15
-(itiddlywiki
-Tiddler
-p84
-(dp85
-g35
-VMatthew Gallant
-p86
-sg37
-(lp87
-Vtitle
-p88
-asg39
-g23
-((I2013
-I4
-I29
-I1
-I33
-I34
-I0
-I119
-I1
-tp89
-(dp90
-tp91
-Rp92
-sg44
-g92
-sg45
-VStoryAuthor
-p93
-sbsa(dp94
-g12
-I00
-sg13
-(lp95
-I430
-aI290
-asg15
-(itiddlywiki
-Tiddler
-p96
-(dp97
-g35
-VYou're placed in a match with 4 teammates.\u000a<<silently>>\u000a<<set $ally1 = "Nachobek">>\u000a<<set $ally2 = "MegaDancer">>\u000a<<set $ally3 = "lungjuno">>\u000a<<set $ally4 = "Krazehz">>\u000a<<endsilently>>\u000aYou have third pick in the draft.\u000a\u000aYou can call a role in team chat...\u000a[[Call top lane|Call Top]]\u000a[[Call mid lane|Call Mid]]\u000a[[Call AD carry|Call ADC]]\u000a[[Call support|Call Support]]\u000a[[Call jungle|Call Jungle]]\u000a\u000aOr say nothing at all and [[fill whatever role is needed|Fill]].
-p98
-sg37
-(lp99
-sg39
-g23
-((I2013
-I4
-I29
-I1
-I35
-I0
-I0
-I119
-I1
-tp100
-(dp101
-tp102
-Rp103
-sg44
-g103
-sg45
-VChampion Select
-p104
-sbsa(dp105
-g12
-I00
-sg13
-(lp106
-I430
-aI10
-asg15
-(itiddlywiki
-Tiddler
-p107
-(dp108
-g35
-V<<display Matchmaking>>
-p109
-sg37
-(lp110
-sg39
-g23
-((I2013
-I4
-I29
-I1
-I40
-I10
-I0
-I119
-I1
-tp111
-(dp112
-tp113
-Rp114
-sg44
-g114
-sg45
-VStart
-p115
-sbsa(dp116
-g12
-I00
-sg13
-(lp117
-I150
-aI10
-asg15
-(itiddlywiki
-Tiddler
-p118
-(dp119
-S'text'
-p120
-VAn excercise in serenity
-p121
-sS'tags'
-p122
-(lp123
-sS'created'
-p124
-g23
-((I2013
-I4
-I29
-I1
-I54
-I33
-I0
-I119
-I1
-tp125
-(dp126
-tp127
-Rp128
-sS'modified'
-p129
-g128
-sS'title'
-p130
-VStorySubtitle
-p131
-sbsa(dp132
-g12
-I00
-sg13
-(lp133
-I144
-aI569
-asg15
-(itiddlywiki
-Tiddler
-p134
-(dp135
-S'text'
-p136
-V<<set $wantrole = "top">>You: top\u000a<<print $ally4>>: top\u000a<<print $ally2>>: mid or adc\u000a<<print $ally3>>: can I jungle?\u000a\u000aA few second later...\u000a\u000a<<print $ally4>>: yo I called top\u000a\u000a[[I called it first|Insist Solo]]\u000a[[*sigh* fine I'll just fill whatever we need|Fill]]
-p137
-sS'tags'
-p138
-(lp139
-sS'created'
-p140
-g23
-((I2013
-I5
-I6
-I0
-I50
-I55
-I0
-I126
-I1
-tp141
-(dp142
-tp143
-Rp144
-sS'modified'
-p145
-g144
-sS'title'
-p146
-VCall Top
-p147
-sbsa(dp148
-g12
-I00
-sg13
-(lp149
-I290
-aI570
-asg15
-(itiddlywiki
-Tiddler
-p150
-(dp151
-g136
-VMid. The shortest and safest lane, with opportunities to quickly roam top and bottom to set up ganks.\u000a\u000a<<set $wantrole = "mid">>You: mid\u000a<<print $ally4>>: mid\u000a<<print $ally2>>: top or adc\u000a<<print $ally3>>: lemme jungle\u000a\u000aA few second later...\u000a\u000a<<print $ally4>>: yo I called mid\u000a\u000a[[I called it first|Insist Solo]]\u000a[[*sigh* fine I'll just fill whatever we need|Fill]]
-p152
-sg138
-(lp153
-sg140
-g23
-((I2013
-I5
-I6
-I0
-I51
-I12
-I0
-I126
-I1
-tp154
-(dp155
-tp156
-Rp157
-sg145
-g157
-sg146
-VCall Mid
-p158
-sbsa(dp159
-g12
-I00
-sg13
-(lp160
-F899.25
-aF536.5
-asg15
-(itiddlywiki
-Tiddler
-p161
-(dp162
-g136
-V
-p163
-sg138
-(lp164
-sg140
-g23
-((I2013
-I5
-I6
-I0
-I51
-I20
-I0
-I126
-I1
-tp165
-(dp166
-tp167
-Rp168
-sg145
-g168
-sg146
-VCall ADC
-p169
-sbsa(dp170
-g12
-I00
-sg13
-(lp171
-F720.75
-aF537.75
-asg15
-(itiddlywiki
-Tiddler
-p172
-(dp173
-g136
-g163
-sg138
-(lp174
-sg140
-g23
-((I2013
-I5
-I6
-I0
-I51
-I27
-I0
-I126
-I1
-tp175
-(dp176
-tp177
-Rp178
-sg145
-g178
-sg146
-VCall Jungle
-p179
-sbsa(dp180
-g12
-I00
-sg13
-(lp181
-F812.5
-aF389.0
-asg15
-(itiddlywiki
-Tiddler
-p182
-(dp183
-g136
-VSupport. Noone's going to contest you for that pick. At least you can guarantee that your lane will have good ward coverage. You might even feed your ADC a kill or two if you're lucky.\u000a\u000a<<set $wantrole = "support">>You: I'll support\u000a<<print $ally4>>: mid\u000a<<print $ally2>>: top or adc\u000a<<print $ally3>>: lemme jungle
-p184
-sg138
-(lp185
-sg140
-g23
-((I2013
-I5
-I6
-I0
-I51
-I42
-I0
-I126
-I1
-tp186
-(dp187
-tp188
-Rp189
-sg145
-g189
-sg146
-VCall Support
-p190
-sbsa(dp191
-g12
-I00
-sg13
-(lp192
-F546.5
-aF842.5
-asg15
-(itiddlywiki
-Tiddler
-p193
-(dp194
-g136
-g163
-sg138
-(lp195
-sg140
-g23
-((I2013
-I5
-I6
-I0
-I52
-I34
-I0
-I126
-I1
-tp196
-(dp197
-tp198
-Rp199
-sg145
-g199
-sg146
-VFill
-p200
-sbsa(dp201
-g12
-I00
-sg13
-(lp202
-I211
-aI733
-asg15
-(itiddlywiki
-Tiddler
-p203
-(dp204
-g136
-VLast time you let someone else get <<print $wantrole>> lane they played <<if $wantrole eq "top">><<randomword 50 "Teemo" 999 "Fiora">><<else>><<randomword 50 "Master Yi" 999 "Pantheon">><<endif>>, never warded and fed like crazy. You don't trust anyone with <<print $wantrole>> but yourself.\u000a\u000aYou: I called <<print $wantrole>> first\u000aYou: and I pick before you\u000a<<print $ally4>>: i called <<print $wantrole>>\u000a<<print $ally4>>: i will carry\u000a<<print $ally4>>: <<print $wantrole>> or I feed\u000a\u000aYou'd rather not lose another match due to a troll teammate.\u000a\u000a<<if $wantrole eq "top">>\u000a[[*sigh* fine you can have top|Fill]]\u000a<<else>>\u000a[[*sigh* fine you can have mid|Fill]]\u000a<<endif>>\u000a[[I pick first, deal with it|Insist Solo 2]]
-p205
-sg138
-(lp206
-sg140
-g23
-((I2013
-I5
-I6
-I1
-I8
-I58
-I0
-I126
-I1
-tp207
-(dp208
-tp209
-Rp210
-sg145
-g210
-sg146
-VInsist Solo
-p211
-sbsa(dp212
-g12
-I00
-sg13
-(lp213
-F1268.75
-aF10.0
-asg15
-(itiddlywiki
-Tiddler
-p214
-(dp215
-g136
-Vtry { macros['randomword'] = { \u000a\u000a  handler: function(place,macroName,params,parser) {\u000a    var state = 0;\u000a    var passageflag = false;\u000a    var chance = 100;\u000a    var r = Math.random() * 100;\u000a    \u000a    for(var i = 0; i < params.length; i++) {\u000a      switch(state) {\u000a        case 0:\u000a          if(params[i] == 'passage') {\u000a            passageflag = true;\u000a            state = 1;\u000a            break;\u000a          }\u000a          //No break !!! fall through if keyword 'passage' is not used\u000a          \u000a        case 1:\u000a          chance -= params[i];\u000a          state = 2;\u000a          break;\u000a          \u000a        case 2:\u000a          if(r >= chance) {\u000a            if(passageflag) macros.display.handler(place,macroName,[ params[i] ]); \u000a            else new Wikifier(place, params[i]);\u000a            return;\u000a          }\u000a          state = 0;\u000a          break;\u000a      }\u000a    }\u000a  },\u000a\u000a  init: function() { }\u000a  \u000a};} catch(e) { \u000a  throwError(place,"Macro Randomword Error: "+e.message); \u000a}
-p216
-sg138
-(lp217
-Vscript
-p218
-asg140
-g23
-((I2013
-I5
-I6
-I1
-I18
-I29
-I0
-I126
-I1
-tp219
-(dp220
-tp221
-Rp222
-sg145
-g222
-sg146
-Vrandomword
-p223
-sbsa(dp224
-g12
-I00
-sg13
-(lp225
-I210
-aI880
-asg15
-(itiddlywiki
-Tiddler
-p226
-(dp227
-g136
-VIt's your turn to pick a champion, who would you like to play in <<print $wantrole>> lane?\u000a\u000a<<if $wantrole eq "top">>\u000a<<display "Top Lane Champions">>\u000a<<else>>\u000a<<display "Mid Lane Champions">>\u000a<<endif>>
-p228
-sg138
-(lp229
-sg140
-g23
-((I2013
-I5
-I6
-I1
-I39
-I18
-I0
-I126
-I1
-tp230
-(dp231
-tp232
-Rp233
-sg145
-g233
-sg146
-VInsist Solo 2
-p234
-sbsa(dp235
-g12
-I00
-sg13
-(lp236
-F38.75
-aF822.5
-asg15
-(itiddlywiki
-Tiddler
-p237
-(dp238
-S'text'
-p239
-V<html>\u000a<a href="#" onclick="javascript:state.display('Irelia', this); return false;"><img src="champs/irelia.png" /></a>\u000a<a href="#" onclick="javascript:state.display('Riven', this); return false;"><img src="champs/riven.png" /></a>\u000a<a href="#" onclick="javascript:state.display('Rumble', this); return false;"><img src="champs/rumble.png" /></a>\u000a<a href="#" onclick="javascript:state.display('Shen', this); return false;"><img src="champs/shen.png" /></a>\u000a<a href="#" onclick="javascript:state.display('Singed', this); return false;"><img src="champs/singed.png" /></a>\u000a</html>
-p240
-sS'tags'
-p241
-(lp242
-sS'created'
-p243
-g23
-((I2013
-I5
-I13
-I21
-I42
-I55
-I0
-I133
-I1
-tp244
-(dp245
-tp246
-Rp247
-sS'modified'
-p248
-g247
-sS'title'
-p249
-VTop Lane Champions
-p250
-sbsa(dp251
-g12
-I00
-sg13
-(lp252
-F37.5
-aF975.0
-asg15
-(itiddlywiki
-Tiddler
-p253
-(dp254
-g239
-V<html>\u000a<a href="#" onclick="javascript:state.display('Ahri', this); return false;"><img src="champs/ahri.png" /></a>\u000a<a href="#" onclick="javascript:state.display('Anivia', this); return false;"><img src="champs/anivia.png" /></a>\u000a<a href="#" onclick="javascript:state.display('Karthus', this); return false;"><img src="champs/karthus.png" /></a>\u000a<a href="#" onclick="javascript:state.display('Lux', this); return false;"><img src="champs/lux.png" /></a>\u000a<a href="#" onclick="javascript:state.display('Ryze', this); return false;"><img src="champs/ryze.png" /></a>\u000a</html>
-p255
-sg241
-(lp256
-sg243
-g23
-((I2013
-I5
-I13
-I21
-I45
-I45
-I0
-I133
-I1
-tp257
-(dp258
-tp259
-Rp260
-sg248
-g260
-sg249
-VMid Lane Champions
-p261
-sbsa(dp262
-g12
-I00
-sg13
-(lp263
-F1125.0
-aF1065.0
-asg15
-(itiddlywiki
-Tiddler
-p264
-(dp265
-g239
-V<<set $champ = "Shen">>\u000a<html>\u000a<div style="background-image: url(splash/shen.png); width: 100%; height: 540px;">\u000a<h1>Fuck yeah Shen!</h1>\u000a<p style="width:500px;">You can't believe he wasn't banned! Shen is super tanky AND his taunt forces enemies to attack him. Most importantly, his ult lets you shield and teleport to any ally on the map. You can be split pushing all day and still show up the moment a team fight breaks out.</p>\u000a<p><a href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>\u000a</div>\u000a</html>
-p266
-sg241
-(lp267
-sg243
-g23
-((I2013
-I5
-I13
-I21
-I58
-I55
-I0
-I133
-I1
-tp268
-(dp269
-tp270
-Rp271
-sg248
-g271
-sg249
-VShen
-p272
-sbsa(dp273
-g12
-I00
-sg13
-(lp274
-F210.0
-aF1026.25
-asg15
-(itiddlywiki
-Tiddler
-p275
-(dp276
-S'text'
-p277
-VSomeone is not pleased with your choice of champion\u000a\u000a<<print $ally4>>: i called <<print $wantrole>> lane asshole\u000a<<print $ally4>>: <<print $wantrole>> or feed\u000a<<print $ally2>>: I'm on promotion series :(\u000a<<print $ally4>>: trade me <<print $champ>> or i feed\u000a\u000aWhat will you do?\u000a[[Fine I'll trade, I don't want to lose because of a troll|Fill]]\u000a[[Call his bluff, he doesn't want to lose either|Insist Solo 4]]
-p278
-sS'tags'
-p279
-(lp280
-sS'created'
-p281
-g23
-((I2013
-I5
-I14
-I0
-I35
-I11
-I1
-I134
-I1
-tp282
-(dp283
-tp284
-Rp285
-sS'modified'
-p286
-g285
-sS'title'
-p287
-VInsist Solo 3
-p288
-sbsa(dp289
-g12
-I00
-sg13
-(lp290
-F990.0
-aF1071.25
-asg15
-(itiddlywiki
-Tiddler
-p291
-(dp292
-S'text'
-p293
-V<<set $champ = "Singed">>\u000a<html>\u000a<div style="background-image: url(splash/singed.png); width: 100%; height: 540px;">\u000a<h1>Fuck yeah Singed!</h1>\u000a<p style="width:500px;">In theory everyone knows not to chase a Singed, yet most opponents can't resist. They'll be choking on your poison cloud while trying in vain to whittle down your massive HP bar. You can sit in top lane all day and still win the game.</p>\u000a<p><a href="#" onclick="javascript:state.display('Insist Solo 3', this); return false;">Awesome, I wonder what champs my allies will pick.</a><p>\u000a</div>\u000a</html>
-p294
-sS'tags'
-p295
-(lp296
-sS'created'
-p297
-g23
-((I2013
-I5
-I13
-I21
-I58
-I55
-I0
-I133
-I1
-tp298
-(dp299
-tp300
-Rp301
-sS'modified'
-p302
-g301
-sS'title'
-p303
-VSinged
-p304
-sbsa(dp305
-g12
-I00
-sg13
-(lp306
-F210.0
-aF1173.75
-asg15
-(itiddlywiki
-Tiddler
-p307
-(dp308
-S'text'
-p309
-V<<print $ally4>> continues to rage, locking in Clarity/Revive Heimerdinger to solidify his threat. You're not buying it, and won't let a troll bully you around.\u000a\u000aA few seconds before the match begins...\u000a<html>\u000a<a href="#" onclick="javascript:state.display('Matchmaking', this); return false;">Game Alert: <span id="ally4">ally4</span> has left during champion selection and you have been placed back in the matchmaking queue.</a>\u000a</html>\u000a<<variablereplace>>
-p310
-sS'tags'
-p311
-(lp312
-sS'created'
-p313
-g23
-((I2013
-I5
-I15
-I0
-I55
-I28
-I2
-I135
-I1
-tp314
-(dp315
-tp316
-Rp317
-sS'modified'
-p318
-g317
-sS'title'
-p319
-VInsist Solo 4
-p320
-sbsa(dp321
-g12
-I00
-sg13
-(lp322
-F1401.25
-aF10.0
-asg15
-(itiddlywiki
-Tiddler
-p323
-(dp324
-S'text'
-p325
-Vtry {\u000a  version.extensions['macrodemoMacro'] = { \u000a    major:1, minor:0, revision:0 \u000a  };\u000a  macros['variablereplace'] = {\u000a    handler: function(place, macroName, params, parser) {\u000a		var element = document.getElementById("ally4");\u000a		if(element != null)\u000a		{\u000a			element.innerHTML = state.history[0].variables['ally4'];\u000a		}\u000a    },\u000a    init: function() { },\u000a  };\u000a} catch(e) {\u000a  throwError(place,"macrodemo Setup Error: "+e.message); \u000a}
-p326
-sS'tags'
-p327
-(lp328
-Vscript
-p329
-asS'created'
-p330
-g23
-((I2013
-I5
-I15
-I9
-I1
-I58
-I2
-I135
-I1
-tp331
-(dp332
-tp333
-Rp334
-sS'modified'
-p335
-g334
-sS'title'
-p336
-Vvariablereplace
-p337
-sbsasS'scale'
-p338
-F0.80000000000000004
-ss.
