@@ -1,13 +1,8 @@
 :: StoryTitle [title]
-Solo Queue
-
-
-:: StorySubtitle [title]
-An exercise in serenity
-
+Solo Queue - An Exercise in Serenity
 
 :: StoryAuthor [title]
-Matthew Gallant
+by Matthew Gallant
 
 
 :: Replace Macro CSS [stylesheet]
@@ -27,7 +22,7 @@ Matthew Gallant
 
 :: Matchmaking
 <html><img src="ranked.png" alt="Select Game Mode" />
-<h1>Classic - Summoner's Rift</h1>
+<h2>Classic - Summoner's Rift</h2>
 <p>Work with your allies to siege the enemy base and destroy their Nexus. Average game length is 30-45 minutes.</p></html>
 Last Step:
 [[Solo: match me with teammates|Matchmaking Solo]]
@@ -35,7 +30,7 @@ Last Step:
 
 
 :: Matchmaking Duo
-You take a look at your friend's list. Everyone you know is either offline or already in a match. [[Solo queue it is.|Matchmaking Solo]]
+You take a look at your friend list. Everyone you know is either offline or already in a match. [[Solo queue it is.|Matchmaking Solo]]
 
 
 :: Matchmaking Solo
@@ -44,8 +39,8 @@ After <<randomnumber 30 50>> seconds of matchmaking...
 <html>
 <img src="match_found.png" usemap="#solo" alt="Match Found" />
 <map name="solo">
-	<area shape="rect" coords="200,250,310,285" alt="Accept" href="#" onclick="javascript:state.display('Champion Select', this); return false;">
-	<area shape="rect" coords="395,250,490,285" alt="Accept" href="#" onclick="javascript:state.display('Matchmaking', this); return false;">
+	<area shape="rect" coords="208,250,305,285" alt="Accept" href="#" onclick="javascript:state.display('Champion Select', this); return false;">
+	<area shape="rect" coords="395,250,495,285" alt="Decline" href="#" onclick="javascript:state.restart(); return false;">
 </map></html>
 
 
@@ -66,13 +61,13 @@ Or say nothing at all and [[fill whatever role is needed|Fill]].
 
 
 :: Call Solo Top
-Isolated from the rest of the map, top lane is a brutal 1v1 brawl. However, since the current meta tends to favour tanky champions in this lane, the combat tends to be slow and drawn-out; who can sustain longer?
+Isolated from the rest of the map, top lane is a brutal 1v1 brawl. The current meta favours tanky champions in this lane, so combat tends to be slow and drawn-out. Who can sustain longer?
 
 <<set $your_role = "top">><<preload "top">><<display "Call Solo">>
 
 
 :: Call Solo Mid
-The middle lane is short, which makes it the relatively safe. Its central location provides opportunities to roam around the map, helping other lanes. In the current meta, an AP mage or assassin is usually picked for this lane.
+The middle lane is short, which makes it the relatively safe. Its central location provides opportunities to roam around the map and assist your teammates. In the current meta, an AP mage or assassin is usually picked for this lane.
 
 <<set $your_role = "mid">><<preload "mid">><<display "Call Solo">>
 
@@ -80,8 +75,8 @@ The middle lane is short, which makes it the relatively safe. Its central locati
 :: Call Solo
 You call your desired role in team chat, and your teammates follow suit. Jungle, AD carry and <<if $your_role eq "top">>mid<<else>>top<<endif>> are claimed in quick succession. The player with last pick remains conspicuously silent, <<replace>>until...<<gains>>
 
-''some_jerk77 :'' i want <<print $your_role>>
-''some_jerk77 :'' i am platinum rank, this my smurf account
+''some_jerk44 :'' i want <<print $your_role>>
+''some_jerk44 :'' i am platinum rank, this my smurf account
 
 Traditionally, pick order in the draft is used to resolve such disputes. As first pick, you have the right to play whatever role you'd like. Plus you have serious doubts as to the veracity of alleged platinum account. How should you respond?
 
@@ -96,7 +91,7 @@ Traditionally, pick order in the draft is used to resolve such disputes. As firs
 :: Call ADC
 Your lane claim goes uncontested, and your teammates quietly fill out the remaining roles.
 
-The AD Carry (or "Marksman" in Riot's new lingo) is weak in the early game, but scales into a monster with enough gold. If the lane phase goes well, hopefully you can //carry// your team to victory.
+The AD Carry (or "Marksman" in Riot's new lingo) is weak in the early game, but becomes immensely powerful with enough gold. If the lane phase goes well, hopefully you can //carry// your team to victory.
 
 Time to choose which champion to play:
 
@@ -144,8 +139,8 @@ In your last game, someone else played <<if $your_role eq "top">><<cyclinglink "
 
 <<replace>>Your obstinate teammate responds...<<gains>>
 
-''some_jerk77 :'' newb
-''some_jerk77 :'' gimme <<print $your_role>> or I feed
+''some_jerk44 :'' newb
+''some_jerk44 :'' gimme <<print $your_role>> or I feed
 
 You contemplate whether you're willing to lose another ranked match due to a troll.
 
@@ -169,9 +164,9 @@ Ignoring your ill-mannered teammate for the moment, your thoughts turn to champi
 
 
 :: Insist Solo 3
-You optimistically lock in <<print $champ>>, but the situation does not improve. In a rage, your troll teammate employs all the profanity in misspelled profanity in his limited vocabulary. When it's his turn to pick a champion, he locks in <<cyclinglink "Heimerdinger" "Sejuani" "Viktor" "Galio">> with <<cyclinglink "Clairvoyance & Heal" "Clarity & Teleport" "Smite & Revive">>.
+You optimistically lock in <<print $champ>>, but the situation does not improve. In a rage, your troll teammate employs all the misspelled profanity in his limited vocabulary. When it's his turn to pick a champion, he locks in <<cyclinglink "Heimerdinger" "Sejuani" "Viktor" "Galio">> with <<cyclinglink "Clairvoyance & Heal" "Clarity & Teleport" "Smite & Revive">>.
 
-It appears your teammate intends to make good on his threat of intentionally throwing the game. It may be preferable to close the client and dodge the game. You'll take a small rank penalty, but you'll save yourself twenty minutes of frustration in a guaranteed loss. What will you do?
+It appears your boorish teammate intends to make good on his threat of intentionally throwing the game. It may be preferable to close the client and dodge the game. You'll take a small rank penalty, but you'll save yourself twenty minutes of frustration in a guaranteed loss. What will you do?
 
 [[Dodge the game, I don't want to play with this troll|Dodge Troll]]
 [[Call the troll's bluff, nobody likes to lose|Insist Solo 4]]
@@ -180,7 +175,7 @@ It appears your teammate intends to make good on his threat of intentionally thr
 :: Insist Solo 4
 A few seconds before the match begins...
 
-''Game Alert: some_jerk77 has left during champion selection and you have been placed back in the matchmaking queue.''
+''Game Alert: some_jerk44 has left during champion selection and you have been placed back in the matchmaking queue.''
 
 <html><a class="internalLink" href="#" onclick="javascript:state.restart(); return false;">Good riddance...</a></html>
 
@@ -338,7 +333,7 @@ Reopening the client, you notice that you've lost <<randomnumber 7 10>> League P
 :: Choose Corki
 <html><div class="champ-background" style="background-image: url(splash/corki.png);">
 <h1>Fuck yeah Corki!</h1>
-<p class="champ-description">Corki is an unusual AD carry, typically picked for abilities rather than his auto attacks. The poke of Missile Barrage and the armour shred of Gatling Gun are invaluable, and his low cooldowns make building Trinity Force extremely effective.</p>
+<p class="champ-description">Corki is an unusual AD carry, typically picked for his abilities rather than his auto attacks. The poke of Missile Barrage and the armour shred of Gatling Gun are invaluable, and his low cooldowns make building Trinity Force extremely effective.</p>
 <p><a class="internalLink" href="#" onclick="javascript:state.display('ADC Game Start', this); return false;">Alright, let's do this.</a></p>
 </div></html>
 <<set $champ = "Corki">>
@@ -435,11 +430,12 @@ You ping the <<print $jungle_gank_lane>> lane and sneak your way over through th
 
 <<print tale.get($jungle_cc).text>>
 
-Confident that you've caught your opponent unaware, you rush into lane with your <<print $jungle_cc>> ability. Together, you secure an easy first blood for your <<print $jungle_gank_lane>> laner.
+Confident that you've caught your opponent unaware, you rush into lane with your <<print $jungle_cc>>. Together, you secure an easy first blood for your <<print $jungle_gank_lane>> laner.
 
 [[Excellent start! Where to next?|Jungle Fail]]<<endreplace>>
 <<set $jungle_fail_action = "invaded bottom lane & secured a double kill for their AD carry">>
 <<set $jungle_losing_lane = "bottom">>
+
 
 :: Jungle Gank Bot
 <<set $jungle_gank_lane = "bottom">>Getting a double kill in bot would really get the lane going. You ping the lane and sneak your way over through the river. <<replace>>Do they see me coming?<<gains>
@@ -461,7 +457,7 @@ Since none of the lanes look ripe for ganking, you decide to gain some more gold
 
 
 :: Jungle Fail
-Unfortunately, while you were busy <<print $jungle_action>>, the enemy jungler <<print $jungle_fail_action>>. An early setback like this can snowball into a lost game, but you're confident that your team can pull it together. However, one teammate does not share your confidence...
+Unfortunately, while you were busy <<print $jungle_action>>, the enemy jungler <<print $jungle_fail_action>>. An early setback like this can snowball into a lost game, but you're certain that your team can pull it together. However, one teammate does not share your confidence...
 
 ''some_jerk77 :'' gg, noob jungler
 
@@ -517,7 +513,7 @@ The opposing minion waves collide, and you cautiously advance. How should you pl
 
 
 :: ADC Push
-You decide to play aggressively and push the wave towards the enemy's base. While risky, forcing them to farm under their tower will deny some of their minion gold. The XP advantage can also afford opportunities for advantageous 2v2 fights.
+You decide to play aggressively and push the wave towards the enemy base. While risky, forcing them to farm under their tower will deny some of their minion gold. The XP advantage can also afford opportunities for advantageous 2v2 fights.
 
 As you're attacking the minions, <<print $allysupport>> assists you by depleting her mana pool as quickly as possible, ineffectually throwing skillshots towards the enemy team. Your teammate follows your aggressively lead with inadvisable zeal, roaming deep into the side bushes. <<replace>>It's only a matter of time before...<<gains>>
 
@@ -527,7 +523,7 @@ The enemy Leona lands Zenith Blade on <<print $allysupport>>. The enemy AD carry
 
 
 :: ADC Safe
-You decide to play cautiously in lane, farming the minions safely so you can scale well into late game. You avoid trading damage with the enemy AD carry, and focus instead of securing every minion kill. Your support <<print $allysupport>> matches your prudence, and concentrates on depleting her mana pool as quickly as possible, ineffectually throwing skillshots towards the enemy team.
+You decide to play cautiously in lane, farming the minions safely so you can scale well into late game. You avoid trading damage with the enemy AD carry, and focus instead of securing every minion kill. The support <<print $allysupport>> matches your prudent stance; she concentrates on depleting her mana pool as quickly as possible by ineffectually lobbing skillshots towards the enemy team.
 
 The enemy duo employ the opposite strategy, and begin pushing the wave towards you. Their aggressive positioning forces you backwards, making you miss out on XP and gold. The minion wave is soon directly under your tower, complicating your farming task even further. <<replace>>You hold out as best you can, but...<<gains>>
 
@@ -550,32 +546,32 @@ What will you buy?
 
 
 :: Support Buy Shield
-<html><img src="items/doransshield.png" width="540" alt="Doran's Shield" /></html>
+You decide to pick up a defensive item; you can't risk giving kills to the enemy duo. Doran's Shield should help keep you safe and improve your ability to trade damage in lane. With any luck, this small stat advantage will allow you to push your opponent out of lane and deny them from farming.
 
-You decide to pick up a defensive item; you're no use to your team if you give kills to the enemy duo. Doran's Shield should help keep you safe and improve your ability to trade damage in lane. With any luck, this small stat advantage will allow you to push your opponent out of lane and deny them from farming.
+<html><img src="items/doransshield.png" width="540" alt="Doran's Shield" /></html>
 
 <<set $support_item = "shield">><<display "Support Start Lane">>
 
 
 :: Support Buy Wards
-<html><img src="items/stealthward.png" width="540" alt="Stealth Ward" /></html>
-
 You grab a pair of Stealth Wards and an Ancient Coin. Though you'd like to have some armour, you recognize that the vision granted by wards is the most effective defense of all. You'll be able to spot when the enemy jungler or mid laner is roaming towards a bot lane looking for a kill, and retreat beneath the safety of your tower.
+
+<html><img src="items/stealthward.png" width="540" alt="Stealth Ward" /></html>
 
 <<set $support_item = "wards">><<display "Support Start Lane">>
 
 
 :: Support Start Lane
-You and your lane partner make your way over to the <<replace>>bottom lane.<<gains>> Your job is to direct as much gold and XP to <<cyclinglink "your AD carry" "Ashe" "Caitlyn" "Corki" "Draven" "Ezreal" "Graves" "Kog'Maw" "Miss Fortune" "Quinn" "Sivir" "Tristana" "Twitch" "Varus" "Vayne" "Urgot" "Teemo" end>> as possible. Though weak and vulnerable now, a well-fed ADC can secure victory for the entire team in the late game.
+You and your lane partner make your way over to the bottom lane. Your job is to direct as much gold and XP to <<cyclinglink "your AD carry" "Ashe" "Caitlyn" "Corki" "Draven" "Ezreal" "Graves" "Kog'Maw" "Miss Fortune" "Quinn" "Sivir" "Tristana" "Twitch" "Varus" "Vayne" "Urgot" "Teemo" end>> as possible. Though weak and vulnerable now, a well-fed ADC can secure victory for the entire team in the late game.
 
 The opposing minion waves collide, and you cautiously advance. How should you play?
 
 [[Poke the enemy laners, playing aggressively will deny them gold|Support Push]]
-[[Stay back and avoid engaging, just let your ADC farm|Support Safe]]<<endreplace>>
+[[Stay back and avoid engaging, just let your ADC farm|Support Safe]]
 
 
 :: Support Push
-You decide to play aggressively and push the wave towards the enemy's base. While risky, forcing them to farm under their tower will deny some of their minion gold. The XP advantage can also afford opportunities for advantageous 2v2 fights.
+You decide to play aggressively and push the wave towards the enemy base. While risky, forcing them to farm under their tower will deny some of their minion gold. The XP advantage can also afford opportunities for advantageous 2v2 fights.
 
 <<if $support_item eq "wards">>
 <<display "Support Push Wards">>
@@ -601,7 +597,7 @@ The enemy Udyr suddenly lunges in from fog of war, diving towards you and your A
 
 
 :: Support Safe
-You decide to play cautiously in lane, acting as a bodyguard while your AD carry safely farms and scales into late game. You hang back and avoid engaging, focusing instead on guarding for jungle ganks.
+You decide to play cautiously in lane, acting as a bodyguard while your AD carry farms and scales into late game. You hang back and avoid engaging, focusing instead on guarding against jungle ganks.
 
 The enemy duo employ the opposite strategy, and begin pushing the wave towards you. Their aggressive positioning forces you backwards, making you miss out on XP and gold. The minion wave is soon directly under your tower, complicating your ADC's farming task even further. <<replace>>You hold out as best you can, but...<<gains>>
 
@@ -625,6 +621,10 @@ The enemy Zac suddenly flies out of the jungle, diving towards you under your tu
 
 
 :: Bot Lane MIA
+One of your teammates takes offense at your performance, and chimes in unhelpfully:
+
+''some_jerk77 :'' gg, noob bot lane
+
 You spend your meager gold on <<if $your_role eq "adc">><<cyclinglink "a second Doran's Blade" "Boots of Speed" "a couple of of wards">><<else>><<cyclinglink "a few more wards" "Boots of Speed" "a Ruby Crystal">><<endif>> and start running back into lane. You lost track of the enemy duo while you were shopping; they're nowhere to be seen on the map. You fear that they may have joined their jungler in taking down the dragon, which would expand their early gold lead.
 
 <html><img src="jungle/dragon.jpg" alt="Dragon" /></html>
@@ -655,7 +655,7 @@ Your focus on securing minion gold is broken by a quick succession of announceme
 <<preload "ending">>The raging continues...
 
 <<if $your_role eq "jungle">>
-''some_jerk77 :'' <<cyclinglink "cant play with this n00b fkin jungler" "you suck, learn to jungle" "gg, noob team" "jungler feeding, gg">>
+''some_jerk77 :'' <<cyclinglink "cant play with this n00b fkin jungler" "you suck, learn to jungle" "gg, noob team" "jungler can't gank, gg">>
 <<else if $your_role eq "adc">>
 ''some_jerk77 :'' <<cyclinglink "cant play with this n00b fkin adc" "you suck, learn to adc" "gg, noob team" "bot feeding, gg">>
 <<else>>

@@ -10,7 +10,6 @@ try {
 				this.images = new Object();
 				this.images.initial = new Array(
 					"ranked.png",
-					"league_queue.png",
 					"match_found.png",
 					"lanes.png",
 					"champs/leesin.png",
