@@ -57,7 +57,7 @@ try {
 					"splash/corki.png",
 					"splash/twitch.png",
 					"items/doransblade.png",
-					"abilities/bolastrike.png",
+					"abilities/cocoon.png",
 					"abilities/zenithblade.png",
 					"doublekill.png",
 					"jungle/dragon.png"
