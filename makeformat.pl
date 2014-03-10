@@ -6,6 +6,11 @@ open(READ, "<$ARGV[0]")
 open(WRITE, ">$ARGV[1]")
 || die("\nError: HTML write file cannot be created.");
 
+# replace title + add favicon
+$old_page_title = '<title>Sugarcane</title>';
+$new_favicon = '<link href="favicon.ico" rel="shortcut icon"/>';
+$new_page_title = '<title>Solo Queue - An Exercise in Serenity</title>';
+
 # use image title
 $old_title = '<span id="storyTitle"></span>';
 $new_title = '<span><img src="title_small.png" alt="Solo Queue" /></span>';
@@ -31,11 +36,18 @@ DISCLAIMER
 # apply regexes to every line
 while(my $line = <READ>)
 {
-	$line =~ s/$old_title/$new_title/;
-	$line =~ s/$old_rewind/$new_rewind/;
-	$line =~ s/$old_link/$new_link/;
-	$line =~ s/$old_credits/$1 $new_credits/;
-	print WRITE $line;
+	if($line =~ m/$old_page_title/)
+	{
+		print WRITE "$new_favicon\n$new_page_title\n";
+	}
+	else
+	{
+		$line =~ s/$old_title/$new_title/;
+		$line =~ s/$old_rewind/$new_rewind/;
+		$line =~ s/$old_link/$new_link/;
+		$line =~ s/$old_credits/$1 $new_credits/;
+		print WRITE $line;
+	}
 }
 
 close(READ);

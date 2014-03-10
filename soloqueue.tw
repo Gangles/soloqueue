@@ -384,8 +384,8 @@ You grab a Hunter's Machete and as many health potions as you can afford. You'll
 
 You cast you eye towards the jungle and <<replace>>start planning your route.<<gains>> Where should you start?
 
-<html><img src="jungle/golem.png" style="width:60px;height:60px;vertical-align:middle" /></html> [[I need mana, I'll start at Ancient Golem to get the blue buff.|Jungle Start Blue]]
-<html><img src="jungle/lizard.png" style="width:60px;height:60px;vertical-align:middle" /></html> [[I want some early aggression, I'll start at Lizard Elder to get the red buff.|Jungle Start Red]]<<endreplace>>
+<html><img src="jungle/golem.png" style="width:60px;height:60px;vertical-align:middle" /></html> [[I need mana, I'll start at Ancient Golem to get the blue buff|Jungle Start Blue]]
+<html><img src="jungle/lizard.png" style="width:60px;height:60px;vertical-align:middle" /></html> [[I want some early aggression, I'll start at Lizard Elder to get the red buff|Jungle Start Red]]<<endreplace>>
 
 
 :: Jungle Start Blue
@@ -611,7 +611,7 @@ The enemy duo employ the opposite strategy, and begin pushing the wave towards y
 :: Support Safe Wards
 <html><img src="abilities/piltover.png" alt="Piltover Peacemaker" /></html>
 
-The enemy duo are relentless, artfully timing their skillshots between tower shots and whittling down your health. Without early defensive stats, you simple cannot trade damage effectively. Before long, you and your teammate are forced to recall back to base and heal. The enemy duo quickly demolish your tower, giving the enemy team control of bot lane. [[Will your ADC fall behind?|Bot Lane MIA]]
+The enemy duo are relentless, artfully timing their skillshots between tower shots and whittling down your health. Without early defensive stats, you simple cannot trade damage effectively. Before long, you and your teammate are forced to recall back to base and heal. The enemy duo demolish the tower in your absence, giving the enemy team control of bot lane. [[Will your ADC fall behind?|Bot Lane MIA]]
 
 
 :: Support Safe Shield

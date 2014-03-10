@@ -60,7 +60,7 @@ try {
 					"abilities/cocoon.png",
 					"abilities/zenithblade.png",
 					"doublekill.png",
-					"jungle/dragon.png"
+					"jungle/dragon.jpg"
 				);
 				this.images.support = new Array(
 					"splash/sona.png",
@@ -74,7 +74,7 @@ try {
 					"abilities/piltover.png",
 					"abilities/elasticslingshot.png",
 					"doublekill.png",
-					"jungle/dragon.png"
+					"jungle/dragon.jpg"
 				);
 				this.images.ending = new Array(
 					"defeat_series.png",
