@@ -468,8 +468,10 @@ Bad players always blame the jungler for their mistakes. You try to ignore your 
 [[Continue pressuring top lane|Jungle Help Easy Lane]]
 <<else if $jungle_gank_lane eq "mid">>
 [[Continue pressuring mid lane|Jungle Help Easy Lane]]
-<<else>>
+<<else if $jungle_gank_lane eq "bottom">>
 [[Continue pressuring bottom lane|Jungle Help Easy Lane]]
+<<else>>
+[[Apply pressure in bottom lane|Jungle Help Easy Lane]]
 <<endif>><<endreplace>>
 
 
@@ -486,16 +488,16 @@ The enemy Hecarim races into lane at the exact same moment, distracting your tea
 
 
 :: Jungle Help Easy Lane
-<<if $jungle_gank_lane eq "bottom">>
-Knowing that the enemy jungler is on the other side of the map, you commit to making something happen in bottom lane. You sweep out the river with your Sweeping Lens trinket and start setting up an ambush. The enemy bot duo remain cautious at first, but soon return to farming minions. <<replace>>They think you've moved on...<<gains>>
+<<if $jungle_gank_lane eq "top" or $jungle_gank_lane eq "mid">>
+Invading a losing lane is too risky; you decide you'd rather continuing to press your advantage in <<print $jungle_gank_lane>>. When <<print $jungle_gank_target>> gets back to lane, you're already <<replace>>lurking in the bush to greet him.<<gains>>
+
+You rush in to attempt another 2v1 kill, but the enemy laner nimbly reacts with <<cyclinglink "Flash" "Barrier" "Cleanse" "Ghost">> to escape. Nonetheless, you've applied even more pressure <<print $jungle_gank_lane>> and your teammate can hopefully begin to snowball off it. [[Will this quell your irritable teammate?|Everybody Raging]]<<endreplace>>
+<<else>>
+Knowing that the enemy jungler is on the other side of the map, you commit to making something happen in bottom lane. You sweep out the river with your Sweeping Lens trinket and start setting up an ambush. The enemy bot duo are cautious at first, but soon return to farming minions. <<replace>>They think you've moved on...<<gains>>
 
 <<print tale.get($jungle_cc).text>>
 
 Your persistence has paid off. You signal your teammates and dive onto their AD carry with <<print $jungle_cc>>. The three of you focus your damage for an easy kill, and the enemy support player is forced to escape with Flash. [[Will this quell your irritable teammate?|Everybody Raging]]<<endreplace>>
-<<else>>
-Invading a losing lane is too risky; you decide you'd rather continuing to press your advantage in <<print $jungle_gank_lane>>. When <<print $jungle_gank_target>> gets back to lane, you're already <<replace>>lurking in the bush to greet him.<<gains>>
-
-You rush in to attempt another 2v1 kill, but the enemy laner nimbly reacts with <<cyclinglink "Flash" "Barrier" "Cleanse" "Ghost">> to escape. Nonetheless, you've applied even more pressure <<print $jungle_gank_lane>> and your teammate can hopefully begin to snowball off it. [[Will this quell your irritable teammate?|Everybody Raging]]<<endreplace>>
 <<endif>>
 
 
@@ -611,7 +613,7 @@ The enemy duo employ the opposite strategy, and begin pushing the wave towards y
 :: Support Safe Wards
 <html><img src="abilities/piltover.png" alt="Piltover Peacemaker" /></html>
 
-The enemy duo are relentless, artfully timing their skillshots between tower shots and whittling down your health. Without early defensive stats, you simple cannot trade damage effectively. Before long, you and your teammate are forced to recall back to base and heal. The enemy duo demolish the tower in your absence, giving the enemy team control of bot lane. [[Will your ADC fall behind?|Bot Lane MIA]]
+The enemy duo are relentless, artfully timing their skillshots between tower shots and whittling down your health. Without early defensive stats, you simple cannot trade damage effectively. Before long, you and your teammate are forced to recall back to base and heal. The enemy duo demolish the tower in your absence, giving their team control of bot lane. [[Will your ADC fall behind?|Bot Lane MIA]]
 
 
 :: Support Safe Shield
